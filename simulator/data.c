@@ -22,11 +22,18 @@ void data_init(struct words *d_img[], int dm_size, int dp_size, int dc_size, int
     d_cac_size = dc_size;
     d_blk_size = db_size;
     d_set = d_s;
+    
     d_mem = malloc(sizeof(m_unit));
     d_cac = malloc(sizeof(m_unit));
     d_tlb = malloc(sizeof(m_unit));
     d_page = malloc(sizeof(m_unit));
-    for(x = 0; x < MEMO_LIMIT; x ++) {
+    
+    d_page->hm[HIT] = 0; d_page->hm[MISS] = 0;
+    d_cac->hm[HIT] = 0; d_cac->hm[MISS] = 0;
+    d_tlb->hm[HIT] = 0; d_tlb->hm[MISS] = 0;
+    d_mem->hm[HIT] = 0; d_mem->hm[MISS] = 0;
+   
+     for(x = 0; x < MEMO_LIMIT; x ++) {
        d_mem->content[x] = 0; 
        d_mem->recency[x] = -1;
        d_cac->content[x] = 0; 

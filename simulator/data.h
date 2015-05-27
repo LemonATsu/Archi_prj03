@@ -1,6 +1,9 @@
 #ifndef DATA_H_
 #define DATA_H_
 #define MEMO_LIMIT 1024
+#define HIT 1
+#define MISS 0
+
 int reg[33];
 int sp;
 int data_num;
@@ -27,6 +30,7 @@ typedef struct m_unit {
     int recency[1025];
     int LRU;
     int LRU_num;
+    int hm[2];
 } m_unit;
 
 struct data* d_disk[1025];
@@ -44,7 +48,6 @@ int d_page_size;
 int d_cac_size;
 int d_blk_size;
 int d_set;
-
 
 
 void data_init(struct words *d_img[], int dm_size, int dp_size, int dc_size, int db_size, int d_s);

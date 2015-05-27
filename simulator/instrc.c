@@ -20,6 +20,11 @@ void ins_init(struct words *i_img[], int im_size, int ip_size, int ic_size, int 
     i_tlb = malloc(sizeof(m_unit)); 
     i_page = malloc(sizeof(m_unit)); 
     
+    i_page->hm[HIT] = 0; i_page->hm[MISS] = 0;
+    i_cac->hm[HIT] = 0; i_cac->hm[MISS] = 0;
+    i_tlb->hm[HIT] = 0; i_tlb->hm[MISS] = 0;
+    i_mem->hm[HIT] = 0; i_mem->hm[MISS] = 0;
+    
     for(x = 0; x < MEMO_LIMIT; x ++) {
        i_mem->content[x] = 0; 
        i_mem->recency[x] = -1;
