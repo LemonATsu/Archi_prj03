@@ -1,20 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "execute.h"
-#include "obj.h"
-
+#include "instrc.h"
 //one extra reg to make sure it is safe.
 
 void cycle_output(int cyc, FILE *output);
-void execute();
 
 void execute() {
     int x = 0;
     int halt_spot = false;
     int cyc = 0;
     FILE *snap_file = fopen("snapshot.rpt", "w");
-    FILE *err_file = fopen("error_dump.rpt", "w");
-    error_init();
 
     reg_init();
     
@@ -27,7 +23,7 @@ void execute() {
             continue;
         }
 
-        struct ins* cur_ins = i_memo[pc / 4]; 
+        struct ins* cur_ins = i_disk[pc / 4]; 
         int opcode = (cur_ins->bits >> 26) & 0x0000003f;
         int code = cur_ins->bits;
         //printf("current pc, stack:%x %x qqq\n", pc, reg[_sp]);        
@@ -141,8 +137,8 @@ void execute() {
                     break;
             }
         } 
-        error_output(cyc, err_file, cur_ins);
-        if(halt_spot || error_halt || cyc == 500001) break;
+        
+        if(halt_spot || cyc == 500001) break;
         //output
         pc += 4;
         cycle_output(cyc, snap_file);
@@ -150,7 +146,6 @@ void execute() {
     }
 
     fclose(snap_file);
-    fclose(err_file);
 }
 
 

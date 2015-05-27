@@ -1,5 +1,9 @@
+#ifndef EXECUTE_H_
 //define opcode/func here.
 //also, about some register
+#define EXECUTE_H_
+#include "data.h"
+#include "operator.h" 
 #define true 1
 #define false 0
 //    register:
@@ -70,5 +74,6 @@
 #define _srl 0x02
 #define _sra 0x03
 #define _jr 0x08
+void execute();
 
-
+#endif

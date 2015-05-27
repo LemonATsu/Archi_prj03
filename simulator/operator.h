@@ -1,7 +1,10 @@
-#include <stdio.h>
+#ifndef OPERATOR_H_
+#define OPERATOR_H_
 #include <stdlib.h>
-#include "obj.h"
+#include <stdio.h>
+#include "data.h"
 #include "execute.h"
+#include "register.h"
 void addi(int s, int t, short c);
 void lw(int s, int t, short c);
 void lh(int s, int t, short c, int mode); // lh/lhu
@@ -29,3 +32,5 @@ void or(int s, int t, int d, int mode);// or/xor/nor
 void slt(int s, int t, int d);
 void sll(int t, int d, int shamt);
 void sr(int t, int d, int shamt, int mode); // srl/sra
+
+#endif

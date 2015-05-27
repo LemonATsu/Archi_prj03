@@ -1,11 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "obj.h"
-
-void reg_init();
-int reg_read(int tar);
-void reg_write(int tar, int data);
-
+#ifndef REGISTER_C_
+#define REGISTER_C_
+#include "register.h"
+#include "data.h"
 void reg_init() {
     int x;
     for(x = 0; x < 32; x ++) {
@@ -18,11 +14,6 @@ int reg_read(int tar) {
 }
 
 void reg_write(int tar, int data) {
-    if(tar == 0) {
-        //error write to $0
-        write_to_zero();
-
-    } else {
-        reg[tar] = data;
-    }
+    reg[tar] = data;
 }
+#endif

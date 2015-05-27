@@ -1,18 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "obj.h"
-
+#include "reader.h"
+#include "data.h"
+#include "instrc.h"
+#include "execute.h"
 void test_printer(struct words* a[], struct words* b[]);
 
 int main(int argc, char **argv){
     //start reading data
     struct words *ins_array[300000];
     struct words *d_array[300000];
+    int e_param[12] = {0, 64, 32, 8, 16, 16, 4, 4, 16, 4, 1}, i;
+    
+    for(i = 1; i < argc; i ++) {
+        e_param[i] = atoi(argv[i]);
+    }
+
     image_reader(ins_array, d_array);
-    printf("start data init\n");
-    data_init(d_array);
+    data_init(d_array, e_param[2], e_param[4], e_param[8], e_param[9], e_param[10]);
     printf("start ins init\n");
-    ins_init(ins_array);
+    ins_init(ins_array, e_param[1], e_param[3], e_param[5], e_param[6], e_param[7]);
     printf("start execute\n");
     execute();
     //data_write(12, 0x56781234);

@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "obj.h"
-
+#include "reader.h"
 void image_reader(struct words *ins_array[], struct words *d_array[]) {
 
     FILE *i_img_ptr = fopen("iimage.bin", "rb");

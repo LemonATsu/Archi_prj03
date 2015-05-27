@@ -1,21 +1,16 @@
 #include "operator.h"
-
-
 void addi(int s, int t, short c) {
     int dat = reg_read(s);
-    num_overflow(dat, c);
     reg_write(t, dat + c);
 }
 
 void lw(int s, int t, short c) {
     int dat = reg_read(s);
-    num_overflow(dat, c);
     reg_write(t, data_read(dat + c, 4));
 }
 
 void lh(int s, int t, short c, int mode) {
     int dat = reg_read(s);
-    num_overflow(dat, c);
     if(mode) {
         short int temp = data_read(dat + c, 2);
         reg_write(t, temp);
@@ -27,7 +22,6 @@ void lh(int s, int t, short c, int mode) {
 //mode = 1 is lb, mode = 0 is lbu
 void lb(int s, int t, short c, int mode) {    
     int dat = reg_read(s);
-    num_overflow(dat, c);
     short byte = data_read(dat + c, 1);
     if(mode) {
         short res = byte;
@@ -43,15 +37,12 @@ void lb(int s, int t, short c, int mode) {
 void sw(int s, int t, short c) {
     int dat_s = reg_read(s);
     int dat_t = reg_read(t);
-    num_overflow(dat_s, c);
     data_write(dat_s + c, dat_t, 4);
-
 }
 
 void sh(int s, int t, short c) {
     int dat_s = reg_read(s);
     int dat_t = reg_read(t);
-    num_overflow(dat_s, c);
     int data = dat_t & 0x0000ffff;
     data_write(dat_s + c, data, 2);
 }
@@ -59,7 +50,6 @@ void sh(int s, int t, short c) {
 void sb(int s, int t, short c) {
     int dat_s = reg_read(s);
     int dat_t = reg_read(t);
-    num_overflow(dat_s, c);
     int data = dat_t & 0x000000ff;
 
     data_write(dat_s + c, data, 1);
@@ -91,7 +81,6 @@ void slti(int s, int t, short c) {
 
 void beq(int s, int t, short c) {
     //need to handle overflow;
-    num_overflow( pc + 4, c * 4);
     if(reg_read(s) == reg_read(t)) {
         pc += 4 * c;
     }
@@ -99,7 +88,6 @@ void beq(int s, int t, short c) {
 }
 
 void bne(int s, int t, short c) {
-    num_overflow( pc + 4, c * 4);
     if(reg_read(s) != reg_read(t)) {
         pc += 4 * c;
     }
@@ -133,10 +121,8 @@ void add(int s, int t, int d, int mode) {
     int dat_t = reg_read(t);
     //error handle: overflow ?
     if(mode) {
-        num_overflow(dat_s, dat_t);
         reg_write(d, dat_s + dat_t);
     } else {
-        num_overflow(dat_s, dat_t * -1);
         reg_write(d, dat_s - dat_t);
     }
 }
