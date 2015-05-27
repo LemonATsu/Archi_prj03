@@ -1,7 +1,7 @@
 #include "data.h"
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "HM.h"
 //address < 1024 -> have 256 words at most
 //unsigned int sp;
 //unsigned int data_num;
@@ -12,42 +12,11 @@
 //short int data_read_byte(int addr);
 //void data_write_byte(int addr, int data);
 
-void data_init(struct words *d_img[], int dm_size, int dp_size, int dc_size, int db_size, int d_s) {
+void data_init(struct words *d_img[]) {
     sp = char_to_num(d_img[0]->machine_code);
     data_num = char_to_num(d_img[1]->machine_code);
 
     int x, y = 2 + data_num;
-    d_mem_size = dm_size;
-    d_page_size = dp_size;
-    d_cac_size = dc_size;
-    d_blk_size = db_size;
-    d_set = d_s;
-    
-    d_mem = malloc(sizeof(m_unit));
-    d_cac = malloc(sizeof(m_unit));
-    d_tlb = malloc(sizeof(m_unit));
-    d_page = malloc(sizeof(m_unit));
-    
-    d_page->hm[HIT] = 0; d_page->hm[MISS] = 0;
-    d_cac->hm[HIT] = 0; d_cac->hm[MISS] = 0;
-    d_tlb->hm[HIT] = 0; d_tlb->hm[MISS] = 0;
-    d_mem->hm[HIT] = 0; d_mem->hm[MISS] = 0;
-   
-     for(x = 0; x < MEMO_LIMIT; x ++) {
-       d_mem->content[x] = 0; 
-       d_mem->recency[x] = -1;
-       d_cac->content[x] = 0; 
-       d_cac->recency[x] = -1; 
-       d_tlb->content[x] = 0; 
-       d_tlb->recency[x] = -1; 
-       d_page->content[x] = 0; 
-       d_page->recency[x] = -1; 
-    }
-    
-    d_page_entry = MEMO_LIMIT / d_page_size;
-    d_tlb_entry = d_page_entry / 4;
-
-    printf("%d %d\n", d_page_entry, d_tlb_entry);
 
     for(x = 2; x < y; x++) {
         //save data into D memory, details are still unsure

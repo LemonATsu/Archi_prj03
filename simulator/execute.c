@@ -13,7 +13,6 @@ void execute() {
     FILE *snap_file = fopen("snapshot.rpt", "w");
 
     reg_init();
-    
     while(!halt_spot) {
         if(!cyc) {
             reg[_sp] = sp;
@@ -22,7 +21,6 @@ void execute() {
             if(ins_num == 0) break;
             continue;
         }
-
         struct ins* cur_ins = i_disk[pc / 4]; 
         int opcode = (cur_ins->bits >> 26) & 0x0000003f;
         int code = cur_ins->bits;

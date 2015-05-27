@@ -1,7 +1,7 @@
 #include "instrc.h"
+#include "HM.h"
 
-
-void ins_init(struct words *i_img[], int im_size, int ip_size, int ic_size, int ib_size, int is) {
+void ins_init(struct words *i_img[]) {
     pc = char_to_num(i_img[0]->machine_code);
     ins_num = char_to_num(i_img[1]->machine_code);
     //printf("pc: 0x%08x, #of ins: 0x%08x\n", pc, ins_num);
@@ -9,36 +9,6 @@ void ins_init(struct words *i_img[], int im_size, int ip_size, int ic_size, int 
 
     int x = 0, y = 2 + ins_num, max = MEMO_LIMIT / 4;
     //initialize
-    i_mem_size = im_size;
-    i_page_size = ip_size;
-    i_cac_size = ic_size;
-    i_blk_size = ib_size;
-    i_set = is;
-
-    i_mem = malloc(sizeof(m_unit)); 
-    i_cac = malloc(sizeof(m_unit));
-    i_tlb = malloc(sizeof(m_unit)); 
-    i_page = malloc(sizeof(m_unit)); 
-    
-    i_page->hm[HIT] = 0; i_page->hm[MISS] = 0;
-    i_cac->hm[HIT] = 0; i_cac->hm[MISS] = 0;
-    i_tlb->hm[HIT] = 0; i_tlb->hm[MISS] = 0;
-    i_mem->hm[HIT] = 0; i_mem->hm[MISS] = 0;
-    
-    for(x = 0; x < MEMO_LIMIT; x ++) {
-       i_mem->content[x] = 0; 
-       i_mem->recency[x] = -1;
-       i_cac->content[x] = 0; 
-       i_cac->recency[x] = -1; 
-       i_tlb->content[x] = 0; 
-       i_tlb->recency[x] = -1; 
-       i_page->content[x] = 0; 
-       i_page->recency[x] = -1; 
-    }
-
-    i_page_entry = MEMO_LIMIT / i_page_size;
-    i_tlb_entry = i_page_entry / 4;
-    printf("%d %d for i.", i_page_entry, i_tlb_entry);
 
     for(x = 0; x < max; x ++) {
         struct ins* i_init = malloc(sizeof(struct ins));

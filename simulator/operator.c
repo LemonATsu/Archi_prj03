@@ -1,4 +1,5 @@
 #include "operator.h"
+#include "HM.h"
 void addi(int s, int t, short c) {
     int dat = reg_read(s);
     reg_write(t, dat + c);
@@ -6,6 +7,7 @@ void addi(int s, int t, short c) {
 
 void lw(int s, int t, short c) {
     int dat = reg_read(s);
+    HM_check(dat + c, 1);
     reg_write(t, data_read(dat + c, 4));
 }
 
@@ -37,6 +39,7 @@ void lb(int s, int t, short c, int mode) {
 void sw(int s, int t, short c) {
     int dat_s = reg_read(s);
     int dat_t = reg_read(t);
+    HM_check(dat_s + c, 1);
     data_write(dat_s + c, dat_t, 4);
 }
 

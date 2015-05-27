@@ -3,12 +3,12 @@
 CC = cc
 CFLAGS = -c -Wall
 LDFLAGS = 
-SOURCES = main.c reader.c data.c instrc.c register.c execute.c operator.c
+SOURCES = main.c reader.c HM.c data.c instrc.c register.c execute.c operator.c
 OBJECTS = $(SOURCES:.c = .o)
 EXECUTABLE = CMP
 
 # Include .h file here
-INCLUDES = instrc.h register.h reader.h data.h excute.h operator.h
+INCLUDES = data.h HM.h instrc.h register.h reader.h excute.h operator.h
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)

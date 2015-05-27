@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "HM.h"
 #include "reader.h"
 #include "data.h"
 #include "instrc.h"
@@ -16,10 +17,12 @@ int main(int argc, char **argv){
         e_param[i] = atoi(argv[i]);
     }
 
+    printf("%d\n", i_page_size);
     image_reader(ins_array, d_array);
-    data_init(d_array, e_param[2], e_param[4], e_param[8], e_param[9], e_param[10]);
+    data_init(d_array);
     printf("start ins init\n");
-    ins_init(ins_array, e_param[1], e_param[3], e_param[5], e_param[6], e_param[7]);
+    ins_init(ins_array);
+    HM_init(e_param);
     printf("start execute\n");
     execute();
     //data_write(12, 0x56781234);
