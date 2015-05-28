@@ -23,7 +23,133 @@ void HM_check(int addr, int type) {
         tar_cac = i_cac;
         tar_tlb = i_tlb;
     }
+    // first, check tlb hit.
+    int tag = addr / tar_page->size; // tlb tag.
+    int tlb_res = search(tag, tar_tlb->entry, tar_tlb);
+    printf("Here\n");
+    if(tlb_res) {
+        printf("TLB hit, search cache (%d)\n", addr);
+        tar_tlb->hm[HIT] ++;
+
+        tag = addr % tar_cac->entry;
+        int cac_res = search(addr, tar_cac->entry * tar_cac->size, tar_cac);
+        if(cac_res) {
+            printf("Cache hit.\n");
+            tar_cac->hm[HIT] ++;
+        } else {
+            printf("Cache miss, seach memory.\n");
+            tar_cac->hm[MISS] ++;
+            CAC_update(addr, tar_cac, set);
+        }
+    } else {
+        printf("TLB miss, search PTE\n");
+        tar_tlb->hm[MISS] ++;
+        int pte_res = PTE_check(tag, tar_page);
+        if(pte_res) {
+            printf("PTE hit\n");
+            tar_page->hm[HIT] ++;
+            printf("update TLB, search cache\n");
+            TLB_update(tag, tar_tlb);
+            
+            int cac_res = search(addr, tar_cac->entry * tar_cac->size, tar_cac);
+            if(cac_res) {
+                printf("Cache hit.\n");
+                tar_cac->hm[HIT] ++;
+            } else {
+                printf("Cache miss, seach memory.\n");
+                tar_cac->hm[MISS] ++;
+                CAC_update(addr, tar_cac, set);
+            }
+        } else {
+            printf("PTE miss\n");
+            printf("update PTE, TLB, cache\n");
+            tar_page->hm[MISS] ++;
+            tar_cac->hm[MISS] ++;
+            PTE_update(tag, tar_page);
+            TLB_update(tag, tar_tlb);
+            CAC_update(addr, tar_cac, set);
+            // cache update.
+        }
+        
+        
+    }
+    printf("TLB HM: %d, %d\n", tar_tlb->hm[HIT], tar_tlb->hm[MISS]);
+    printf("PTE HM: %d, %d\n", tar_page->hm[HIT], tar_page->hm[MISS]);
+    printf("CAC HM: %d, %d\n", tar_cac->hm[HIT], tar_cac->hm[MISS]);
 }
+
+
+void CAC_update(int addr, m_unit* cac, int set) {
+    int x, y;
+    int content = addr | 0x80000000;
+    int tag = (addr / cac->entry);
+    for(y = 0; y < set; y ++) {
+        int valid = (cac->content[tag + y] >> 31) & 1; // search set;
+        if(!valid) {
+            printf("Cache :: find unused %d, content\n", tag + y);
+            cac->content[tag + y] = content;
+            cac->recency[tag + y] = 0;
+            // LRU
+            return;
+        }
+    }
+
+    // LRU Replacement
+    printf("LRU replace for cac\n");
+    cac->content[tag] = content;
+    cac->recency[tag + y] = 0;
+}
+
+void PTE_update(int tag, m_unit* pte) {
+    pte->content[tag] = 1;
+}
+
+void TLB_update(int tag, m_unit* tlb) {
+    int x;
+    int content = tag | 0x80000000;
+    printf("TLB update\n"); 
+    for(x = 0; x < tlb->entry; x ++) {
+        int valid = (tlb->content[x] >> 31) & 1;
+        if(!valid) {
+            printf("TLB update, fine unused, store(%d)\n", tag);
+            tlb->content[x] = content;
+            tlb->recency[x] = 0;
+            //LRU_update(tar, tlb->entry);
+            return;
+        }
+    }
+    printf("TLB:: need replace\n");
+    // LRU replace
+}
+
+/*void LRU_update(m_unit* tar, int size) {
+    int x;
+    
+    for(x = 0; x < size; x ++) {
+        
+    }
+}*/
+
+int PTE_check(int entry, m_unit* tar) {
+    if(tar->content[entry]) {
+        return HIT;
+    } else return MISS;
+
+}
+
+
+int search(int tag, int size, m_unit* tar) {
+    int x = 0;
+    for(x = 0; x < size; x ++) {
+        int valid = (tar->content[x] >> 31) & 1;
+        int content = (tar->content[x] & 0x3FF);
+        if(valid && content == tag) return HIT;
+    }
+    return MISS;
+}
+
+
+
 
 void HM_init(int param[]) {
     int x;
@@ -42,6 +168,7 @@ void HM_init(int param[]) {
     d_cac->entry = param[8] / d_cac->size; // cache entry = total cache / cache size
     d_set = param[10]; //cache association
     d_tlb->entry = d_page->entry / 4; // tlb entry = quarter of page entry 
+    d_pn = d_mem->size / d_page->size; 
  
     d_page->hm[HIT] = 0; d_page->hm[MISS] = 0;
     d_cac->hm[HIT] = 0; d_cac->hm[MISS] = 0;
@@ -72,7 +199,7 @@ void HM_init(int param[]) {
     i_cac->entry = param[5] / i_cac->size; // cache entry = total cahche / cache size
     i_tlb->entry = i_page->entry / 4;
     i_set = param[7];
-    
+    i_pn = i_mem->size / i_page->size; 
     i_page->hm[HIT] = 0; i_page->hm[MISS] = 0;
     i_cac->hm[HIT] = 0; i_cac->hm[MISS] = 0;
     i_tlb->hm[HIT] = 0; i_tlb->hm[MISS] = 0;
