@@ -28,8 +28,6 @@ typedef struct m_unit {
     int content[1025];
     int recency[1025];
     int c_recency[MEMO_LIMIT][MEMO_LIMIT];
-    int LRU;
-    int LRU_num;
     int way;
     int hm[2];
 } m_unit;

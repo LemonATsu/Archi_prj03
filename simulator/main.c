@@ -17,7 +17,6 @@ int main(int argc, char **argv){
         e_param[i] = atoi(argv[i]);
     }
 
-    printf("%d\n", i_page_size);
     image_reader(ins_array, d_array);
     data_init(d_array);
     printf("start ins init\n");

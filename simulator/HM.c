@@ -27,18 +27,25 @@ void HM_check(int addr, int type) {
     int tag = addr / tar_page->size; // each tlb can link to a  page size of words
     int tlb_res = TLB_search(tar_tlb, tag);
     if(tlb_res) {
-        // TLB HIT
+        // TLB HIT, check CACHE
         tar_tlb->hm[HIT] ++;
-        int update = LRU_search(tar_tlb, tag);
-        LRU_update(tar_tlb, update, tar_tlb->entry, tag);
+
+        int update = LRU_search(tar_tlb, tag); // search the hit index
+        LRU_update(tar_tlb, update, tar_tlb->entry, tag); // update the recency
         
-        int cac_res = CAC_search(tar_cac, addr);
+        int cac_res = CAC_search(tar_cac, addr); // check Cache
         if(cac_res) {
+            // hit, update recency
             update = CLRU_search(tar_cac, addr);
             tar_cac->hm[HIT]++;
             CLRU_update(tar_cac, update, addr);
         }
         else {
+            // miss, update CACHE
+            // why not check memory?
+            // if item isn't in memory, it's impossible that
+            // TLB hit. So we are sure that it's already in memory. 
+            // update Cache directly
             tar_cac->hm[MISS] ++;
             CLRU_insert(tar_cac, addr);
         }
@@ -50,18 +57,22 @@ void HM_check(int addr, int type) {
         if(pte_res) {
             // PTE HIT
             tar_page->hm[HIT] ++;
-            LRU_insert(tar_tlb, tar_tlb->entry, tag);
+            LRU_insert(tar_tlb, tar_tlb->entry, tag); // Page is special case. The it will replace the old page in order.
             int cac_res = CAC_search(tar_cac, addr);
             if(cac_res) {
+                // update cache recency
                 int update = CLRU_search(tar_cac, addr);
                 tar_cac->hm[HIT]++;
                 CLRU_update(tar_cac, update, addr);
             }
             else {
+                // update cache
                 tar_cac->hm[MISS] ++;
                 CLRU_insert(tar_cac, addr);
             }
         } else {
+            // if TLB, PTE both miss, cache must be miss.
+            // update PTE, TLB and Cache.
             tar_page->hm[MISS] ++;
             tar_cac->hm[MISS] ++;
             LRU_insert(tar_page, tar_page->entry, tag);
@@ -73,19 +84,21 @@ void HM_check(int addr, int type) {
 
 
 
-    printf("I TLB HM: %d, %d\n", i_tlb->hm[HIT], i_tlb->hm[MISS]);
+    /*printf("I TLB HM: %d, %d\n", i_tlb->hm[HIT], i_tlb->hm[MISS]);
     printf("I PTE HM: %d, %d\n", i_page->hm[HIT], i_page->hm[MISS]);
     printf("I CAC HM: %d, %d\n", i_cac->hm[HIT], i_cac->hm[MISS]);
     printf("D TLB HM: %d, %d\n", d_tlb->hm[HIT], d_tlb->hm[MISS]);
     printf("D PTE HM: %d, %d\n", d_page->hm[HIT], d_page->hm[MISS]);
-    printf("D CAC HM: %d, %d\n", d_cac->hm[HIT], d_cac->hm[MISS]);
+    printf("D CAC HM: %d, %d\n", d_cac->hm[HIT], d_cac->hm[MISS]);*/
 }
 
 int CAC_search(m_unit* cac, int addr) {
     int x, y;
-    printf("%d cac_ent\n", cac->entry);
+    //printf("%d cac_ent\n", cac->entry);
+
+    // search the cache to fine the addr.
     for(x = 0; x < cac->entry; x += y) {
-        printf("x moving %d\n", x);
+       //printf("x moving %d\n", x);
         for(y = 0; y < cac->way; y ++) {
             if(cac->c_recency[x][y] == addr) return HIT;
         }
@@ -97,6 +110,7 @@ int CAC_search(m_unit* cac, int addr) {
 int CLRU_search(m_unit* cac, int addr) {
     int x;
     int set = (addr / cac->size) % cac->entry;
+    // search the set to find the index that contains target address
     for(x = 0; x < cac->way; x ++) {
         if(cac->c_recency[set][x] == addr) return x;
     }
@@ -106,8 +120,9 @@ int CLRU_search(m_unit* cac, int addr) {
 void CLRU_insert(m_unit* cac, int addr) {
     int x;
     int set = (addr / cac->size) % cac->entry;
-    printf("insert %d, set %d\n",  addr, set);
+    //printf("insert %d, set %d\n",  addr, set);
     for(x = 0; x < cac->way; x ++) {
+        // if it's -1, it is invalid and can be insert directly
         if(cac->c_recency[set][x] == -1) {
             cac->c_recency[set][x] = addr;
             return;
@@ -124,6 +139,9 @@ void CLRU_update(m_unit* cac, int from, int addr){
     int set = (addr / cac->size) % cac->entry;
     cac->c_recency[set][from] = addr;
     for(x = from; x < cac->way - 1; x ++) {
+        // move the target address to the end of the queue.
+        // the one on the first place will be replace first
+        // (from = 0, replace, otherwise it represent update recency)
         int temp = cac->c_recency[set][x + 1];
         cac->c_recency[set][x + 1] = cac->c_recency[set][x];
         cac->c_recency[set][x] = temp;
@@ -202,19 +220,16 @@ void HM_init(int param[]) {
     d_cac->way = param[10]; //cache association
     d_cac->entry = param[8] / d_cac->size / d_cac->way; // total / block_size = total block. total_block / way = total set(entry). each set(entry) has way block
     d_tlb->entry = d_page->entry / 4; // tlb entry = quarter of page entry 
-    d_pn = d_mem->size / d_page->size; 
+    d_pn = d_mem->size / d_page->size; // ppn is equal to 
     d_pn_c = 0;
 
-    d_tlb->entry = (d_pn <= d_tlb->entry) ? d_pn : d_tlb->entry;
-    d_page->entry = (d_pn <= d_page->entry) ? d_pn : d_page->entry;
+    d_tlb->entry = (d_pn <= d_tlb->entry) ? d_pn : d_tlb->entry; // the actual valid will be limit by ppn. Equals to ppn if tlb entry > ppn
+    d_page->entry = (d_pn <= d_page->entry) ? d_pn : d_page->entry; // the actual valid page will be limit by ppn. same as above
 
     d_page->hm[HIT] = 0; d_page->hm[MISS] = 0;
     d_cac->hm[HIT] = 0; d_cac->hm[MISS] = 0;
     d_tlb->hm[HIT] = 0; d_tlb->hm[MISS] = 0;
     d_mem->hm[HIT] = 0; d_mem->hm[MISS] = 0;
-    d_mem->LRU_num = 1;
-    d_cac->LRU_num = 1;
-    d_page->LRU_num = 1;
     for(x = 0; x < MEMO_LIMIT; x ++) {
         d_mem->content[x] = 0; 
         d_mem->recency[x] = -1;
@@ -222,7 +237,6 @@ void HM_init(int param[]) {
         d_cac->recency[x] = -1; 
         d_tlb->content[x] = 0; 
         d_tlb->recency[x] = -1;
-        d_tlb->LRU_num = 1;
         d_page->content[x] = 0; 
         d_page->recency[x] = -1; 
         d_cur_pn[x] = -1;
@@ -244,15 +258,15 @@ void HM_init(int param[]) {
     i_tlb->entry = i_page->entry / 4;
     i_pn = i_mem->size / i_page->size; 
     i_pn_c = 0;
+    
+    i_tlb->entry = (i_pn <= i_tlb->entry) ? i_pn : i_tlb->entry; // the actual valid will be limit by ppn. Equals to ppn if tlb entry > ppn
+    i_page->entry = (i_pn <= i_page->entry) ? i_pn : i_page->entry; // the actual valid page will be limit by ppn. same as above
 
     i_page->hm[HIT] = 0; i_page->hm[MISS] = 0;
     i_cac->hm[HIT] = 0; i_cac->hm[MISS] = 0;
     i_tlb->hm[HIT] = 0; i_tlb->hm[MISS] = 0;
     i_mem->hm[HIT] = 0; i_mem->hm[MISS] = 0;
-    i_mem->LRU_num = 1;
-    i_cac->LRU_num = 1;
-    i_tlb->LRU_num = 1;
-    i_page->LRU_num = 1;
+    
     for(x = 0; x < MEMO_LIMIT; x ++) {
         i_mem->content[x] = 0; 
         i_mem->recency[x] = -1;
@@ -267,12 +281,13 @@ void HM_init(int param[]) {
     int z;
     for(x = 0; x < MEMO_LIMIT; x ++) {
         for(z = 0; z < MEMO_LIMIT; z ++) {
+            // initialize cache set recency
             i_cac->c_recency[x][z] = -1;
             d_cac->c_recency[x][z] = -1;
         }
     }
-    printf("%d %d for i, ppn %d.\n", i_page->entry, i_tlb->entry, i_pn);
-    printf("%d %d for d, ppn %d.\n", d_page->entry, d_tlb->entry, d_pn);
+    //printf("%d %d for i, ppn %d.\n", i_page->entry, i_tlb->entry, i_pn);
+    //printf("%d %d for d, ppn %d.\n", d_page->entry, d_tlb->entry, d_pn);
 
 }
 
