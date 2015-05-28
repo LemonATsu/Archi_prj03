@@ -21,7 +21,7 @@ int d_set;
 int d_pn;
 int d_cur_pn[MEMO_LIMIT];
 int d_pn_c;
-
+int dc_recency[MEMO_LIMIT][MEMO_LIMIT];
 m_unit* i_mem;
 m_unit* i_cac;
 m_unit* i_tlb;
@@ -37,7 +37,11 @@ int i_set;
 int i_pn;
 int i_cur_pn[MEMO_LIMIT];
 int i_pn_c;
+int ic_recency[MEMO_LIMIT][MEMO_LIMIT];
 
+int CLRU_search(m_unit* cac, int addr);
+void CLRU_insert(m_unit* cac, int addr);
+void CLRU_update(m_unit* cac, int from, int addr);
 
 int CAC_search(m_unit* cac, int addr);
 int TLB_search(m_unit* tlb, int tag);

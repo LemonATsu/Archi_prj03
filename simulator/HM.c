@@ -18,8 +18,6 @@ void HM_check(int addr, int type) {
         tar_cac = d_cac;
         tar_tlb = d_tlb;
     } else {
-        printf("-------------I type ---------------\n");
-        printf("addr %d\n", addr);
         set = i_set;
         tar_page = i_page;
         tar_mem = i_mem;
@@ -33,6 +31,18 @@ void HM_check(int addr, int type) {
         tar_tlb->hm[HIT] ++;
         int update = LRU_search(tar_tlb, tag);
         LRU_update(tar_tlb, update, tar_tlb->entry, tag);
+        
+        int cac_res = CAC_search(tar_cac, addr);
+        if(cac_res) {
+            update = CLRU_search(tar_cac, addr);
+            tar_cac->hm[HIT]++;
+            CLRU_update(tar_cac, update, addr);
+        }
+        else {
+            tar_cac->hm[MISS] ++;
+            CLRU_insert(tar_cac, addr);
+        }
+      
     } else {
         // TLB MISS
         tar_tlb->hm[MISS] ++;
@@ -41,11 +51,22 @@ void HM_check(int addr, int type) {
             // PTE HIT
             tar_page->hm[HIT] ++;
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
+            int cac_res = CAC_search(tar_cac, addr);
+            if(cac_res) {
+                int update = CLRU_search(tar_cac, addr);
+                tar_cac->hm[HIT]++;
+                CLRU_update(tar_cac, update, addr);
+            }
+            else {
+                tar_cac->hm[MISS] ++;
+                CLRU_insert(tar_cac, addr);
+            }
         } else {
             tar_page->hm[MISS] ++;
             tar_cac->hm[MISS] ++;
             LRU_insert(tar_page, tar_page->entry, tag);
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
+            CLRU_insert(tar_cac, addr);
         }
     }
 
@@ -60,15 +81,55 @@ void HM_check(int addr, int type) {
     printf("D CAC HM: %d, %d\n", d_cac->hm[HIT], d_cac->hm[MISS]);
 }
 
-int CAC_search(m_unit* cac, int addr, int way) {
+int CAC_search(m_unit* cac, int addr) {
     int x, y;
+    printf("%d cac_ent\n", cac->entry);
     for(x = 0; x < cac->entry; x += y) {
-        for(y = 0; y < ; y++) {
-            if(cac->recency)
+        printf("x moving %d\n", x);
+        for(y = 0; y < cac->way; y ++) {
+            if(cac->c_recency[x][y] == addr) return HIT;
         }
     }
+    return MISS;
+}
+
+
+int CLRU_search(m_unit* cac, int addr) {
+    int x;
+    int set = (addr / cac->size) % cac->entry;
+    for(x = 0; x < cac->way; x ++) {
+        if(cac->c_recency[set][x] == addr) return x;
+    }
+    return -1;
+}
+
+void CLRU_insert(m_unit* cac, int addr) {
+    int x;
+    int set = (addr / cac->size) % cac->entry;
+    printf("insert %d, set %d\n",  addr, set);
+    for(x = 0; x < cac->way; x ++) {
+        if(cac->c_recency[set][x] == -1) {
+            cac->c_recency[set][x] = addr;
+            return;
+        }
+    } 
+    // table full
+    // replace
+    CLRU_update(cac, 0, addr);
 
 }
+
+void CLRU_update(m_unit* cac, int from, int addr){
+    int x;
+    int set = (addr / cac->size) % cac->entry;
+    cac->c_recency[set][from] = addr;
+    for(x = from; x < cac->way - 1; x ++) {
+        int temp = cac->c_recency[set][x + 1];
+        cac->c_recency[set][x + 1] = cac->c_recency[set][x];
+        cac->c_recency[set][x] = temp;
+    }
+}
+
 
 int PTE_search(m_unit* pte, int tag) {
     int x;
@@ -90,7 +151,6 @@ int TLB_search(m_unit* tlb, int tag) {
     return MISS;
 }
 
-
 int LRU_search(m_unit* tar, int tag) {
     int x;
     for(x = 0; x < tar->entry; x ++) {
@@ -108,7 +168,6 @@ void LRU_insert(m_unit* tar, int size, int tag) {
             return;
         }
     }
-
     // table is full.
     // replace policy
     LRU_update(tar, 0, size, tag);
@@ -140,8 +199,8 @@ void HM_init(int param[]) {
     d_page->size = param[4];
     d_page->entry = MEMO_LIMIT / param[4]; // page entry = disk_size / page_size
     d_cac->size = param[9];
-    d_cac->entry = param[8] / d_cac->size; // cache entry = total cache / cache size
-    d_set = param[10]; //cache association
+    d_cac->way = param[10]; //cache association
+    d_cac->entry = param[8] / d_cac->size / d_cac->way; // total / block_size = total block. total_block / way = total set(entry). each set(entry) has way block
     d_tlb->entry = d_page->entry / 4; // tlb entry = quarter of page entry 
     d_pn = d_mem->size / d_page->size; 
     d_pn_c = 0;
@@ -153,11 +212,8 @@ void HM_init(int param[]) {
     d_cac->hm[HIT] = 0; d_cac->hm[MISS] = 0;
     d_tlb->hm[HIT] = 0; d_tlb->hm[MISS] = 0;
     d_mem->hm[HIT] = 0; d_mem->hm[MISS] = 0;
-    d_mem->imm = -1;
     d_mem->LRU_num = 1;
-    d_cac->imm = -1;
     d_cac->LRU_num = 1;
-    d_page->imm = -1;
     d_page->LRU_num = 1;
     for(x = 0; x < MEMO_LIMIT; x ++) {
         d_mem->content[x] = 0; 
@@ -166,7 +222,6 @@ void HM_init(int param[]) {
         d_cac->recency[x] = -1; 
         d_tlb->content[x] = 0; 
         d_tlb->recency[x] = -1;
-        d_tlb->imm = -1; 
         d_tlb->LRU_num = 1;
         d_page->content[x] = 0; 
         d_page->recency[x] = -1; 
@@ -184,8 +239,8 @@ void HM_init(int param[]) {
     i_page->size = param[3];
     i_page->entry = MEMO_LIMIT / param[3]; // page entry = disk_size / page_size
     i_cac->size = param[6];
-    i_set = param[7];
-    i_cac->entry = param[5] / i_cac->size / i_set; // cache entry = total cahche / cache size
+    i_cac->way = param[7];
+    i_cac->entry = param[5] / i_cac->size / i_cac->way; // cache entry = total cahche / cache size
     i_tlb->entry = i_page->entry / 4;
     i_pn = i_mem->size / i_page->size; 
     i_pn_c = 0;
@@ -194,13 +249,9 @@ void HM_init(int param[]) {
     i_cac->hm[HIT] = 0; i_cac->hm[MISS] = 0;
     i_tlb->hm[HIT] = 0; i_tlb->hm[MISS] = 0;
     i_mem->hm[HIT] = 0; i_mem->hm[MISS] = 0;
-    i_mem->imm = -1;
     i_mem->LRU_num = 1;
-    i_cac->imm = -1;
     i_cac->LRU_num = 1;
-    i_tlb->imm = -1;
     i_tlb->LRU_num = 1;
-    i_page->imm = -1;
     i_page->LRU_num = 1;
     for(x = 0; x < MEMO_LIMIT; x ++) {
         i_mem->content[x] = 0; 
@@ -213,7 +264,13 @@ void HM_init(int param[]) {
         i_page->recency[x] = -1; 
         i_cur_pn[x]= -1;
     }
-
+    int z;
+    for(x = 0; x < MEMO_LIMIT; x ++) {
+        for(z = 0; z < MEMO_LIMIT; z ++) {
+            i_cac->c_recency[x][z] = -1;
+            d_cac->c_recency[x][z] = -1;
+        }
+    }
     printf("%d %d for i, ppn %d.\n", i_page->entry, i_tlb->entry, i_pn);
     printf("%d %d for d, ppn %d.\n", d_page->entry, d_tlb->entry, d_pn);
 

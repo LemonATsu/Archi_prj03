@@ -25,6 +25,7 @@ void execute() {
         struct ins* cur_ins = i_disk[pc / 4];
         int opcode = (cur_ins->bits >> 26) & 0x0000003f;
         int code = cur_ins->bits;
+        HM_check(pc, 0);
         //printf("current pc, stack:%x %x qqq\n", pc, reg[_sp]);        
         if(opcode) {
         //I or J type
