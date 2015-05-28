@@ -19,6 +19,8 @@ int d_cac_size;
 int d_blk_size;
 int d_set;
 int d_pn;
+int d_cur_pn[MEMO_LIMIT];
+int d_pn_c;
 
 m_unit* i_mem;
 m_unit* i_cac;
@@ -33,13 +35,17 @@ int i_cac_size;
 int i_blk_size;
 int i_set;
 int i_pn;
-int search(int tag, int size, m_unit* tar);
-int PTE_check(int entry, m_unit* tar);
-void CAC_update(int addr, m_unit* cac, int set);
-void TLB_update(int tag, m_unit* tlb);
-void LRU_update(m_unit* tar, int size);
-void PTE_update(int tag, m_unit* pte);
-void HM_init(int param[]);
-void HM_check(int addr, int type);
+int i_cur_pn[MEMO_LIMIT];
+int i_pn_c;
+
+
+int CAC_search(m_unit* cac, int addr);
+int TLB_search(m_unit* tlb, int tag);
+int PTE_search(m_unit* pte, int tag);
+void LRU_insert(m_unit* tar, int size, int tag);
+void LRU_update(m_unit* tar, int from, int size, int tag);
+int LRU_search(m_unit* tar, int tag);
+
+void report(FILE* fptr_report);
 
 #endif

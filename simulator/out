@@ -1,0 +1,967 @@
+0
+start ins init
+128 32 for i, ppn 8.
+64 16 for d, ppn 2.
+start execute
+-------------I type ---------------
+addr 0
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+0 -1 become invalid, 0 become valid
+TLB update
+TLB update, fine unused, store(0) at 0 
+cache tag 0
+Cache tag 0 :: find unused 0, put content 0
+I TLB HM: 0, 1
+I PTE HM: 0, 1
+I CAC HM: 0, 1
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 4
+TLB hit tag(0), search cache (4)
+Cache miss, seach memory.
+cache tag 0
+Cache tag 0 :: find unused 1, put content 4
+I TLB HM: 1, 1
+I PTE HM: 0, 1
+I CAC HM: 0, 2
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 8
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+1 -1 become invalid, 1 become valid
+TLB update
+TLB update, fine unused, store(1) at 1 
+cache tag 0
+Cache tag 0 :: find unused 2, put content 8
+I TLB HM: 1, 2
+I PTE HM: 0, 2
+I CAC HM: 0, 3
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 12
+TLB hit tag(1), search cache (12)
+Cache miss, seach memory.
+cache tag 0
+Cache tag 0 :: find unused 3, put content 12
+I TLB HM: 2, 2
+I PTE HM: 0, 2
+I CAC HM: 0, 4
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 16
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+2 -1 become invalid, 2 become valid
+TLB update
+TLB update, fine unused, store(2) at 2 
+cache tag 0
+CAC replace----0
+0 imm ui 1
+~~~ 0 1 0 0
+~~~ 0 1 0 1
+tida 1
+~~~ 0 0 -1 2
+~~~ 0 0 -1 3
+cache 0 :======: 16 0
+cache 1 :======: 4 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 2, 3
+I PTE HM: 0, 3
+I CAC HM: 0, 5
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 20
+TLB hit tag(2), search cache (20)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 16 0
+cache 1 :======: 20 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 3, 3
+I PTE HM: 0, 3
+I CAC HM: 0, 6
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 24
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+3 -1 become invalid, 3 become valid
+TLB update
+TLB update, fine unused, store(3) at 3 
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 24 0
+cache 1 :======: 20 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 3, 4
+I PTE HM: 0, 4
+I CAC HM: 0, 7
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 8
+TLB hit tag(1), search cache (8)
+Cache hit.
+I TLB HM: 4, 4
+I PTE HM: 0, 4
+I CAC HM: 1, 7
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 12
+TLB hit tag(1), search cache (12)
+Cache hit.
+I TLB HM: 5, 4
+I PTE HM: 0, 4
+I CAC HM: 2, 7
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 16
+TLB hit tag(2), search cache (16)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 24 0
+cache 1 :======: 16 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 6, 4
+I PTE HM: 0, 4
+I CAC HM: 2, 8
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 20
+TLB hit tag(2), search cache (20)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 20 0
+cache 1 :======: 16 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 7, 4
+I PTE HM: 0, 4
+I CAC HM: 2, 9
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 24
+TLB hit tag(3), search cache (24)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 20 0
+cache 1 :======: 24 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 8, 4
+I PTE HM: 0, 4
+I CAC HM: 2, 10
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 8
+TLB hit tag(1), search cache (8)
+Cache hit.
+I TLB HM: 9, 4
+I PTE HM: 0, 4
+I CAC HM: 3, 10
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 12
+TLB hit tag(1), search cache (12)
+Cache hit.
+I TLB HM: 10, 4
+I PTE HM: 0, 4
+I CAC HM: 4, 10
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 16
+TLB hit tag(2), search cache (16)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 16 0
+cache 1 :======: 24 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 11, 4
+I PTE HM: 0, 4
+I CAC HM: 4, 11
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 20
+TLB hit tag(2), search cache (20)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 16 0
+cache 1 :======: 20 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 12, 4
+I PTE HM: 0, 4
+I CAC HM: 4, 12
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 24
+TLB hit tag(3), search cache (24)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 24 0
+cache 1 :======: 20 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 13, 4
+I PTE HM: 0, 4
+I CAC HM: 4, 13
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 8
+TLB hit tag(1), search cache (8)
+Cache hit.
+I TLB HM: 14, 4
+I PTE HM: 0, 4
+I CAC HM: 5, 13
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 28
+TLB hit tag(3), search cache (28)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 24 0
+cache 1 :======: 28 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 15, 4
+I PTE HM: 0, 4
+I CAC HM: 5, 14
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 32
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+4 -1 become invalid, 4 become valid
+TLB update
+TLB update, fine unused, store(4) at 4 
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 32 0
+cache 1 :======: 28 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 15, 5
+I PTE HM: 0, 5
+I CAC HM: 5, 15
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 32 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 16, 5
+I PTE HM: 0, 5
+I CAC HM: 5, 16
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 40
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+5 -1 become invalid, 5 become valid
+TLB update
+TLB update, fine unused, store(5) at 5 
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 40 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 16, 6
+I PTE HM: 0, 6
+I CAC HM: 5, 17
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 44
+TLB hit tag(5), search cache (44)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 40 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 17, 6
+I PTE HM: 0, 6
+I CAC HM: 5, 18
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 48
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+6 -1 become invalid, 6 become valid
+TLB update
+TLB update, fine unused, store(6) at 6 
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 48 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 17, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 19
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 48 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 18, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 20
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 40
+TLB hit tag(5), search cache (40)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 40 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 19, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 21
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 44
+TLB hit tag(5), search cache (44)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 40 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 20, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 22
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 48
+TLB hit tag(6), search cache (48)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 48 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 21, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 23
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 48 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 22, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 24
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 40
+TLB hit tag(5), search cache (40)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 40 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 23, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 25
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 44
+TLB hit tag(5), search cache (44)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 40 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 24, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 26
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 48
+TLB hit tag(6), search cache (48)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 48 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 25, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 27
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 48 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 26, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 28
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 40
+TLB hit tag(5), search cache (40)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 40 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 27, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 29
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 44
+TLB hit tag(5), search cache (44)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 40 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 28, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 30
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 48
+TLB hit tag(6), search cache (48)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 48 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 29, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 31
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 48 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 30, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 32
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 40
+TLB hit tag(5), search cache (40)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 40 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 31, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 33
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 44
+TLB hit tag(5), search cache (44)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 40 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 32, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 34
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 48
+TLB hit tag(6), search cache (48)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 48 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 33, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 35
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 48 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 34, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 36
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 40
+TLB hit tag(5), search cache (40)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 40 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 35, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 37
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 44
+TLB hit tag(5), search cache (44)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 40 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 36, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 38
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 48
+TLB hit tag(6), search cache (48)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 48 0
+cache 1 :======: 44 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 37, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 39
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 36
+TLB hit tag(4), search cache (36)
+Cache miss, seach memory.
+cache tag 0
+CAC replace----1
+1 imm ui 0
+~~~ 0 0 1 0
+tada
+~~~ 0 0 1 1
+~~~ 0 0 1 2
+~~~ 0 0 1 3
+cache 0 :======: 48 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 38, 7
+I PTE HM: 0, 7
+I CAC HM: 5, 40
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0
+-------------I type ---------------
+addr 56
+TLB miss, search PTE
+PTE miss
+update PTE, TLB, cache
+7 -1 become invalid, 7 become valid
+TLB update
+TLB update, fine unused, store(7) at 7 
+cache tag 0
+CAC replace----0
+0 imm ui 0
+~~~ 0 0 0 0
+tada
+~~~ 0 0 0 1
+tada
+~~~ 0 0 0 2
+~~~ 0 0 0 3
+cache 0 :======: 56 0
+cache 1 :======: 36 0
+cache 2 :======: 8 0
+cache 3 :======: 12 0
+I TLB HM: 38, 8
+I PTE HM: 0, 8
+I CAC HM: 5, 41
+D TLB HM: 0, 0
+D PTE HM: 0, 0
+D CAC HM: 0, 0

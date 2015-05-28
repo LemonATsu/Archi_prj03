@@ -29,6 +29,7 @@ typedef struct m_unit {
     int recency[1025];
     int LRU;
     int LRU_num;
+    int imm;
     int hm[2];
 } m_unit;
 

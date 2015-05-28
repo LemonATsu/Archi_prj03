@@ -11,6 +11,7 @@ void execute() {
     int halt_spot = false;
     int cyc = 0;
     FILE *snap_file = fopen("snapshot.rpt", "w");
+    FILE *report_file = fopen("report.rpt", "w");
 
     reg_init();
     while(!halt_spot) {
@@ -21,7 +22,7 @@ void execute() {
             if(ins_num == 0) break;
             continue;
         }
-        struct ins* cur_ins = i_disk[pc / 4]; 
+        struct ins* cur_ins = i_disk[pc / 4];
         int opcode = (cur_ins->bits >> 26) & 0x0000003f;
         int code = cur_ins->bits;
         //printf("current pc, stack:%x %x qqq\n", pc, reg[_sp]);        
@@ -143,7 +144,9 @@ void execute() {
         cyc ++;
     }
 
+    report(report_file);
     fclose(snap_file);
+    fclose(report_file);
 }
 
 
