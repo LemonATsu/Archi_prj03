@@ -28,6 +28,7 @@ void HM_check(int addr, int type) {
     int tlb_res = TLB_search(tar_tlb, tag);
     if(tlb_res) {
         // TLB HIT, check CACHE
+        if(type)printf("tag tlb hit %d %d\n", tag, addr);
         tar_tlb->hm[HIT] ++;
 
         int update = LRU_search(tar_tlb, tag); // search the hit index
@@ -47,27 +48,42 @@ void HM_check(int addr, int type) {
             // TLB hit. So we are sure that it's already in memory. 
             // update Cache directly
             tar_cac->hm[MISS] ++;
+            
             CLRU_insert(tar_cac, addr);
         }
+        // update page(memory)
+        update = LRU_search(tar_page, tag);
+        LRU_update(tar_page, update, tar_page->entry, tag); // update page
       
     } else {
         // TLB MISS
+        if(type)printf("tag tlb miss %d %d\n", tag, addr);
         tar_tlb->hm[MISS] ++;
         int pte_res = PTE_search(tar_page, tag);
         if(pte_res) {
             // PTE HIT
+            if(type){printf("I MISS BUT I HIT IT NIGGA %d %d\n", tag, addr);
+            printf("IN tlb : %d %d\n", tar_tlb->recency[0], tar_tlb->recency[1]);
+            printf("In pte\n");
+            int x;
+            for(x = 0; x < tar_page->entry; x ++) {
+                printf("%d\n", tar_page->recency[x]);
+            }}
             tar_page->hm[HIT] ++;
-            LRU_insert(tar_tlb, tar_tlb->entry, tag); // Page is special case. The it will replace the old page in order.
+            int update = LRU_search(tar_page, tag);
+            LRU_update(tar_page, update, tar_page->entry, tag); // update page
+            LRU_insert(tar_tlb, tar_tlb->entry, tag); // insert page into TLB
             int cac_res = CAC_search(tar_cac, addr);
             if(cac_res) {
                 // update cache recency
-                int update = CLRU_search(tar_cac, addr);
+                update = CLRU_search(tar_cac, addr);
                 tar_cac->hm[HIT]++;
                 CLRU_update(tar_cac, update, addr);
             }
             else {
                 // update cache
                 tar_cac->hm[MISS] ++;
+                LRU_update(tar_page, update, tar_page->entry, tag); // update page
                 CLRU_insert(tar_cac, addr);
             }
         } else {
@@ -78,9 +94,18 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_page, tar_page->entry, tag);
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
             CLRU_insert(tar_cac, addr);
+            int x;
+            if(type){printf("PTE after insert. %d %d\n", tag, addr);
+            for(x = 0; x < tar_page->entry; x ++) {
+                printf("%d\n", tar_page->recency[x]);
+            }
+            printf("tlb after\n");
+            for(x = 0; x < tar_tlb->entry; x ++) {
+                printf("%d\n", tar_tlb->recency[x]);
+            }
+            }
         }
     }
-
 
 
 
@@ -286,8 +311,8 @@ void HM_init(int param[]) {
             d_cac->c_recency[x][z] = -1;
         }
     }
-    //printf("%d %d for i, ppn %d.\n", i_page->entry, i_tlb->entry, i_pn);
-    //printf("%d %d for d, ppn %d.\n", d_page->entry, d_tlb->entry, d_pn);
+   printf("%d %d for i, ppn %d.\n", i_page->entry, i_tlb->entry, i_pn);
+   printf("%d %d for d, ppn %d.\n", d_page->entry, d_tlb->entry, d_pn);
 
 }
 
