@@ -3,8 +3,8 @@ ICache :
 # misses: 256
 
 DCache :
-# hits: 43
-# misses: 212
+# hits: 35
+# misses: 220
 
 ITLB :
 # hits: 128
