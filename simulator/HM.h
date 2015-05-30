@@ -43,7 +43,8 @@ int CLRU_search(m_unit* cac, int addr);
 void CLRU_insert(m_unit* cac, int addr);
 void CLRU_update(m_unit* cac, int from, int addr);
 
-void CAC_invalid(m_unit* cac, m_unit* pte, int type);
+void CAC_reset(m_unit* cac, int set);
+void CAC_invalid(m_unit* cac, m_unit* pte);
 int CAC_search(m_unit* cac, int addr);
 int TLB_search(m_unit* tlb, int tag);
 int PTE_search(m_unit* pte, int tag);
