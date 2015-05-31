@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "HM.h"
 
+int cur_type;
+
 // type = 0 for i, type = 1 for d
 void HM_check(int addr, int type) {
     int set;    
@@ -9,6 +11,8 @@ void HM_check(int addr, int type) {
     m_unit* tar_mem;
     m_unit* tar_cac;
     m_unit* tar_tlb;
+    
+    cur_type = type;
 
     if(type) {
         //printf("***********D type **********\n");
@@ -115,6 +119,26 @@ void HM_check(int addr, int type) {
     printf("D CAC HM: %d, %d\n", d_cac->hm[HIT], d_cac->hm[MISS]);*/
 }
 
+
+int Cequals(int addr, int cur) {
+    if(addr == cur) return 1;
+
+    int result = 0;
+    int blk_size = cur_type ? d_cac->size : i_cac->size;
+    int mod = cur_type ? d_cac->entry : i_cac->entry;
+    int e_addr = (addr / blk_size) % mod;
+    int cur_addr = (cur / blk_size) % mod;
+
+    if(cur_addr != e_addr) return 0;
+    
+    // in same set entry
+
+    int max = blk_size - 4;
+
+    if(abs(addr - cur) <= max) return 1;
+    else return 0;
+}
+
 int CAC_search(m_unit* cac, int addr) {
     int x, y;
     //printf("%d cac_ent\n", cac->entry);
@@ -123,7 +147,7 @@ int CAC_search(m_unit* cac, int addr) {
     for(x = 0; x < cac->entry; x += y) {
        //printf("x moving %d\n", x);
         for(y = 0; y < cac->way; y ++) {
-            if(cac->c_recency[x][y] == addr) return HIT;
+            if(Cequals(addr, cac->c_recency[x][y])) return HIT;
         }
     }
     return MISS;

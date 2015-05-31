@@ -1,0 +1,24 @@
+path=~/prj3_tc/
+origin=~/102062207_03/simulator
+
+cd $path
+
+for i in *
+do
+    echo $i >> ~/test.log
+    cd ./$i
+
+    cp iimage.bin $origin
+    cp dimage.bin $origin
+
+    cd $origin
+    
+    make
+    ./CMP
+
+    diff -b snapshot.rpt $path/$i/snapshot.rpt >> ~/test.log
+    diff -b report.rpt $path/$i/report.rpt >> ~/test.log
+    make clean
+    cd $path
+done
+
