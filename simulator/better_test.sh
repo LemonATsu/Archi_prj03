@@ -15,13 +15,12 @@ do
         cp dimage.bin $origin
 
         cd $origin
-    
-        make
+        
         ./CMP
+        mv report.rpt repo_2.rpt
 
-        diff -b snapshot.rpt $path/$i/$e/snapshot.rpt >> ~/test.log
-        diff -b report.rpt $path/$i/$e/report.rpt >> ~/test.log
-        make clean
+        /home/archi/CMP
+        diff -b report.rpt repo_2.rpt >> ~/test.log
         cd $path/$i
     done
     cd $path
