@@ -3,7 +3,7 @@
 #include "HM.h"
 
 int cur_type;
-
+int cur_ppn;
 // type = 0 for i, type = 1 for d
 void HM_check(int addr, int type) {
     int set;    
@@ -21,32 +21,35 @@ void HM_check(int addr, int type) {
         tar_mem = d_mem;
         tar_cac = d_cac;
         tar_tlb = d_tlb;
+        cur_ppn = d_pn;
     } else {
         set = i_set;
         tar_page = i_page;
         tar_mem = i_mem;
         tar_cac = i_cac;
         tar_tlb = i_tlb;
+        cur_ppn = i_pn;
     }
     int tag = addr / tar_page->size; // each tlb can link to a  page size of words
     int tlb_res = TLB_search(tar_tlb, tag);
-    if(type) printf("%d %d\n", addr, (addr / tar_cac->size) % tar_cac->entry);
     if(tlb_res) {
         // TLB HIT, check CACHE
         tar_tlb->hm[HIT] ++;
         //if(type) printf("TLB HIT : %d, tag : %d ---------------HIT# %d\n", addr, tag, tar_tlb->hm[HIT]);
         int update = LRU_search(tar_tlb, tag); // search the hit index
-        
         // fuck update
         LRU_update(tar_tlb, update, tar_tlb->entry, tag); // update the recency
+        int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
         
-        int cac_res = CAC_search(tar_cac, addr); // check Cache
+       // if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry);
+        
+        int cac_res = CAC_search(tar_cac, trans); // check Cache
         if(cac_res) {
             // hit, update recency
             tar_cac->hm[HIT]++;
             //if(type)printf("-----------CACHE HIT %d\n",addr);
-            update = CLRU_search(tar_cac, addr);
-            CLRU_update(tar_cac, update, addr);
+            update = CLRU_search(tar_cac, trans);
+            CLRU_update(tar_cac, update, trans);
         }
         else {
             // miss, update CACHE
@@ -56,7 +59,7 @@ void HM_check(int addr, int type) {
             // update Cache directly
             //if(type)printf("-----------CACHE MISS %d\n",addr);
             tar_cac->hm[MISS] ++;
-            CLRU_insert(tar_cac, addr);
+            CLRU_insert(tar_cac, trans);
         }
         // fuck update
         // update page(memory)
@@ -73,19 +76,23 @@ void HM_check(int addr, int type) {
             int update = LRU_search(tar_page, tag);
             LRU_update(tar_page, update, tar_page->entry, tag); // update page
             LRU_insert(tar_tlb, tar_tlb->entry, tag); // insert page into TLB
-            int cac_res = CAC_search(tar_cac, addr);
+
+            int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
+        //    if(type) printf("addr: %d, ppn %d, trans %d\n", addr, tar_page->content[tag], trans);
+
+            int cac_res = CAC_search(tar_cac, trans);
             if(cac_res) {
                 // update cache recency
                 tar_cac->hm[HIT]++;
-                update = CLRU_search(tar_cac, addr);
-                CLRU_update(tar_cac, update, addr);
-                //if(type)printf("-----------CACHE HIT %d\n",addr);
+                update = CLRU_search(tar_cac, trans);
+                CLRU_update(tar_cac, update, trans);
+          //      if(type)printf("-----------CACHE HIT %d\n",addr);
             }
             else {
-                //if(type)printf("-----------CACHE MISS %d\n",addr);
+            //    if(type)printf("-----------CACHE MISS %d\n",addr);
                 // update cache
                 tar_cac->hm[MISS] ++;
-                CLRU_insert(tar_cac, addr);
+                CLRU_insert(tar_cac, trans);
                 //LRU_update(tar_page, update, tar_page->entry, tag); // update page
             }
         } else {
@@ -96,11 +103,12 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_page, tar_page->entry, tag);
             TLB_invalid(tar_tlb, tar_page);
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
-            CLRU_insert(tar_cac, addr);
+            
+            int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
+            //if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry);
+            CLRU_insert(tar_cac, trans);
         }
     }
-
-    CAC_invalid(tar_cac, tar_page);
 /*
     if(type) {
         int q, c;
@@ -109,12 +117,6 @@ void HM_check(int addr, int type) {
             printf("%d %d entry\n", tar_cac->c_recency[q][0], tar_cac->c_recency[q][0] / 4 % 4);
         }
     }*/
-    /*printf("I TLB HM: %d, %d\n", i_tlb->hm[HIT], i_tlb->hm[MISS]);
-    printf("I PTE HM: %d, %d\n", i_page->hm[HIT], i_page->hm[MISS]);
-    printf("I CAC HM: %d, %d\n", i_cac->hm[HIT], i_cac->hm[MISS]);
-    printf("D TLB HM: %d, %d\n", d_tlb->hm[HIT], d_tlb->hm[MISS]);
-    printf("D PTE HM: %d, %d\n", d_page->hm[HIT], d_page->hm[MISS]);
-    printf("D CAC HM: %d, %d\n", d_cac->hm[HIT], d_cac->hm[MISS]);*/
 }
 
 
@@ -190,7 +192,7 @@ int CAC_search(m_unit* cac, int addr) {
     return MISS;
 }
 
-void CAC_invalid(m_unit* cac, m_unit* pte) {
+void CAC_invalid(m_unit* cac, m_unit* pte, int page) {
     int x, y;
     int cac_reset = 0;
     for(x = 0; x < cac->entry; x += y) {
@@ -200,10 +202,9 @@ void CAC_invalid(m_unit* cac, m_unit* pte) {
                 //y = cac->way;
                 continue;
             }
-            int tag = cac->c_recency[x][y] / pte->size;
-            int res = PTE_search(pte, tag);
-            if(!res) {
-                //if(type)printf("Invalidate %x %d\n", x, cac->c_recency[x][y]);
+            
+            int t_page = (cac->c_recency[x][y] / pte->size) & 0x1;
+            if(t_page == page) {
                 cac->c_recency[x][y] = -1;
                 cac_reset = 1;
             }
@@ -306,6 +307,10 @@ void LRU_insert(m_unit* tar, int size, int tag) {
     for(x = 0; x < size; x ++) {
         if(tar->recency[x] == -1) {
             // insert success
+            tar->content[tag] = tar->ppn;
+            tar->ppn ++;
+            if(tar->ppn == cur_ppn) tar->ppn = 0;
+            
             tar->recency[x] = tag;
             return;
         }
@@ -318,6 +323,14 @@ void LRU_insert(m_unit* tar, int size, int tag) {
 
 void LRU_update(m_unit* tar, int from, int size, int tag) {
     int x;
+    int old = tar->recency[from];
+    // let tag's ppn equals to the one that be replaced
+    tar->content[tag] = tar->content[old];
+    if(tar->isPTE) {
+        m_unit* cac = cur_type ? d_cac : i_cac;
+        CAC_invalid(cac, tar, tar->content[tag]);
+    }
+    tar->content[old] = -1;
     tar->recency[from] = tag;
     for(x = from; x < size - 1; x ++) {
         int temp = tar->recency[x + 1];
@@ -356,15 +369,17 @@ void HM_init(int param[]) {
     d_tlb->hm[HIT] = 0; d_tlb->hm[MISS] = 0;
     d_mem->hm[HIT] = 0; d_mem->hm[MISS] = 0;
     for(x = 0; x < MEMO_LIMIT; x ++) {
-        d_mem->content[x] = 0; 
+        d_mem->content[x] = -1; 
         d_mem->recency[x] = -1;
-        d_cac->content[x] = 0; 
+        d_cac->content[x] = -1; 
         d_cac->recency[x] = -1; 
-        d_tlb->content[x] = 0; 
+        d_tlb->content[x] = -1; 
         d_tlb->recency[x] = -1;
-        d_page->content[x] = 0; 
+        d_page->content[x] = -1; 
         d_page->recency[x] = -1; 
         d_cur_pn[x] = -1;
+        d_page->ppn = 0;
+        d_page->isPTE = 1;
     }
 
 
@@ -393,15 +408,17 @@ void HM_init(int param[]) {
     i_mem->hm[HIT] = 0; i_mem->hm[MISS] = 0;
     
     for(x = 0; x < MEMO_LIMIT; x ++) {
-        i_mem->content[x] = 0; 
+        i_mem->content[x] = -1; 
         i_mem->recency[x] = -1;
-        i_cac->content[x] = 0; 
+        i_cac->content[x] = -1; 
         i_cac->recency[x] = -1; 
-        i_tlb->content[x] = 0; 
+        i_tlb->content[x] = -1; 
         i_tlb->recency[x] = -1; 
-        i_page->content[x] = 0; 
+        i_page->content[x] = -1; 
         i_page->recency[x] = -1; 
         i_cur_pn[x]= -1;
+        i_page->ppn = 0;
+        i_page->isPTE = 1;
     }
     int z;
     for(x = 0; x < MEMO_LIMIT; x ++) {

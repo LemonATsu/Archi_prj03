@@ -48,7 +48,7 @@ void TLB_invalid(m_unit* tlb, m_unit* pte);
 int Cequals(int addr, int cur);
 
 void CAC_reset(m_unit* cac, int set);
-void CAC_invalid(m_unit* cac, m_unit* pte);
+void CAC_invalid(m_unit* cac, m_unit* pte, int page);
 int CAC_search(m_unit* cac, int addr);
 int TLB_search(m_unit* tlb, int tag);
 int PTE_search(m_unit* pte, int tag);

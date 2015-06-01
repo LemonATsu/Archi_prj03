@@ -29,7 +29,9 @@ typedef struct m_unit {
     int recency[1025];
     int c_recency[MEMO_LIMIT][MEMO_LIMIT];
     int way;
+    int ppn;
     int hm[2];
+    int isPTE;
 } m_unit;
 
 struct data* d_disk[1025];
