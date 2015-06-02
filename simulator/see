@@ -1,0 +1,3061 @@
+start ins init
+start execute
+In pte
+5 0 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+In pte
+5 0 entry
+4 1 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+addr: 276, ppn 1, trans 84, entry 1
+84 64 CEQUALS
+84 52 CEQUALS
+84 -1 CEQUALS
+84 -1 CEQUALS
+-----------CACHE MISS 276
+In pte
+5 0 entry
+4 1 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+addr: 300, ppn 1, trans 108, entry 3
+108 64 CEQUALS
+108 84 CEQUALS
+108 -1 CEQUALS
+108 -1 CEQUALS
+-----------CACHE MISS 300
+In pte
+5 0 entry
+4 1 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+In pte
+5 0 entry
+4 1 entry
+0 2 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+In pte
+5 0 entry
+4 1 entry
+0 2 entry
+3 3 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+In pte
+5 0 entry
+4 1 entry
+0 2 entry
+3 3 entry
+13 4 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+addr: 192, ppn 3, trans 192, entry 0
+192 304 CEQUALS
+192 84 CEQUALS
+192 232 CEQUALS
+192 108 CEQUALS
+-----------CACHE MISS 192
+In pte
+5 0 entry
+4 1 entry
+0 2 entry
+3 3 entry
+13 4 entry
+-1 64 entry
+-1 64 entry
+-1 64 entry
+In pte
+5 0 entry
+4 1 entry
+0 2 entry
+3 3 entry
+13 4 entry
+9 5 entry
+-1 64 entry
+-1 64 entry
+In pte
+5 0 entry
+4 1 entry
+0 2 entry
+3 3 entry
+13 4 entry
+9 5 entry
+10 6 entry
+-1 64 entry
+addr: 300, ppn 1, trans 108, entsssry 3
+108 432 CEQUALS
+108 356 CEQUALS
+108 232 CEQUALS
+108 108 CEQUALS
+108 108 are EQUALS
+-----------CACHE HIT 300
+In pte
+5 0 entry
+0 2 entry
+3 3 entry
+13 4 entry
+9 5 entry
+10 6 entry
+4 1 entry
+-1 64 entry
+addr: 268, ppn 1, trans 76, entry 3
+76 432 CEQUALS
+76 356 CEQUALS
+76 232 CEQUALS
+76 108 CEQUALS
+-----------CACHE MISS 268
+In pte
+5 0 entry
+0 2 entry
+3 3 entry
+13 4 entry
+9 5 entry
+10 6 entry
+4 1 entry
+-1 64 entry
+addr: 8, ppn 2, trans 136, entsssry 2
+136 432 CEQUALS
+136 356 CEQUALS
+136 232 CEQUALS
+136 76 CEQUALS
+------qwer-----CACHE MISS 8
+In pte
+5 0 entry
+3 3 entry
+13 4 entry
+9 5 entry
+10 6 entry
+4 1 entry
+0 2 entry
+-1 64 entry
+addr: 344, ppn 0, trans 24, entsssry 2
+24 432 CEQUALS
+24 356 CEQUALS
+24 136 CEQUALS
+24 76 CEQUALS
+------qwer-----CACHE MISS 344
+In pte
+3 3 entry
+13 4 entry
+9 5 entry
+10 6 entry
+4 1 entry
+0 2 entry
+5 0 entry
+-1 64 entry
+In pte
+3 3 entry
+13 4 entry
+9 5 entry
+10 6 entry
+4 1 entry
+0 2 entry
+5 0 entry
+15 7 entry
+addr: 216, ppn 3, trans 216, entsssry 2
+216 432 CEQUALS
+216 356 CEQUALS
+216 488 CEQUALS
+216 76 CEQUALS
+------qwer-----CACHE MISS 216
+In pte
+13 4 entry
+9 5 entry
+10 6 entry
+4 1 entry
+0 2 entry
+5 0 entry
+15 7 entry
+3 3 entry
+In pte
+9 5 entry
+10 6 entry
+4 1 entry
+0 2 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+addr: 660, ppn 6, trans 404, entsssry 1
+404 432 CEQUALS
+404 356 CEQUALS
+404 216 CEQUALS
+404 300 CEQUALS
+------qwer-----CACHE MISS 660
+In pte
+9 5 entry
+4 1 entry
+0 2 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+10 6 entry
+addr: 232, ppn 3, trans 232, entry 2
+232 432 CEQUALS
+232 404 CEQUALS
+232 216 CEQUALS
+232 300 CEQUALS
+-----------CACHE MISS 232
+In pte
+9 5 entry
+4 1 entry
+0 2 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+10 6 entry
+addr: 28, ppn 2, trans 156, entsssry 3
+156 432 CEQUALS
+156 404 CEQUALS
+156 232 CEQUALS
+156 300 CEQUALS
+------qwer-----CACHE MISS 28
+In pte
+9 5 entry
+4 1 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+10 6 entry
+0 2 entry
+In pte
+4 1 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+10 6 entry
+0 2 entry
+8 5 entry
+addr: 672, ppn 6, trans 416, entry 0
+416 432 CEQUALS
+416 356 CEQUALS
+416 232 CEQUALS
+416 156 CEQUALS
+-----------CACHE MISS 672
+In pte
+4 1 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+10 6 entry
+0 2 entry
+8 5 entry
+addr: 8, ppn 2, trans 136, entry 2
+136 416 CEQUALS
+136 356 CEQUALS
+136 232 CEQUALS
+136 156 CEQUALS
+-----------CACHE MISS 8
+In pte
+4 1 entry
+5 0 entry
+15 7 entry
+3 3 entry
+14 4 entry
+10 6 entry
+0 2 entry
+8 5 entry
+addr: 916, ppn 4, trans 276, entsssry 1
+276 416 CEQUALS
+276 356 CEQUALS
+276 136 CEQUALS
+276 156 CEQUALS
+------qwer-----CACHE MISS 916
+In pte
+4 1 entry
+5 0 entry
+15 7 entry
+3 3 entry
+10 6 entry
+0 2 entry
+8 5 entry
+14 4 entry
+In pte
+5 0 entry
+15 7 entry
+3 3 entry
+10 6 entry
+0 2 entry
+8 5 entry
+14 4 entry
+6 1 entry
+In pte
+15 7 entry
+3 3 entry
+10 6 entry
+0 2 entry
+8 5 entry
+14 4 entry
+6 1 entry
+1 0 entry
+addr: 908, ppn 4, trans 268, entry 3
+268 32 CEQUALS
+268 -1 CEQUALS
+268 120 CEQUALS
+268 -1 CEQUALS
+-----------CACHE MISS 908
+In pte
+15 7 entry
+3 3 entry
+10 6 entry
+0 2 entry
+8 5 entry
+14 4 entry
+6 1 entry
+1 0 entry
+In pte
+3 3 entry
+10 6 entry
+0 2 entry
+8 5 entry
+14 4 entry
+6 1 entry
+1 0 entry
+11 7 entry
+addr: 516, ppn 5, trans 324, entsssry 1
+324 480 CEQUALS
+324 -1 CEQUALS
+324 120 CEQUALS
+324 268 CEQUALS
+------qwer-----CACHE MISS 516
+In pte
+3 3 entry
+10 6 entry
+0 2 entry
+14 4 entry
+6 1 entry
+1 0 entry
+11 7 entry
+8 5 entry
+addr: 32, ppn 2, trans 160, entsssry 0
+160 480 CEQUALS
+160 324 CEQUALS
+160 120 CEQUALS
+160 268 CEQUALS
+------qwer-----CACHE MISS 32
+In pte
+3 3 entry
+10 6 entry
+14 4 entry
+6 1 entry
+1 0 entry
+11 7 entry
+8 5 entry
+0 2 entry
+In pte
+10 6 entry
+14 4 entry
+6 1 entry
+1 0 entry
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+In pte
+14 4 entry
+6 1 entry
+1 0 entry
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+13 6 entry
+addr: 484, ppn 3, trans 228, entry 1
+228 160 CEQUALS
+228 324 CEQUALS
+228 200 CEQUALS
+228 396 CEQUALS
+-----------CACHE MISS 484
+In pte
+14 4 entry
+6 1 entry
+1 0 entry
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+13 6 entry
+addr: 952, ppn 4, trans 312, entsssry 2
+312 160 CEQUALS
+312 228 CEQUALS
+312 200 CEQUALS
+312 396 CEQUALS
+------qwer-----CACHE MISS 952
+In pte
+6 1 entry
+1 0 entry
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+13 6 entry
+14 4 entry
+In pte
+1 0 entry
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+13 6 entry
+14 4 entry
+9 1 entry
+In pte
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+13 6 entry
+14 4 entry
+9 1 entry
+15 0 entry
+addr: 860, ppn 6, trans 412, entsssry 3
+412 -1 CEQUALS
+412 84 CEQUALS
+412 -1 CEQUALS
+412 12 CEQUALS
+------qwer-----CACHE MISS 860
+In pte
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+addr: 868, ppn 6, trans 420, entry 1
+420 -1 CEQUALS
+420 84 CEQUALS
+420 -1 CEQUALS
+420 412 CEQUALS
+-----------CACHE MISS 868
+In pte
+11 7 entry
+8 5 entry
+0 2 entry
+7 3 entry
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+In pte
+8 5 entry
+0 2 entry
+7 3 entry
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+3 7 entry
+In pte
+0 2 entry
+7 3 entry
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+3 7 entry
+1 5 entry
+In pte
+7 3 entry
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+3 7 entry
+1 5 entry
+8 2 entry
+In pte
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+3 7 entry
+1 5 entry
+8 2 entry
+11 3 entry
+addr: 572, ppn 2, trans 188, entry 3
+188 176 CEQUALS
+188 372 CEQUALS
+188 504 CEQUALS
+188 204 CEQUALS
+-----------CACHE MISS 572
+In pte
+14 4 entry
+9 1 entry
+15 0 entry
+13 6 entry
+3 7 entry
+1 5 entry
+8 2 entry
+11 3 entry
+In pte
+9 1 entry
+15 0 entry
+13 6 entry
+3 7 entry
+1 5 entry
+8 2 entry
+11 3 entry
+6 4 entry
+In pte
+15 0 entry
+13 6 entry
+3 7 entry
+1 5 entry
+8 2 entry
+11 3 entry
+6 4 entry
+10 1 entry
+addr: 64, ppn 5, trans 320, entsssry 0
+320 176 CEQUALS
+320 68 CEQUALS
+320 -1 CEQUALS
+320 188 CEQUALS
+------qwer-----CACHE MISS 64
+In pte
+15 0 entry
+13 6 entry
+3 7 entry
+8 2 entry
+11 3 entry
+6 4 entry
+10 1 entry
+1 5 entry
+addr: 736, ppn 3, trans 224, entsssry 0
+224 320 CEQUALS
+224 68 CEQUALS
+224 -1 CEQUALS
+224 188 CEQUALS
+------qwer-----CACHE MISS 736
+In pte
+15 0 entry
+13 6 entry
+3 7 entry
+8 2 entry
+6 4 entry
+10 1 entry
+1 5 entry
+11 3 entry
+In pte
+13 6 entry
+3 7 entry
+8 2 entry
+6 4 entry
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+In pte
+3 7 entry
+8 2 entry
+6 4 entry
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+addr: 620, ppn 0, trans 44, entry 3
+44 224 CEQUALS
+44 436 CEQUALS
+44 -1 CEQUALS
+44 12 CEQUALS
+-----------CACHE MISS 620
+In pte
+3 7 entry
+8 2 entry
+6 4 entry
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+addr: 708, ppn 3, trans 196, entry 1
+196 224 CEQUALS
+196 436 CEQUALS
+196 -1 CEQUALS
+196 44 CEQUALS
+-----------CACHE MISS 708
+In pte
+3 7 entry
+8 2 entry
+6 4 entry
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+addr: 420, ppn 4, trans 292, entsssry 1
+292 224 CEQUALS
+292 196 CEQUALS
+292 -1 CEQUALS
+292 44 CEQUALS
+------qwer-----CACHE MISS 420
+In pte
+3 7 entry
+8 2 entry
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+6 4 entry
+In pte
+8 2 entry
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+6 4 entry
+14 7 entry
+In pte
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+6 4 entry
+14 7 entry
+3 2 entry
+addr: 732, ppn 3, trans 220, entry 3
+220 160 CEQUALS
+220 292 CEQUALS
+220 -1 CEQUALS
+220 44 CEQUALS
+-----------CACHE MISS 732
+In pte
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+15 6 entry
+6 4 entry
+14 7 entry
+3 2 entry
+addr: 984, ppn 6, trans 408, entsssry 2
+408 160 CEQUALS
+408 292 CEQUALS
+408 -1 CEQUALS
+408 220 CEQUALS
+------qwer-----CACHE MISS 984
+In pte
+10 1 entry
+1 5 entry
+11 3 entry
+9 0 entry
+6 4 entry
+14 7 entry
+3 2 entry
+15 6 entry
+In pte
+1 5 entry
+11 3 entry
+9 0 entry
+6 4 entry
+14 7 entry
+3 2 entry
+15 6 entry
+2 1 entry
+addr: 172, ppn 1, trans 108, entry 3
+108 112 CEQUALS
+108 292 CEQUALS
+108 408 CEQUALS
+108 -1 CEQUALS
+-----------CACHE MISS 172
+In pte
+1 5 entry
+11 3 entry
+9 0 entry
+6 4 entry
+14 7 entry
+3 2 entry
+15 6 entry
+2 1 entry
+In pte
+11 3 entry
+9 0 entry
+6 4 entry
+14 7 entry
+3 2 entry
+15 6 entry
+2 1 entry
+4 5 entry
+In pte
+9 0 entry
+6 4 entry
+14 7 entry
+3 2 entry
+15 6 entry
+2 1 entry
+4 5 entry
+5 3 entry
+In pte
+6 4 entry
+14 7 entry
+3 2 entry
+15 6 entry
+2 1 entry
+4 5 entry
+5 3 entry
+7 0 entry
+In pte
+14 7 entry
+3 2 entry
+15 6 entry
+2 1 entry
+4 5 entry
+5 3 entry
+7 0 entry
+12 4 entry
+In pte
+3 2 entry
+15 6 entry
+2 1 entry
+4 5 entry
+5 3 entry
+7 0 entry
+12 4 entry
+13 7 entry
+In pte
+15 6 entry
+2 1 entry
+4 5 entry
+5 3 entry
+7 0 entry
+12 4 entry
+13 7 entry
+6 2 entry
+addr: 1012, ppn 6, trans 436, entsssry 1
+436 112 CEQUALS
+436 484 CEQUALS
+436 136 CEQUALS
+436 108 CEQUALS
+------qwer-----CACHE MISS 1012
+In pte
+2 1 entry
+4 5 entry
+5 3 entry
+7 0 entry
+12 4 entry
+13 7 entry
+6 2 entry
+15 6 entry
+In pte
+4 5 entry
+5 3 entry
+7 0 entry
+12 4 entry
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+addr: 840, ppn 7, trans 456, entry 2
+456 -1 CEQUALS
+456 436 CEQUALS
+456 136 CEQUALS
+456 92 CEQUALS
+-----------CACHE MISS 840
+In pte
+4 5 entry
+5 3 entry
+7 0 entry
+12 4 entry
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+addr: 460, ppn 0, trans 12, entsssry 3
+12 -1 CEQUALS
+12 436 CEQUALS
+12 456 CEQUALS
+12 92 CEQUALS
+------qwer-----CACHE MISS 460
+In pte
+4 5 entry
+5 3 entry
+12 4 entry
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+7 0 entry
+addr: 288, ppn 5, trans 352, entsssry 0
+352 -1 CEQUALS
+352 436 CEQUALS
+352 456 CEQUALS
+352 12 CEQUALS
+------qwer-----CACHE MISS 288
+In pte
+5 3 entry
+12 4 entry
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+7 0 entry
+4 5 entry
+addr: 812, ppn 4, trans 300, entsssry 3
+300 352 CEQUALS
+300 436 CEQUALS
+300 456 CEQUALS
+300 12 CEQUALS
+------qwer-----CACHE MISS 812
+In pte
+5 3 entry
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+7 0 entry
+4 5 entry
+12 4 entry
+In pte
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+7 0 entry
+4 5 entry
+12 4 entry
+9 3 entry
+addr: 808, ppn 4, trans 296, entry 2
+296 192 CEQUALS
+296 436 CEQUALS
+296 456 CEQUALS
+296 300 CEQUALS
+-----------CACHE MISS 808
+In pte
+13 7 entry
+6 2 entry
+15 6 entry
+8 1 entry
+7 0 entry
+4 5 entry
+12 4 entry
+9 3 entry
+In pte
+6 2 entry
+15 6 entry
+8 1 entry
+7 0 entry
+4 5 entry
+12 4 entry
+9 3 entry
+3 7 entry
+addr: 492, ppn 0, trans 44, entsssry 3
+44 192 CEQUALS
+44 436 CEQUALS
+44 488 CEQUALS
+44 300 CEQUALS
+------qwer-----CACHE MISS 492
+In pte
+6 2 entry
+15 6 entry
+8 1 entry
+4 5 entry
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+In pte
+15 6 entry
+8 1 entry
+4 5 entry
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+addr: 288, ppn 5, trans 352, entsssry 0
+352 128 CEQUALS
+352 436 CEQUALS
+352 488 CEQUALS
+352 44 CEQUALS
+------qwer-----CACHE MISS 288
+In pte
+15 6 entry
+8 1 entry
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+In pte
+8 1 entry
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+2 6 entry
+addr: 140, ppn 6, trans 396, entry 3
+396 384 CEQUALS
+396 436 CEQUALS
+396 488 CEQUALS
+396 44 CEQUALS
+-----------CACHE MISS 140
+In pte
+8 1 entry
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+2 6 entry
+In pte
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+2 6 entry
+13 1 entry
+addr: 300, ppn 5, trans 364, entry 3
+364 384 CEQUALS
+364 436 CEQUALS
+364 -1 CEQUALS
+364 108 CEQUALS
+-----------CACHE MISS 300
+In pte
+12 4 entry
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+2 6 entry
+13 1 entry
+In pte
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+2 6 entry
+13 1 entry
+6 4 entry
+addr: 396, ppn 4, trans 268, entry 3
+268 384 CEQUALS
+268 436 CEQUALS
+268 264 CEQUALS
+268 364 CEQUALS
+-----------CACHE MISS 396
+In pte
+9 3 entry
+3 7 entry
+7 0 entry
+14 2 entry
+4 5 entry
+2 6 entry
+13 1 entry
+6 4 entry
+addr: 908, ppn 2, trans 140, entsssry 3
+140 384 CEQUALS
+140 436 CEQUALS
+140 264 CEQUALS
+140 268 CEQUALS
+------qwer-----CACHE MISS 908
+In pte
+9 3 entry
+3 7 entry
+7 0 entry
+4 5 entry
+2 6 entry
+13 1 entry
+6 4 entry
+14 2 entry
+addr: 288, ppn 5, trans 352, entry 0
+352 384 CEQUALS
+352 436 CEQUALS
+352 264 CEQUALS
+352 140 CEQUALS
+-----------CACHE MISS 288
+In pte
+9 3 entry
+3 7 entry
+7 0 entry
+4 5 entry
+2 6 entry
+13 1 entry
+6 4 entry
+14 2 entry
+addr: 452, ppn 0, trans 4, entsssry 1
+4 352 CEQUALS
+4 436 CEQUALS
+4 264 CEQUALS
+4 140 CEQUALS
+------qwer-----CACHE MISS 452
+In pte
+9 3 entry
+3 7 entry
+4 5 entry
+2 6 entry
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+In pte
+3 7 entry
+4 5 entry
+2 6 entry
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+addr: 140, ppn 6, trans 396, entsssry 3
+396 224 CEQUALS
+396 4 CEQUALS
+396 264 CEQUALS
+396 140 CEQUALS
+------qwer-----CACHE MISS 140
+In pte
+3 7 entry
+4 5 entry
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+2 6 entry
+addr: 232, ppn 7, trans 488, entsssry 2
+488 224 CEQUALS
+488 4 CEQUALS
+488 264 CEQUALS
+488 396 CEQUALS
+------qwer-----CACHE MISS 232
+In pte
+4 5 entry
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+In pte
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+addr: 176, ppn 6, trans 432, entry 0
+432 352 CEQUALS
+432 4 CEQUALS
+432 488 CEQUALS
+432 396 CEQUALS
+-----------CACHE MISS 176
+In pte
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+addr: 76, ppn 5, trans 332, entry 3
+332 432 CEQUALS
+332 4 CEQUALS
+332 488 CEQUALS
+332 396 CEQUALS
+-----------CACHE MISS 76
+In pte
+13 1 entry
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+In pte
+6 4 entry
+14 2 entry
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+addr: 948, ppn 2, trans 180, entsssry 1
+180 432 CEQUALS
+180 4 CEQUALS
+180 -1 CEQUALS
+180 76 CEQUALS
+------qwer-----CACHE MISS 948
+In pte
+6 4 entry
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+14 2 entry
+In pte
+7 0 entry
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+14 2 entry
+10 4 entry
+In pte
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+14 2 entry
+10 4 entry
+6 0 entry
+addr: 640, ppn 4, trans 256, entry 0
+256 0 CEQUALS
+256 -1 CEQUALS
+256 -1 CEQUALS
+256 76 CEQUALS
+-----------CACHE MISS 640
+In pte
+12 3 entry
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+14 2 entry
+10 4 entry
+6 0 entry
+In pte
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+14 2 entry
+10 4 entry
+6 0 entry
+0 3 entry
+addr: 676, ppn 4, trans 292, entry 1
+292 208 CEQUALS
+292 -1 CEQUALS
+292 -1 CEQUALS
+292 76 CEQUALS
+-----------CACHE MISS 676
+In pte
+2 6 entry
+3 7 entry
+1 5 entry
+4 1 entry
+14 2 entry
+10 4 entry
+6 0 entry
+0 3 entry
+addr: 248, ppn 7, trans 504, entsssry 2
+504 208 CEQUALS
+504 292 CEQUALS
+504 -1 CEQUALS
+504 76 CEQUALS
+------qwer-----CACHE MISS 248
+In pte
+2 6 entry
+1 5 entry
+4 1 entry
+14 2 entry
+10 4 entry
+6 0 entry
+0 3 entry
+3 7 entry
+addr: 304, ppn 1, trans 112, entsssry 0
+112 208 CEQUALS
+112 292 CEQUALS
+112 504 CEQUALS
+112 76 CEQUALS
+------qwer-----CACHE MISS 304
+In pte
+2 6 entry
+1 5 entry
+14 2 entry
+10 4 entry
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+In pte
+1 5 entry
+14 2 entry
+10 4 entry
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+In pte
+14 2 entry
+10 4 entry
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+In pte
+10 4 entry
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+addr: 288, ppn 1, trans 96, entry 0
+96 112 CEQUALS
+96 340 CEQUALS
+96 504 CEQUALS
+96 156 CEQUALS
+-----------CACHE MISS 288
+In pte
+10 4 entry
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+In pte
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+addr: 316, ppn 1, trans 124, entry 3
+124 96 CEQUALS
+124 340 CEQUALS
+124 504 CEQUALS
+124 316 CEQUALS
+-----------CACHE MISS 316
+In pte
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+addr: 524, ppn 2, trans 140, entry 3
+140 96 CEQUALS
+140 340 CEQUALS
+140 504 CEQUALS
+140 124 CEQUALS
+-----------CACHE MISS 524
+In pte
+6 0 entry
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+addr: 388, ppn 0, trans 4, entsssry 1
+4 96 CEQUALS
+4 340 CEQUALS
+4 504 CEQUALS
+4 140 CEQUALS
+------qwer-----CACHE MISS 388
+In pte
+0 3 entry
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+6 0 entry
+In pte
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+6 0 entry
+2 3 entry
+addr: 296, ppn 1, trans 104, entry 2
+104 96 CEQUALS
+104 4 CEQUALS
+104 232 CEQUALS
+104 140 CEQUALS
+-----------CACHE MISS 296
+In pte
+3 7 entry
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+6 0 entry
+2 3 entry
+In pte
+4 1 entry
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+6 0 entry
+2 3 entry
+12 7 entry
+In pte
+9 6 entry
+7 5 entry
+8 2 entry
+15 4 entry
+6 0 entry
+2 3 entry
+12 7 entry
+14 1 entry
+In pte
+7 5 entry
+8 2 entry
+15 4 entry
+6 0 entry
+2 3 entry
+12 7 entry
+14 1 entry
+0 6 entry
+In pte
+8 2 entry
+15 4 entry
+6 0 entry
+2 3 entry
+12 7 entry
+14 1 entry
+0 6 entry
+10 5 entry
+addr: 392, ppn 0, trans 8, entsssry 2
+8 80 CEQUALS
+8 356 CEQUALS
+8 392 CEQUALS
+8 140 CEQUALS
+------qwer-----CACHE MISS 392
+In pte
+8 2 entry
+15 4 entry
+2 3 entry
+12 7 entry
+14 1 entry
+0 6 entry
+10 5 entry
+6 0 entry
+In pte
+15 4 entry
+2 3 entry
+12 7 entry
+14 1 entry
+0 6 entry
+10 5 entry
+6 0 entry
+9 2 entry
+In pte
+2 3 entry
+12 7 entry
+14 1 entry
+0 6 entry
+10 5 entry
+6 0 entry
+9 2 entry
+4 4 entry
+addr: 184, ppn 3, trans 248, entsssry 2
+248 80 CEQUALS
+248 356 CEQUALS
+248 264 CEQUALS
+248 140 CEQUALS
+------qwer-----CACHE MISS 184
+In pte
+12 7 entry
+14 1 entry
+0 6 entry
+10 5 entry
+6 0 entry
+9 2 entry
+4 4 entry
+2 3 entry
+In pte
+14 1 entry
+0 6 entry
+10 5 entry
+6 0 entry
+9 2 entry
+4 4 entry
+2 3 entry
+13 7 entry
+addr: 20, ppn 6, trans 404, entsssry 1
+404 80 CEQUALS
+404 356 CEQUALS
+404 248 CEQUALS
+404 492 CEQUALS
+------qwer-----CACHE MISS 20
+In pte
+14 1 entry
+10 5 entry
+6 0 entry
+9 2 entry
+4 4 entry
+2 3 entry
+13 7 entry
+0 6 entry
+In pte
+10 5 entry
+6 0 entry
+9 2 entry
+4 4 entry
+2 3 entry
+13 7 entry
+0 6 entry
+11 1 entry
+addr: 316, ppn 4, trans 316, entsssry 3
+316 -1 CEQUALS
+316 404 CEQUALS
+316 -1 CEQUALS
+316 92 CEQUALS
+------qwer-----CACHE MISS 316
+In pte
+10 5 entry
+6 0 entry
+9 2 entry
+2 3 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+addr: 856, ppn 7, trans 472, entry 2
+472 -1 CEQUALS
+472 404 CEQUALS
+472 -1 CEQUALS
+472 316 CEQUALS
+-----------CACHE MISS 856
+In pte
+10 5 entry
+6 0 entry
+9 2 entry
+2 3 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+addr: 144, ppn 3, trans 208, entsssry 0
+208 -1 CEQUALS
+208 404 CEQUALS
+208 472 CEQUALS
+208 316 CEQUALS
+------qwer-----CACHE MISS 144
+In pte
+10 5 entry
+6 0 entry
+9 2 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+addr: 872, ppn 7, trans 488, entry 2
+488 208 CEQUALS
+488 404 CEQUALS
+488 472 CEQUALS
+488 316 CEQUALS
+-----------CACHE MISS 872
+In pte
+10 5 entry
+6 0 entry
+9 2 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+In pte
+6 0 entry
+9 2 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+In pte
+9 2 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+addr: 460, ppn 0, trans 12, entry 3
+12 208 CEQUALS
+12 -1 CEQUALS
+12 40 CEQUALS
+12 -1 CEQUALS
+-----------CACHE MISS 460
+In pte
+9 2 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+addr: 116, ppn 5, trans 372, entry 1
+372 208 CEQUALS
+372 -1 CEQUALS
+372 40 CEQUALS
+372 12 CEQUALS
+-----------CACHE MISS 116
+In pte
+9 2 entry
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+In pte
+13 7 entry
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+15 2 entry
+In pte
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+15 2 entry
+5 7 entry
+addr: 340, ppn 7, trans 468, entry 1
+468 448 CEQUALS
+468 132 CEQUALS
+468 40 CEQUALS
+468 12 CEQUALS
+-----------CACHE MISS 340
+In pte
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+15 2 entry
+5 7 entry
+addr: 124, ppn 5, trans 380, entry 3
+380 448 CEQUALS
+380 468 CEQUALS
+380 40 CEQUALS
+380 12 CEQUALS
+-----------CACHE MISS 124
+In pte
+0 6 entry
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+15 2 entry
+5 7 entry
+In pte
+11 1 entry
+4 4 entry
+2 3 entry
+1 5 entry
+7 0 entry
+15 2 entry
+5 7 entry
+3 6 entry
+addr: 144, ppn 3, trans 208, entsssry 0
+208 400 CEQUALS
+208 468 CEQUALS
+208 40 CEQUALS
+208 380 CEQUALS
+------qwer-----CACHE MISS 144
+In pte
+11 1 entry
+4 4 entry
+1 5 entry
+7 0 entry
+15 2 entry
+5 7 entry
+3 6 entry
+2 3 entry
+addr: 304, ppn 4, trans 304, entsssry 0
+304 208 CEQUALS
+304 468 CEQUALS
+304 40 CEQUALS
+304 380 CEQUALS
+------qwer-----CACHE MISS 304
+In pte
+11 1 entry
+1 5 entry
+7 0 entry
+15 2 entry
+5 7 entry
+3 6 entry
+2 3 entry
+4 4 entry
+addr: 376, ppn 7, trans 504, entsssry 2
+504 304 CEQUALS
+504 468 CEQUALS
+504 40 CEQUALS
+504 380 CEQUALS
+------qwer-----CACHE MISS 376
+In pte
+11 1 entry
+1 5 entry
+7 0 entry
+15 2 entry
+3 6 entry
+2 3 entry
+4 4 entry
+5 7 entry
+addr: 316, ppn 4, trans 316, entry 3
+316 304 CEQUALS
+316 468 CEQUALS
+316 504 CEQUALS
+316 380 CEQUALS
+-----------CACHE MISS 316
+In pte
+11 1 entry
+1 5 entry
+7 0 entry
+15 2 entry
+3 6 entry
+2 3 entry
+4 4 entry
+5 7 entry
+In pte
+1 5 entry
+7 0 entry
+15 2 entry
+3 6 entry
+2 3 entry
+4 4 entry
+5 7 entry
+10 1 entry
+In pte
+7 0 entry
+15 2 entry
+3 6 entry
+2 3 entry
+4 4 entry
+5 7 entry
+10 1 entry
+14 5 entry
+In pte
+15 2 entry
+3 6 entry
+2 3 entry
+4 4 entry
+5 7 entry
+10 1 entry
+14 5 entry
+6 0 entry
+In pte
+3 6 entry
+2 3 entry
+4 4 entry
+5 7 entry
+10 1 entry
+14 5 entry
+6 0 entry
+9 2 entry
+In pte
+2 3 entry
+4 4 entry
+5 7 entry
+10 1 entry
+14 5 entry
+6 0 entry
+9 2 entry
+0 6 entry
+In pte
+4 4 entry
+5 7 entry
+10 1 entry
+14 5 entry
+6 0 entry
+9 2 entry
+0 6 entry
+15 3 entry
+In pte
+5 7 entry
+10 1 entry
+14 5 entry
+6 0 entry
+9 2 entry
+0 6 entry
+15 3 entry
+12 4 entry
+In pte
+10 1 entry
+14 5 entry
+6 0 entry
+9 2 entry
+0 6 entry
+15 3 entry
+12 4 entry
+3 7 entry
+addr: 900, ppn 5, trans 324, entsssry 1
+324 144 CEQUALS
+324 452 CEQUALS
+324 312 CEQUALS
+324 252 CEQUALS
+------qwer-----CACHE MISS 900
+In pte
+10 1 entry
+6 0 entry
+9 2 entry
+0 6 entry
+15 3 entry
+12 4 entry
+3 7 entry
+14 5 entry
+In pte
+6 0 entry
+9 2 entry
+0 6 entry
+15 3 entry
+12 4 entry
+3 7 entry
+14 5 entry
+7 1 entry
+In pte
+9 2 entry
+0 6 entry
+15 3 entry
+12 4 entry
+3 7 entry
+14 5 entry
+7 1 entry
+10 0 entry
+addr: 596, ppn 2, trans 148, entsssry 1
+148 16 CEQUALS
+148 -1 CEQUALS
+148 88 CEQUALS
+148 -1 CEQUALS
+------qwer-----CACHE MISS 596
+In pte
+0 6 entry
+15 3 entry
+12 4 entry
+3 7 entry
+14 5 entry
+7 1 entry
+10 0 entry
+9 2 entry
+In pte
+15 3 entry
+12 4 entry
+3 7 entry
+14 5 entry
+7 1 entry
+10 0 entry
+9 2 entry
+11 6 entry
+In pte
+12 4 entry
+3 7 entry
+14 5 entry
+7 1 entry
+10 0 entry
+9 2 entry
+11 6 entry
+4 3 entry
+In pte
+3 7 entry
+14 5 entry
+7 1 entry
+10 0 entry
+9 2 entry
+11 6 entry
+4 3 entry
+6 4 entry
+In pte
+14 5 entry
+7 1 entry
+10 0 entry
+9 2 entry
+11 6 entry
+4 3 entry
+6 4 entry
+2 7 entry
+In pte
+7 1 entry
+10 0 entry
+9 2 entry
+11 6 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+addr: 184, ppn 7, trans 504, entry 2
+504 16 CEQUALS
+504 292 CEQUALS
+504 472 CEQUALS
+504 380 CEQUALS
+-----------CACHE MISS 184
+In pte
+7 1 entry
+10 0 entry
+9 2 entry
+11 6 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+addr: 628, ppn 2, trans 180, entsssry 1
+180 16 CEQUALS
+180 292 CEQUALS
+180 504 CEQUALS
+180 380 CEQUALS
+------qwer-----CACHE MISS 628
+In pte
+7 1 entry
+10 0 entry
+11 6 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+addr: 752, ppn 6, trans 432, entsssry 0
+432 16 CEQUALS
+432 180 CEQUALS
+432 504 CEQUALS
+432 380 CEQUALS
+------qwer-----CACHE MISS 752
+In pte
+7 1 entry
+10 0 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+addr: 848, ppn 5, trans 336, entry 0
+336 432 CEQUALS
+336 180 CEQUALS
+336 504 CEQUALS
+336 380 CEQUALS
+-----------CACHE MISS 848
+In pte
+7 1 entry
+10 0 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+addr: 756, ppn 6, trans 436, entry 1
+436 336 CEQUALS
+436 180 CEQUALS
+436 504 CEQUALS
+436 380 CEQUALS
+-----------CACHE MISS 756
+In pte
+7 1 entry
+10 0 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+In pte
+10 0 entry
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+14 1 entry
+In pte
+4 3 entry
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+14 1 entry
+8 0 entry
+In pte
+6 4 entry
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+14 1 entry
+8 0 entry
+3 3 entry
+In pte
+2 7 entry
+13 5 entry
+9 2 entry
+11 6 entry
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+addr: 136, ppn 7, trans 456, entsssry 2
+456 288 CEQUALS
+456 52 CEQUALS
+456 216 CEQUALS
+456 -1 CEQUALS
+------qwer-----CACHE MISS 136
+In pte
+13 5 entry
+9 2 entry
+11 6 entry
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+addr: 616, ppn 2, trans 168, entsssry 2
+168 288 CEQUALS
+168 52 CEQUALS
+168 456 CEQUALS
+168 -1 CEQUALS
+------qwer-----CACHE MISS 616
+In pte
+13 5 entry
+11 6 entry
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+addr: 136, ppn 7, trans 456, entry 2
+456 288 CEQUALS
+456 52 CEQUALS
+456 168 CEQUALS
+456 -1 CEQUALS
+-----------CACHE MISS 136
+In pte
+13 5 entry
+11 6 entry
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+In pte
+11 6 entry
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+In pte
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+13 6 entry
+addr: 580, ppn 2, trans 132, entry 1
+132 416 CEQUALS
+132 372 CEQUALS
+132 456 CEQUALS
+132 -1 CEQUALS
+-----------CACHE MISS 580
+In pte
+14 1 entry
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+13 6 entry
+In pte
+8 0 entry
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+13 6 entry
+11 1 entry
+addr: 528, ppn 0, trans 16, entsssry 0
+16 64 CEQUALS
+16 132 CEQUALS
+16 -1 CEQUALS
+16 -1 CEQUALS
+------qwer-----CACHE MISS 528
+In pte
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+13 6 entry
+11 1 entry
+8 0 entry
+addr: 620, ppn 2, trans 172, entry 3
+172 16 CEQUALS
+172 132 CEQUALS
+172 -1 CEQUALS
+172 -1 CEQUALS
+-----------CACHE MISS 620
+In pte
+3 3 entry
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+13 6 entry
+11 1 entry
+8 0 entry
+In pte
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+13 6 entry
+11 1 entry
+8 0 entry
+4 3 entry
+addr: 892, ppn 6, trans 444, entsssry 3
+444 16 CEQUALS
+444 132 CEQUALS
+444 -1 CEQUALS
+444 220 CEQUALS
+------qwer-----CACHE MISS 892
+In pte
+1 4 entry
+2 7 entry
+9 2 entry
+6 5 entry
+11 1 entry
+8 0 entry
+4 3 entry
+13 6 entry
+In pte
+2 7 entry
+9 2 entry
+6 5 entry
+11 1 entry
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+In pte
+9 2 entry
+6 5 entry
+11 1 entry
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+10 7 entry
+addr: 260, ppn 3, trans 196, entry 1
+196 16 CEQUALS
+196 484 CEQUALS
+196 264 CEQUALS
+196 444 CEQUALS
+-----------CACHE MISS 260
+In pte
+9 2 entry
+6 5 entry
+11 1 entry
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+10 7 entry
+In pte
+6 5 entry
+11 1 entry
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+10 7 entry
+1 2 entry
+In pte
+11 1 entry
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+10 7 entry
+1 2 entry
+12 5 entry
+In pte
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+addr: 268, ppn 3, trans 204, entry 3
+204 176 CEQUALS
+204 -1 CEQUALS
+204 264 CEQUALS
+204 108 CEQUALS
+-----------CACHE MISS 268
+In pte
+8 0 entry
+4 3 entry
+13 6 entry
+0 4 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+addr: 52, ppn 4, trans 308, entsssry 1
+308 176 CEQUALS
+308 -1 CEQUALS
+308 264 CEQUALS
+308 204 CEQUALS
+------qwer-----CACHE MISS 52
+In pte
+8 0 entry
+4 3 entry
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+addr: 60, ppn 4, trans 316, entry 3
+316 176 CEQUALS
+316 308 CEQUALS
+316 264 CEQUALS
+316 204 CEQUALS
+-----------CACHE MISS 60
+In pte
+8 0 entry
+4 3 entry
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+addr: 204, ppn 1, trans 76, entry 3
+76 176 CEQUALS
+76 308 CEQUALS
+76 264 CEQUALS
+76 316 CEQUALS
+-----------CACHE MISS 204
+In pte
+8 0 entry
+4 3 entry
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+addr: 816, ppn 5, trans 368, entry 0
+368 176 CEQUALS
+368 308 CEQUALS
+368 264 CEQUALS
+368 76 CEQUALS
+-----------CACHE MISS 816
+In pte
+8 0 entry
+4 3 entry
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+In pte
+4 3 entry
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+In pte
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+addr: 460, ppn 0, trans 12, entry 3
+12 368 CEQUALS
+12 -1 CEQUALS
+12 -1 CEQUALS
+12 220 CEQUALS
+-----------CACHE MISS 460
+In pte
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+addr: 448, ppn 0, trans 0, entry 0
+0 368 CEQUALS
+0 -1 CEQUALS
+0 -1 CEQUALS
+0 12 CEQUALS
+-----------CACHE MISS 448
+In pte
+13 6 entry
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+In pte
+10 7 entry
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+8 6 entry
+In pte
+1 2 entry
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+8 6 entry
+2 7 entry
+In pte
+12 5 entry
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+8 6 entry
+2 7 entry
+6 2 entry
+In pte
+3 1 entry
+0 4 entry
+7 0 entry
+5 3 entry
+8 6 entry
+2 7 entry
+6 2 entry
+1 5 entry
+In pte
+0 4 entry
+7 0 entry
+5 3 entry
+8 6 entry
+2 7 entry
+6 2 entry
+1 5 entry
+13 1 entry
+In pte
+7 0 entry
+5 3 entry
+8 6 entry
+2 7 entry
+6 2 entry
+1 5 entry
+13 1 entry
+15 4 entry
+In pte
+5 3 entry
+8 6 entry
+2 7 entry
+6 2 entry
+1 5 entry
+13 1 entry
+15 4 entry
+10 0 entry
+In pte
+8 6 entry
+2 7 entry
+6 2 entry
+1 5 entry
+13 1 entry
+15 4 entry
+10 0 entry
+3 3 entry
+addr: 392, ppn 2, trans 136, entsssry 2
+136 -1 CEQUALS
+136 4 CEQUALS
+136 -1 CEQUALS
+136 236 CEQUALS
+------qwer-----CACHE MISS 392
+In pte
+8 6 entry
+2 7 entry
+1 5 entry
+13 1 entry
+15 4 entry
+10 0 entry
+3 3 entry
+6 2 entry
+addr: 532, ppn 6, trans 404, entsssry 1
+404 -1 CEQUALS
+404 4 CEQUALS
+404 136 CEQUALS
+404 236 CEQUALS
+------qwer-----CACHE MISS 532
+In pte
+2 7 entry
+1 5 entry
+13 1 entry
+15 4 entry
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+In pte
+1 5 entry
+13 1 entry
+15 4 entry
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+14 7 entry
+addr: 520, ppn 6, trans 392, entry 2
+392 -1 CEQUALS
+392 500 CEQUALS
+392 136 CEQUALS
+392 236 CEQUALS
+-----------CACHE MISS 520
+In pte
+1 5 entry
+13 1 entry
+15 4 entry
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+14 7 entry
+In pte
+13 1 entry
+15 4 entry
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+14 7 entry
+12 5 entry
+In pte
+15 4 entry
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+14 7 entry
+12 5 entry
+11 1 entry
+In pte
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+14 7 entry
+12 5 entry
+11 1 entry
+0 4 entry
+addr: 920, ppn 7, trans 472, entsssry 2
+472 304 CEQUALS
+472 68 CEQUALS
+472 392 CEQUALS
+472 -1 CEQUALS
+------qwer-----CACHE MISS 920
+In pte
+10 0 entry
+3 3 entry
+6 2 entry
+8 6 entry
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+In pte
+3 3 entry
+6 2 entry
+8 6 entry
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+addr: 520, ppn 6, trans 392, entsssry 2
+392 -1 CEQUALS
+392 68 CEQUALS
+392 472 CEQUALS
+392 12 CEQUALS
+------qwer-----CACHE MISS 520
+In pte
+3 3 entry
+6 2 entry
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+addr: 164, ppn 0, trans 36, entry 1
+36 -1 CEQUALS
+36 68 CEQUALS
+36 392 CEQUALS
+36 12 CEQUALS
+-----------CACHE MISS 164
+In pte
+3 3 entry
+6 2 entry
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+In pte
+6 2 entry
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+addr: 168, ppn 0, trans 40, entry 2
+40 192 CEQUALS
+40 36 CEQUALS
+40 392 CEQUALS
+40 188 CEQUALS
+-----------CACHE MISS 168
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+addr: 552, ppn 6, trans 424, entry 2
+424 192 CEQUALS
+424 36 CEQUALS
+424 40 CEQUALS
+424 188 CEQUALS
+-----------CACHE MISS 552
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+addr: 972, ppn 2, trans 140, entry 3
+140 192 CEQUALS
+140 36 CEQUALS
+140 424 CEQUALS
+140 188 CEQUALS
+-----------CACHE MISS 972
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+addr: 536, ppn 6, trans 408, entry 2
+408 192 CEQUALS
+408 36 CEQUALS
+408 424 CEQUALS
+408 140 CEQUALS
+-----------CACHE MISS 536
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+addr: 960, ppn 2, trans 128, entry 0
+128 192 CEQUALS
+128 36 CEQUALS
+128 408 CEQUALS
+128 140 CEQUALS
+-----------CACHE MISS 960
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+14 7 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+addr: 900, ppn 7, trans 452, entsssry 1
+452 128 CEQUALS
+452 36 CEQUALS
+452 408 CEQUALS
+452 140 CEQUALS
+------qwer-----CACHE MISS 900
+In pte
+12 5 entry
+11 1 entry
+0 4 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+14 7 entry
+addr: 712, ppn 1, trans 72, entsssry 2
+72 128 CEQUALS
+72 452 CEQUALS
+72 408 CEQUALS
+72 140 CEQUALS
+------qwer-----CACHE MISS 712
+In pte
+12 5 entry
+0 4 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+14 7 entry
+11 1 entry
+addr: 56, ppn 4, trans 312, entsssry 2
+312 128 CEQUALS
+312 452 CEQUALS
+312 72 CEQUALS
+312 140 CEQUALS
+------qwer-----CACHE MISS 56
+In pte
+12 5 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+14 7 entry
+11 1 entry
+0 4 entry
+addr: 0, ppn 4, trans 256, entry 0
+256 128 CEQUALS
+256 452 CEQUALS
+256 312 CEQUALS
+256 140 CEQUALS
+-----------CACHE MISS 0
+In pte
+12 5 entry
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+14 7 entry
+11 1 entry
+0 4 entry
+In pte
+2 0 entry
+8 6 entry
+4 3 entry
+15 2 entry
+14 7 entry
+11 1 entry
+0 4 entry
+6 5 entry
+In pte
+8 6 entry
+4 3 entry
+15 2 entry
+14 7 entry
+11 1 entry
+0 4 entry
+6 5 entry
+9 0 entry
+addr: 1016, ppn 2, trans 184, entsssry 2
+184 -1 CEQUALS
+184 452 CEQUALS
+184 40 CEQUALS
+184 -1 CEQUALS
+------qwer-----CACHE MISS 1016
+In pte
+8 6 entry
+4 3 entry
+14 7 entry
+11 1 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+addr: 60, ppn 4, trans 316, entry 3
+316 -1 CEQUALS
+316 452 CEQUALS
+316 184 CEQUALS
+316 -1 CEQUALS
+-----------CACHE MISS 60
+In pte
+8 6 entry
+4 3 entry
+14 7 entry
+11 1 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+addr: 316, ppn 3, trans 252, entsssry 3
+252 -1 CEQUALS
+252 452 CEQUALS
+252 184 CEQUALS
+252 316 CEQUALS
+------qwer-----CACHE MISS 316
+In pte
+8 6 entry
+14 7 entry
+11 1 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+addr: 752, ppn 1, trans 112, entsssry 0
+112 -1 CEQUALS
+112 452 CEQUALS
+112 184 CEQUALS
+112 252 CEQUALS
+------qwer-----CACHE MISS 752
+In pte
+8 6 entry
+14 7 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+addr: 312, ppn 3, trans 248, entry 2
+248 112 CEQUALS
+248 452 CEQUALS
+248 184 CEQUALS
+248 252 CEQUALS
+-----------CACHE MISS 312
+In pte
+8 6 entry
+14 7 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+In pte
+14 7 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+addr: 316, ppn 3, trans 252, entry 3
+252 112 CEQUALS
+252 388 CEQUALS
+252 248 CEQUALS
+252 252 CEQUALS
+252 252 are EQUALS
+-----------CACHE HIT 316
+In pte
+14 7 entry
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+In pte
+0 4 entry
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+3 7 entry
+In pte
+6 5 entry
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+In pte
+9 0 entry
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+10 5 entry
+In pte
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+10 5 entry
+6 0 entry
+addr: 440, ppn 0, trans 56, entry 2
+56 0 CEQUALS
+56 356 CEQUALS
+56 -1 CEQUALS
+56 252 CEQUALS
+-----------CACHE MISS 440
+In pte
+15 2 entry
+4 3 entry
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+10 5 entry
+6 0 entry
+addr: 300, ppn 3, trans 236, entsssry 3
+236 0 CEQUALS
+236 356 CEQUALS
+236 56 CEQUALS
+236 252 CEQUALS
+------qwer-----CACHE MISS 300
+In pte
+15 2 entry
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+10 5 entry
+6 0 entry
+4 3 entry
+In pte
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+10 5 entry
+6 0 entry
+4 3 entry
+2 2 entry
+addr: 136, ppn 2, trans 136, entry 2
+136 0 CEQUALS
+136 164 CEQUALS
+136 56 CEQUALS
+136 236 CEQUALS
+-----------CACHE MISS 136
+In pte
+11 1 entry
+1 6 entry
+3 7 entry
+14 4 entry
+10 5 entry
+6 0 entry
+4 3 entry
+2 2 entry
+addr: 192, ppn 7, trans 448, entsssry 0
+448 0 CEQUALS
+448 164 CEQUALS
+448 136 CEQUALS
+448 236 CEQUALS
+------qwer-----CACHE MISS 192
+In pte
+11 1 entry
+1 6 entry
+14 4 entry
+10 5 entry
+6 0 entry
+4 3 entry
+2 2 entry
+3 7 entry
+In pte
+1 6 entry
+14 4 entry
+10 5 entry
+6 0 entry
+4 3 entry
+2 2 entry
+3 7 entry
+12 1 entry
+In pte
+14 4 entry
+10 5 entry
+6 0 entry
+4 3 entry
+2 2 entry
+3 7 entry
+12 1 entry
+15 6 entry
+In pte
+10 5 entry
+6 0 entry
+4 3 entry
+2 2 entry
+3 7 entry
+12 1 entry
+15 6 entry
+7 4 entry
+In pte
+6 0 entry
+4 3 entry
+2 2 entry
+3 7 entry
+12 1 entry
+15 6 entry
+7 4 entry
+9 5 entry
+In pte
+4 3 entry
+2 2 entry
+3 7 entry
+12 1 entry
+15 6 entry
+7 4 entry
+9 5 entry
+1 0 entry
+addr: 500, ppn 4, trans 308, entry 1
+308 16 CEQUALS
+308 -1 CEQUALS
+308 72 CEQUALS
+308 -1 CEQUALS
+-----------CACHE MISS 500
+In pte
+4 3 entry
+2 2 entry
+3 7 entry
+12 1 entry
+15 6 entry
+7 4 entry
+9 5 entry
+1 0 entry
+In pte
+2 2 entry
+3 7 entry
+12 1 entry
+15 6 entry
+7 4 entry
+9 5 entry
+1 0 entry
+10 3 entry
+addr: 172, ppn 2, trans 172, entsssry 3
+172 16 CEQUALS
+172 308 CEQUALS
+172 72 CEQUALS
+172 220 CEQUALS
+------qwer-----CACHE MISS 172
+In pte
+3 7 entry
+12 1 entry
+15 6 entry
+7 4 entry
+9 5 entry
+1 0 entry
+10 3 entry
+2 2 entry
+In pte
+12 1 entry
+15 6 entry
+7 4 entry
+9 5 entry
+1 0 entry
+10 3 entry
+2 2 entry
+6 7 entry
+addr: 980, ppn 6, trans 404, entsssry 1
+404 16 CEQUALS
+404 468 CEQUALS
+404 72 CEQUALS
+404 172 CEQUALS
+------qwer-----CACHE MISS 980
+In pte
+12 1 entry
+7 4 entry
+9 5 entry
+1 0 entry
+10 3 entry
+2 2 entry
+6 7 entry
+15 6 entry
+addr: 128, ppn 2, trans 128, entry 0
+128 16 CEQUALS
+128 404 CEQUALS
+128 72 CEQUALS
+128 172 CEQUALS
+-----------CACHE MISS 128
+In pte
+12 1 entry
+7 4 entry
+9 5 entry
+1 0 entry
+10 3 entry
+2 2 entry
+6 7 entry
+15 6 entry
+In pte
+7 4 entry
+9 5 entry
+1 0 entry
+10 3 entry
+2 2 entry
+6 7 entry
+15 6 entry
+8 1 entry
+In pte
+9 5 entry
+1 0 entry
+10 3 entry
+2 2 entry
+6 7 entry
+15 6 entry
+8 1 entry
+14 4 entry
+addr: 624, ppn 5, trans 368, entsssry 0
+368 304 CEQUALS
+368 404 CEQUALS
+368 -1 CEQUALS
+368 172 CEQUALS
+------qwer-----CACHE MISS 624
+In pte
+1 0 entry
+10 3 entry
+2 2 entry
+6 7 entry
+15 6 entry
+8 1 entry
+14 4 entry
+9 5 entry
+addr: 404, ppn 7, trans 468, entsssry 1
+468 368 CEQUALS
+468 404 CEQUALS
+468 -1 CEQUALS
+468 172 CEQUALS
+------qwer-----CACHE MISS 404
+In pte
+1 0 entry
+10 3 entry
+2 2 entry
+15 6 entry
+8 1 entry
+14 4 entry
+9 5 entry
+6 7 entry
+In pte
+10 3 entry
+2 2 entry
+15 6 entry
+8 1 entry
+14 4 entry
+9 5 entry
+6 7 entry
+4 0 entry
+addr: 144, ppn 2, trans 144, entsssry 0
+144 368 CEQUALS
+144 52 CEQUALS
+144 -1 CEQUALS
+144 -1 CEQUALS
+------qwer-----CACHE MISS 144
+In pte
+10 3 entry
+15 6 entry
+8 1 entry
+14 4 entry
+9 5 entry
+6 7 entry
+4 0 entry
+2 2 entry

@@ -41,8 +41,7 @@ void HM_check(int addr, int type) {
         LRU_update(tar_tlb, update, tar_tlb->entry, tag); // update the recency
         int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
         
-       // if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry);
-        
+        //if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
         int cac_res = CAC_search(tar_cac, trans); // check Cache
         if(cac_res) {
             // hit, update recency
@@ -78,18 +77,18 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_tlb, tar_tlb->entry, tag); // insert page into TLB
 
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
-        //    if(type) printf("addr: %d, ppn %d, trans %d\n", addr, tar_page->content[tag], trans);
 
+            //if(type) printf("addr: %d, ppn %d, trans %d, entsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             int cac_res = CAC_search(tar_cac, trans);
             if(cac_res) {
                 // update cache recency
                 tar_cac->hm[HIT]++;
                 update = CLRU_search(tar_cac, trans);
                 CLRU_update(tar_cac, update, trans);
-          //      if(type)printf("-----------CACHE HIT %d\n",addr);
+                //if(type)printf("-----------CACHE HIT %d\n",addr);
             }
             else {
-            //    if(type)printf("-----------CACHE MISS %d\n",addr);
+                //if(type)printf("------qwer-----CACHE MISS %d\n",addr);
                 // update cache
                 tar_cac->hm[MISS] ++;
                 CLRU_insert(tar_cac, trans);
@@ -105,16 +104,15 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
             
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
-            //if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry);
             CLRU_insert(tar_cac, trans);
         }
     }
 /*
     if(type) {
         int q, c;
-        printf("In cac\n");
-        for(q = 0; q < tar_cac->entry; q ++) {
-            printf("%d %d entry\n", tar_cac->c_recency[q][0], tar_cac->c_recency[q][0] / 4 % 4);
+        printf("In pte\n");
+        for(q = 0; q < tar_page->entry; q ++) {
+            printf("%d %d entry\n", tar_page->recency[q], tar_page->content[tar_page->recency[q]]);
         }
     }*/
 }
@@ -155,7 +153,7 @@ void TLB_reset(m_unit* tlb) {
 int Cequals(int addr, int cur) {
     //if(cur_type)printf("%d %d CEQUALS\n", addr, cur);
     if(addr == cur) {
-      //  if(cur_type)printf("%d %d are EQUALS\n", addr, cur); 
+        //if(cur_type)printf("%d %d are EQUALS\n", addr, cur); 
         return 1;
     }
 
@@ -268,6 +266,7 @@ void CLRU_update(m_unit* cac, int from, int addr){
         // the one on the first place will be replace first
         // (from = 0, replace, otherwise it represent update recency)
         int temp = cac->c_recency[set][x + 1];
+        if(temp == -1) continue;
         cac->c_recency[set][x + 1] = cac->c_recency[set][x];
         cac->c_recency[set][x] = temp;
     }
@@ -322,18 +321,25 @@ void LRU_insert(m_unit* tar, int size, int tag) {
 }
 
 void LRU_update(m_unit* tar, int from, int size, int tag) {
-    int x;
+    int x, temp, p_update = 0;
     int old = tar->recency[from];
     // let tag's ppn equals to the one that be replaced
-    tar->content[tag] = tar->content[old];
+    temp = tar->content[old];
+    if(tar->content[tag] == temp) {
+        p_update = 1;
+    } else {
+        tar->content[old] = -1;
+        tar->content[tag] = temp;
+    }
+
     if(tar->isPTE) {
         m_unit* cac = cur_type ? d_cac : i_cac;
-        CAC_invalid(cac, tar, tar->content[tag]);
+        if(!p_update) CAC_invalid(cac, tar, tar->content[tag]);
     }
-    tar->content[old] = -1;
     tar->recency[from] = tag;
     for(x = from; x < size - 1; x ++) {
         int temp = tar->recency[x + 1];
+        if(temp == -1) continue;
    
         tar->recency[x + 1] = tar->recency[x];
         tar->recency[x] = temp; 

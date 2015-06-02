@@ -1,6 +1,8 @@
 path=~/hell/
 origin=~/102062207_03/simulator
 
+make
+
 cd $path
 
 for i in *
@@ -16,13 +18,25 @@ do
 
         cd $origin
         
-        ./CMP
+        ./CMP 64 512 8 64 16 4 4 16 4 1
         mv report.rpt repo_2.rpt
         mv snapshot.rpt sna_2.rpt
 
-        /home/archi/CMP
+        /home/archi/CMP 64 512 8 64 16 4 4 16 4 1
         diff -b report.rpt repo_2.rpt >> ~/test.log
         diff -b snapshot.rpt sna_2.rpt >> ~/test.log
+        
+        rm *.rpt
+        
+        ./CMP
+        mv report.rpt repo_2.rpt
+        mv snapshot.rpt sna_2.rpt
+        
+        /home/archi/CMP
+        
+        diff -b report.rpt repo_2.rpt >> ~/test.log
+        diff -b snapshot.rpt sna_2.rpt >> ~/test.log
+        rm *.rpt *.bin
         cd $path/$i
     done
     cd $path
