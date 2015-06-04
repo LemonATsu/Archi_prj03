@@ -1,3061 +1,1660 @@
 start ins init
 start execute
-In pte
-5 0 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
-In pte
-5 0 entry
-4 1 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
+current pc, :4  qqq
+addr:372 
+addr: 372, ppn 0, trans 52, qentsssry 1
+In cac
+-1 -1 -1 -1 -1 -1 -1 -1 
+52 -1 -1 -1 -1 -1 -1 -1 
+current pc, :8  qqq
+addr:256 
+addr: 256, ppn 1, trans 64, qentsssry 0
+In cac
+64 -1 -1 -1 -1 -1 -1 -1 
+52 -1 -1 -1 -1 -1 -1 -1 
+current pc, :c  qqq
+addr:276 
 addr: 276, ppn 1, trans 84, entry 1
-84 64 CEQUALS
-84 52 CEQUALS
-84 -1 CEQUALS
-84 -1 CEQUALS
 -----------CACHE MISS 276
-In pte
-5 0 entry
-4 1 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
-addr: 300, ppn 1, trans 108, entry 3
-108 64 CEQUALS
-108 84 CEQUALS
-108 -1 CEQUALS
-108 -1 CEQUALS
+In cac
+64 -1 -1 -1 -1 -1 -1 -1 
+52 84 -1 -1 -1 -1 -1 -1 
+current pc, :10  qqq
+addr:300 
+addr: 300, ppn 1, trans 108, entry 0
 -----------CACHE MISS 300
-In pte
-5 0 entry
-4 1 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
-In pte
-5 0 entry
-4 1 entry
-0 2 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
-In pte
-5 0 entry
-4 1 entry
-0 2 entry
-3 3 entry
--1 64 entry
--1 64 entry
--1 64 entry
--1 64 entry
-In pte
-5 0 entry
-4 1 entry
-0 2 entry
-3 3 entry
-13 4 entry
--1 64 entry
--1 64 entry
--1 64 entry
+In cac
+64 108 -1 -1 -1 -1 -1 -1 
+52 84 -1 -1 -1 -1 -1 -1 
+current pc, :14  qqq
+addr:24 
+addr: 24, ppn 2, trans 152, qentsssry 1
+In cac
+64 108 -1 -1 -1 -1 -1 -1 
+52 84 152 -1 -1 -1 -1 -1 
+current pc, :18  qqq
+addr:232 
+addr: 232, ppn 3, trans 232, qentsssry 0
+In cac
+64 108 232 -1 -1 -1 -1 -1 
+52 84 152 -1 -1 -1 -1 -1 
+current pc, :1c  qqq
+addr:880 
+addr: 880, ppn 4, trans 304, qentsssry 1
+In cac
+64 108 232 -1 -1 -1 -1 -1 
+52 84 152 304 -1 -1 -1 -1 
+current pc, :20  qqq
+addr:192 
 addr: 192, ppn 3, trans 192, entry 0
-192 304 CEQUALS
-192 84 CEQUALS
-192 232 CEQUALS
-192 108 CEQUALS
 -----------CACHE MISS 192
-In pte
-5 0 entry
-4 1 entry
-0 2 entry
-3 3 entry
-13 4 entry
--1 64 entry
--1 64 entry
--1 64 entry
-In pte
-5 0 entry
-4 1 entry
-0 2 entry
-3 3 entry
-13 4 entry
-9 5 entry
--1 64 entry
--1 64 entry
-In pte
-5 0 entry
-4 1 entry
-0 2 entry
-3 3 entry
-13 4 entry
-9 5 entry
-10 6 entry
--1 64 entry
-addr: 300, ppn 1, trans 108, entsssry 3
-108 432 CEQUALS
-108 356 CEQUALS
-108 232 CEQUALS
-108 108 CEQUALS
-108 108 are EQUALS
+In cac
+64 108 232 192 -1 -1 -1 -1 
+52 84 152 304 -1 -1 -1 -1 
+current pc, :24  qqq
+addr:612 
+addr: 612, ppn 5, trans 356, qentsssry 0
+In cac
+64 108 232 192 356 -1 -1 -1 
+52 84 152 304 -1 -1 -1 -1 
+current pc, :28  qqq
+addr:688 
+addr: 688, ppn 6, trans 432, qentsssry 1
+In cac
+64 108 232 192 356 -1 -1 -1 
+52 84 152 304 432 -1 -1 -1 
+current pc, :2c  qqq
+addr:300 
+addr: 300, ppn 1, trans 108, entsssry 0
 -----------CACHE HIT 300
-In pte
-5 0 entry
-0 2 entry
-3 3 entry
-13 4 entry
-9 5 entry
-10 6 entry
-4 1 entry
--1 64 entry
-addr: 268, ppn 1, trans 76, entry 3
-76 432 CEQUALS
-76 356 CEQUALS
-76 232 CEQUALS
-76 108 CEQUALS
------------CACHE MISS 268
-In pte
-5 0 entry
-0 2 entry
-3 3 entry
-13 4 entry
-9 5 entry
-10 6 entry
-4 1 entry
--1 64 entry
-addr: 8, ppn 2, trans 136, entsssry 2
-136 432 CEQUALS
-136 356 CEQUALS
-136 232 CEQUALS
-136 76 CEQUALS
+In cac
+64 232 192 356 108 -1 -1 -1 
+52 84 152 304 432 -1 -1 -1 
+current pc, :30  qqq
+addr:268 
+addr: 268, ppn 1, trans 76, entry 0
+-----------CACHE HIT 268
+In cac
+232 192 356 108 76 -1 -1 -1 
+52 84 152 304 432 -1 -1 -1 
+current pc, :34  qqq
+addr:8 
+addr: 8, ppn 2, trans 136, entsssry 0
 ------qwer-----CACHE MISS 8
-In pte
-5 0 entry
-3 3 entry
-13 4 entry
-9 5 entry
-10 6 entry
-4 1 entry
-0 2 entry
--1 64 entry
-addr: 344, ppn 0, trans 24, entsssry 2
-24 432 CEQUALS
-24 356 CEQUALS
-24 136 CEQUALS
-24 76 CEQUALS
+In cac
+232 192 356 108 76 136 -1 -1 
+52 84 152 304 432 -1 -1 -1 
+current pc, :38  qqq
+addr:344 
+addr: 344, ppn 0, trans 24, entsssry 1
 ------qwer-----CACHE MISS 344
-In pte
-3 3 entry
-13 4 entry
-9 5 entry
-10 6 entry
-4 1 entry
-0 2 entry
-5 0 entry
--1 64 entry
-In pte
-3 3 entry
-13 4 entry
-9 5 entry
-10 6 entry
-4 1 entry
-0 2 entry
-5 0 entry
-15 7 entry
-addr: 216, ppn 3, trans 216, entsssry 2
-216 432 CEQUALS
-216 356 CEQUALS
-216 488 CEQUALS
-216 76 CEQUALS
+In cac
+232 192 356 108 76 136 -1 -1 
+52 84 152 304 432 24 -1 -1 
+current pc, :3c  qqq
+addr:1000 
+addr: 1000, ppn 7, trans 488, qentsssry 0
+In cac
+232 192 356 108 76 136 488 -1 
+52 84 152 304 432 24 -1 -1 
+current pc, :40  qqq
+addr:216 
+addr: 216, ppn 3, trans 216, entsssry 1
 ------qwer-----CACHE MISS 216
-In pte
-13 4 entry
-9 5 entry
-10 6 entry
-4 1 entry
-0 2 entry
-5 0 entry
-15 7 entry
-3 3 entry
-In pte
-9 5 entry
-10 6 entry
-4 1 entry
-0 2 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
+In cac
+232 192 356 108 76 136 488 -1 
+52 84 152 304 432 24 216 -1 
+current pc, :44  qqq
+addr:940 
+addr: 940, ppn 4, trans 300, qentsssry 0
+In cac
+232 192 356 108 76 136 488 300 
+52 84 152 304 432 24 216 -1 
+current pc, :48  qqq
+addr:660 
 addr: 660, ppn 6, trans 404, entsssry 1
-404 432 CEQUALS
-404 356 CEQUALS
-404 216 CEQUALS
-404 300 CEQUALS
 ------qwer-----CACHE MISS 660
-In pte
-9 5 entry
-4 1 entry
-0 2 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
-10 6 entry
-addr: 232, ppn 3, trans 232, entry 2
-232 432 CEQUALS
-232 404 CEQUALS
-232 216 CEQUALS
-232 300 CEQUALS
------------CACHE MISS 232
-In pte
-9 5 entry
-4 1 entry
-0 2 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
-10 6 entry
-addr: 28, ppn 2, trans 156, entsssry 3
-156 432 CEQUALS
-156 404 CEQUALS
-156 232 CEQUALS
-156 300 CEQUALS
-------qwer-----CACHE MISS 28
-In pte
-9 5 entry
-4 1 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
-10 6 entry
-0 2 entry
-In pte
-4 1 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
-10 6 entry
-0 2 entry
-8 5 entry
+In cac
+232 192 356 108 76 136 488 300 
+52 84 152 304 432 24 216 404 
+current pc, :4c  qqq
+addr:232 
+addr: 232, ppn 3, trans 232, entry 0
+-----------CACHE HIT 232
+In cac
+192 356 108 76 136 488 300 232 
+52 84 152 304 432 24 216 404 
+current pc, :50  qqq
+addr:28 
+addr: 28, ppn 2, trans 156, entsssry 1
+-----------CACHE HIT 28
+In cac
+192 356 108 76 136 488 300 232 
+52 84 304 432 24 216 404 156 
+current pc, :54  qqq
+addr:548 
+addr: 548, ppn 5, trans 356, qentsssry 0
+In cac
+356 108 76 136 488 300 232 356 
+52 84 304 432 24 216 404 156 
+current pc, :58  qqq
+addr:672 
 addr: 672, ppn 6, trans 416, entry 0
-416 432 CEQUALS
-416 356 CEQUALS
-416 232 CEQUALS
-416 156 CEQUALS
 -----------CACHE MISS 672
-In pte
-4 1 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
-10 6 entry
-0 2 entry
-8 5 entry
-addr: 8, ppn 2, trans 136, entry 2
-136 416 CEQUALS
-136 356 CEQUALS
-136 232 CEQUALS
-136 156 CEQUALS
------------CACHE MISS 8
-In pte
-4 1 entry
-5 0 entry
-15 7 entry
-3 3 entry
-14 4 entry
-10 6 entry
-0 2 entry
-8 5 entry
+In cac
+108 76 136 488 300 232 356 416 
+52 84 304 432 24 216 404 156 
+current pc, :5c  qqq
+addr:8 
+addr: 8, ppn 2, trans 136, entry 0
+-----------CACHE HIT 8
+In cac
+108 76 488 300 232 356 416 136 
+52 84 304 432 24 216 404 156 
+current pc, :60  qqq
+addr:916 
 addr: 916, ppn 4, trans 276, entsssry 1
-276 416 CEQUALS
-276 356 CEQUALS
-276 136 CEQUALS
-276 156 CEQUALS
 ------qwer-----CACHE MISS 916
-In pte
-4 1 entry
-5 0 entry
-15 7 entry
-3 3 entry
-10 6 entry
-0 2 entry
-8 5 entry
-14 4 entry
-In pte
-5 0 entry
-15 7 entry
-3 3 entry
-10 6 entry
-0 2 entry
-8 5 entry
-14 4 entry
-6 1 entry
-In pte
-15 7 entry
-3 3 entry
-10 6 entry
-0 2 entry
-8 5 entry
-14 4 entry
-6 1 entry
-1 0 entry
-addr: 908, ppn 4, trans 268, entry 3
-268 32 CEQUALS
-268 -1 CEQUALS
-268 120 CEQUALS
-268 -1 CEQUALS
+In cac
+108 76 488 300 232 356 416 136 
+84 304 432 24 216 404 156 276 
+current pc, :64  qqq
+addr:440 
+addr: 440, ppn 1, trans 120, qentsssry 1
+In cac
+300 416 136 -1 -1 -1 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :68  qqq
+addr:96 
+addr: 96, ppn 0, trans 32, qentsssry 0
+In cac
+32 -1 -1 -1 -1 -1 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :6c  qqq
+addr:908 
+addr: 908, ppn 4, trans 268, entry 0
 -----------CACHE MISS 908
-In pte
-15 7 entry
-3 3 entry
-10 6 entry
-0 2 entry
-8 5 entry
-14 4 entry
-6 1 entry
-1 0 entry
-In pte
-3 3 entry
-10 6 entry
-0 2 entry
-8 5 entry
-14 4 entry
-6 1 entry
-1 0 entry
-11 7 entry
-addr: 516, ppn 5, trans 324, entsssry 1
-324 480 CEQUALS
-324 -1 CEQUALS
-324 120 CEQUALS
-324 268 CEQUALS
+In cac
+32 268 -1 -1 -1 -1 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :70  qqq
+addr:736 
+addr: 736, ppn 7, trans 480, qentsssry 0
+In cac
+32 268 480 -1 -1 -1 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :74  qqq
+addr:516 
+addr: 516, ppn 5, trans 324, entsssry 0
 ------qwer-----CACHE MISS 516
-In pte
-3 3 entry
-10 6 entry
-0 2 entry
-14 4 entry
-6 1 entry
-1 0 entry
-11 7 entry
-8 5 entry
+In cac
+32 268 480 324 -1 -1 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :78  qqq
+addr:32 
 addr: 32, ppn 2, trans 160, entsssry 0
-160 480 CEQUALS
-160 324 CEQUALS
-160 120 CEQUALS
-160 268 CEQUALS
 ------qwer-----CACHE MISS 32
-In pte
-3 3 entry
-10 6 entry
-14 4 entry
-6 1 entry
-1 0 entry
-11 7 entry
-8 5 entry
-0 2 entry
-In pte
-10 6 entry
-14 4 entry
-6 1 entry
-1 0 entry
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-In pte
-14 4 entry
-6 1 entry
-1 0 entry
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-13 6 entry
-addr: 484, ppn 3, trans 228, entry 1
-228 160 CEQUALS
-228 324 CEQUALS
-228 200 CEQUALS
-228 396 CEQUALS
+In cac
+32 268 480 324 160 -1 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :7c  qqq
+addr:456 
+addr: 456, ppn 3, trans 200, qentsssry 0
+In cac
+32 268 480 324 160 200 -1 -1 
+304 432 24 216 404 156 276 120 
+current pc, :80  qqq
+addr:844 
+addr: 844, ppn 6, trans 396, qentsssry 0
+In cac
+32 268 480 324 160 200 396 -1 
+304 432 24 216 404 156 276 120 
+current pc, :84  qqq
+addr:484 
+addr: 484, ppn 3, trans 228, entry 0
 -----------CACHE MISS 484
-In pte
-14 4 entry
-6 1 entry
-1 0 entry
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-13 6 entry
-addr: 952, ppn 4, trans 312, entsssry 2
-312 160 CEQUALS
-312 228 CEQUALS
-312 200 CEQUALS
-312 396 CEQUALS
-------qwer-----CACHE MISS 952
-In pte
-6 1 entry
-1 0 entry
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-13 6 entry
-14 4 entry
-In pte
-1 0 entry
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-13 6 entry
-14 4 entry
-9 1 entry
-In pte
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-13 6 entry
-14 4 entry
-9 1 entry
-15 0 entry
-addr: 860, ppn 6, trans 412, entsssry 3
-412 -1 CEQUALS
-412 84 CEQUALS
-412 -1 CEQUALS
-412 12 CEQUALS
-------qwer-----CACHE MISS 860
-In pte
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-addr: 868, ppn 6, trans 420, entry 1
-420 -1 CEQUALS
-420 84 CEQUALS
-420 -1 CEQUALS
-420 412 CEQUALS
+In cac
+32 268 480 324 160 200 396 228 
+304 432 24 216 404 156 276 120 
+current pc, :88  qqq
+addr:952 
+addr: 952, ppn 4, trans 312, entsssry 1
+-----------CACHE HIT 952
+In cac
+32 268 480 324 160 200 396 228 
+432 24 216 404 156 276 120 312 
+current pc, :8c  qqq
+addr:596 
+addr: 596, ppn 1, trans 84, qentsssry 1
+In cac
+32 268 160 396 -1 -1 -1 -1 
+24 216 404 156 276 120 312 84 
+current pc, :90  qqq
+addr:972 
+addr: 972, ppn 0, trans 12, qentsssry 0
+In cac
+12 -1 -1 -1 -1 -1 -1 -1 
+24 216 404 156 276 120 312 84 
+current pc, :94  qqq
+addr:860 
+addr: 860, ppn 6, trans 412, entsssry 1
+-----------CACHE HIT 860
+In cac
+12 -1 -1 -1 -1 -1 -1 -1 
+24 216 156 276 120 312 84 412 
+current pc, :98  qqq
+addr:868 
+addr: 868, ppn 6, trans 420, entry 0
 -----------CACHE MISS 868
-In pte
-11 7 entry
-8 5 entry
-0 2 entry
-7 3 entry
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-In pte
-8 5 entry
-0 2 entry
-7 3 entry
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-3 7 entry
-In pte
-0 2 entry
-7 3 entry
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-3 7 entry
-1 5 entry
-In pte
-7 3 entry
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-3 7 entry
-1 5 entry
-8 2 entry
-In pte
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-3 7 entry
-1 5 entry
-8 2 entry
-11 3 entry
-addr: 572, ppn 2, trans 188, entry 3
-188 176 CEQUALS
-188 372 CEQUALS
-188 504 CEQUALS
-188 204 CEQUALS
------------CACHE MISS 572
-In pte
-14 4 entry
-9 1 entry
-15 0 entry
-13 6 entry
-3 7 entry
-1 5 entry
-8 2 entry
-11 3 entry
-In pte
-9 1 entry
-15 0 entry
-13 6 entry
-3 7 entry
-1 5 entry
-8 2 entry
-11 3 entry
-6 4 entry
-In pte
-15 0 entry
-13 6 entry
-3 7 entry
-1 5 entry
-8 2 entry
-11 3 entry
-6 4 entry
-10 1 entry
+In cac
+12 420 -1 -1 -1 -1 -1 -1 
+24 216 156 276 120 312 84 412 
+current pc, :9c  qqq
+addr:248 
+addr: 248, ppn 7, trans 504, qentsssry 1
+In cac
+12 420 -1 -1 -1 -1 -1 -1 
+216 156 276 120 312 84 412 504 
+current pc, :a0  qqq
+addr:116 
+addr: 116, ppn 5, trans 372, qentsssry 1
+In cac
+12 420 -1 -1 -1 -1 -1 -1 
+156 276 120 312 84 412 504 372 
+current pc, :a4  qqq
+addr:560 
+addr: 560, ppn 2, trans 176, qentsssry 1
+In cac
+12 420 -1 -1 -1 -1 -1 -1 
+276 120 312 84 412 504 372 176 
+current pc, :a8  qqq
+addr:716 
+addr: 716, ppn 3, trans 204, qentsssry 0
+In cac
+12 420 204 -1 -1 -1 -1 -1 
+276 120 312 84 412 504 372 176 
+current pc, :ac  qqq
+addr:572 
+addr: 572, ppn 2, trans 188, entry 1
+-----------CACHE HIT 572
+In cac
+12 420 204 -1 -1 -1 -1 -1 
+276 120 312 84 412 504 372 188 
+current pc, :b0  qqq
+addr:420 
+addr: 420, ppn 4, trans 292, qentsssry 0
+In cac
+12 420 204 292 -1 -1 -1 -1 
+276 120 312 84 412 504 372 188 
+current pc, :b4  qqq
+addr:644 
+addr: 644, ppn 1, trans 68, qentsssry 0
+In cac
+12 420 292 68 -1 -1 -1 -1 
+276 120 312 84 412 504 372 188 
+current pc, :b8  qqq
+addr:64 
 addr: 64, ppn 5, trans 320, entsssry 0
-320 176 CEQUALS
-320 68 CEQUALS
-320 -1 CEQUALS
-320 188 CEQUALS
 ------qwer-----CACHE MISS 64
-In pte
-15 0 entry
-13 6 entry
-3 7 entry
-8 2 entry
-11 3 entry
-6 4 entry
-10 1 entry
-1 5 entry
+In cac
+12 420 292 68 320 -1 -1 -1 
+276 120 312 84 412 504 372 188 
+current pc, :bc  qqq
+addr:736 
 addr: 736, ppn 3, trans 224, entsssry 0
-224 320 CEQUALS
-224 68 CEQUALS
-224 -1 CEQUALS
-224 188 CEQUALS
 ------qwer-----CACHE MISS 736
-In pte
-15 0 entry
-13 6 entry
-3 7 entry
-8 2 entry
-6 4 entry
-10 1 entry
-1 5 entry
-11 3 entry
-In pte
-13 6 entry
-3 7 entry
-8 2 entry
-6 4 entry
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-In pte
-3 7 entry
-8 2 entry
-6 4 entry
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-addr: 620, ppn 0, trans 44, entry 3
-44 224 CEQUALS
-44 436 CEQUALS
-44 -1 CEQUALS
-44 12 CEQUALS
+In cac
+12 420 292 68 320 224 -1 -1 
+276 120 312 84 412 504 372 188 
+current pc, :c0  qqq
+addr:588 
+addr: 588, ppn 0, trans 12, qentsssry 0
+In cac
+68 320 224 12 -1 -1 -1 -1 
+276 120 312 84 412 504 372 188 
+current pc, :c4  qqq
+addr:1012 
+addr: 1012, ppn 6, trans 436, qentsssry 1
+In cac
+68 320 224 12 -1 -1 -1 -1 
+120 312 84 412 504 372 188 436 
+current pc, :c8  qqq
+addr:620 
+addr: 620, ppn 0, trans 44, entry 0
 -----------CACHE MISS 620
-In pte
-3 7 entry
-8 2 entry
-6 4 entry
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-addr: 708, ppn 3, trans 196, entry 1
-196 224 CEQUALS
-196 436 CEQUALS
-196 -1 CEQUALS
-196 44 CEQUALS
+In cac
+68 320 224 12 44 -1 -1 -1 
+120 312 84 412 504 372 188 436 
+current pc, :cc  qqq
+addr:708 
+addr: 708, ppn 3, trans 196, entry 0
 -----------CACHE MISS 708
-In pte
-3 7 entry
-8 2 entry
-6 4 entry
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-addr: 420, ppn 4, trans 292, entsssry 1
-292 224 CEQUALS
-292 196 CEQUALS
-292 -1 CEQUALS
-292 44 CEQUALS
+In cac
+68 320 224 12 44 196 -1 -1 
+120 312 84 412 504 372 188 436 
+current pc, :d0  qqq
+addr:420 
+addr: 420, ppn 4, trans 292, entsssry 0
 ------qwer-----CACHE MISS 420
-In pte
-3 7 entry
-8 2 entry
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-6 4 entry
-In pte
-8 2 entry
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-6 4 entry
-14 7 entry
-In pte
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-6 4 entry
-14 7 entry
-3 2 entry
-addr: 732, ppn 3, trans 220, entry 3
-220 160 CEQUALS
-220 292 CEQUALS
-220 -1 CEQUALS
-220 44 CEQUALS
+In cac
+68 320 224 12 44 196 292 -1 
+120 312 84 412 504 372 188 436 
+current pc, :d4  qqq
+addr:928 
+addr: 928, ppn 7, trans 480, qentsssry 0
+In cac
+68 320 224 12 44 196 292 480 
+120 312 84 412 504 372 188 436 
+current pc, :d8  qqq
+addr:224 
+addr: 224, ppn 2, trans 160, qentsssry 0
+In cac
+320 224 12 44 196 292 480 160 
+120 312 84 412 504 372 188 436 
+current pc, :dc  qqq
+addr:732 
+addr: 732, ppn 3, trans 220, entry 1
 -----------CACHE MISS 732
-In pte
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-15 6 entry
-6 4 entry
-14 7 entry
-3 2 entry
-addr: 984, ppn 6, trans 408, entsssry 2
-408 160 CEQUALS
-408 292 CEQUALS
-408 -1 CEQUALS
-408 220 CEQUALS
-------qwer-----CACHE MISS 984
-In pte
-10 1 entry
-1 5 entry
-11 3 entry
-9 0 entry
-6 4 entry
-14 7 entry
-3 2 entry
-15 6 entry
-In pte
-1 5 entry
-11 3 entry
-9 0 entry
-6 4 entry
-14 7 entry
-3 2 entry
-15 6 entry
-2 1 entry
-addr: 172, ppn 1, trans 108, entry 3
-108 112 CEQUALS
-108 292 CEQUALS
-108 408 CEQUALS
-108 -1 CEQUALS
+In cac
+320 224 12 44 196 292 480 160 
+312 84 412 504 372 188 436 220 
+current pc, :e0  qqq
+addr:984 
+addr: 984, ppn 6, trans 408, entsssry 1
+-----------CACHE HIT 984
+In cac
+320 224 12 44 196 292 480 160 
+312 84 504 372 188 436 220 408 
+current pc, :e4  qqq
+addr:176 
+addr: 176, ppn 1, trans 112, qentsssry 1
+In cac
+12 44 292 160 -1 -1 -1 -1 
+84 504 372 188 436 220 408 112 
+current pc, :e8  qqq
+addr:172 
+addr: 172, ppn 1, trans 108, entry 0
 -----------CACHE MISS 172
-In pte
-1 5 entry
-11 3 entry
-9 0 entry
-6 4 entry
-14 7 entry
-3 2 entry
-15 6 entry
-2 1 entry
-In pte
-11 3 entry
-9 0 entry
-6 4 entry
-14 7 entry
-3 2 entry
-15 6 entry
-2 1 entry
-4 5 entry
-In pte
-9 0 entry
-6 4 entry
-14 7 entry
-3 2 entry
-15 6 entry
-2 1 entry
-4 5 entry
-5 3 entry
-In pte
-6 4 entry
-14 7 entry
-3 2 entry
-15 6 entry
-2 1 entry
-4 5 entry
-5 3 entry
-7 0 entry
-In pte
-14 7 entry
-3 2 entry
-15 6 entry
-2 1 entry
-4 5 entry
-5 3 entry
-7 0 entry
-12 4 entry
-In pte
-3 2 entry
-15 6 entry
-2 1 entry
-4 5 entry
-5 3 entry
-7 0 entry
-12 4 entry
-13 7 entry
-In pte
-15 6 entry
-2 1 entry
-4 5 entry
-5 3 entry
-7 0 entry
-12 4 entry
-13 7 entry
-6 2 entry
+In cac
+12 44 292 160 108 -1 -1 -1 
+84 504 372 188 436 220 408 112 
+current pc, :ec  qqq
+addr:264 
+addr: 264, ppn 5, trans 328, qentsssry 0
+In cac
+12 44 292 160 108 328 -1 -1 
+84 504 372 188 436 220 408 112 
+current pc, :f0  qqq
+addr:360 
+addr: 360, ppn 3, trans 232, qentsssry 0
+In cac
+12 44 292 160 108 328 232 -1 
+84 504 372 188 436 220 408 112 
+current pc, :f4  qqq
+addr:484 
+addr: 484, ppn 0, trans 36, qentsssry 0
+In cac
+108 328 232 36 -1 -1 -1 -1 
+84 504 372 188 436 220 408 112 
+current pc, :f8  qqq
+addr:776 
+addr: 776, ppn 4, trans 264, qentsssry 0
+In cac
+108 328 232 36 264 -1 -1 -1 
+84 504 372 188 436 220 408 112 
+current pc, :fc  qqq
+addr:868 
+addr: 868, ppn 7, trans 484, qentsssry 0
+In cac
+108 328 232 36 264 484 -1 -1 
+84 504 372 188 436 220 408 112 
+current pc, :100  qqq
+addr:392 
+addr: 392, ppn 2, trans 136, qentsssry 0
+In cac
+108 328 232 36 264 484 136 -1 
+84 504 372 188 436 220 408 112 
+current pc, :104  qqq
+addr:1012 
 addr: 1012, ppn 6, trans 436, entsssry 1
-436 112 CEQUALS
-436 484 CEQUALS
-436 136 CEQUALS
-436 108 CEQUALS
-------qwer-----CACHE MISS 1012
-In pte
-2 1 entry
-4 5 entry
-5 3 entry
-7 0 entry
-12 4 entry
-13 7 entry
-6 2 entry
-15 6 entry
-In pte
-4 5 entry
-5 3 entry
-7 0 entry
-12 4 entry
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-addr: 840, ppn 7, trans 456, entry 2
-456 -1 CEQUALS
-456 436 CEQUALS
-456 136 CEQUALS
-456 92 CEQUALS
+-----------CACHE HIT 1012
+In cac
+108 328 232 36 264 484 136 -1 
+84 504 372 188 220 408 112 436 
+current pc, :108  qqq
+addr:540 
+addr: 540, ppn 1, trans 92, qentsssry 1
+In cac
+36 264 136 -1 -1 -1 -1 -1 
+504 372 188 220 408 112 436 92 
+current pc, :10c  qqq
+addr:840 
+addr: 840, ppn 7, trans 456, entry 0
 -----------CACHE MISS 840
-In pte
-4 5 entry
-5 3 entry
-7 0 entry
-12 4 entry
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-addr: 460, ppn 0, trans 12, entsssry 3
-12 -1 CEQUALS
-12 436 CEQUALS
-12 456 CEQUALS
-12 92 CEQUALS
+In cac
+36 264 136 456 -1 -1 -1 -1 
+504 372 188 220 408 112 436 92 
+current pc, :110  qqq
+addr:460 
+addr: 460, ppn 0, trans 12, entsssry 0
 ------qwer-----CACHE MISS 460
-In pte
-4 5 entry
-5 3 entry
-12 4 entry
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-7 0 entry
+In cac
+36 264 136 456 12 -1 -1 -1 
+504 372 188 220 408 112 436 92 
+current pc, :114  qqq
+addr:288 
 addr: 288, ppn 5, trans 352, entsssry 0
-352 -1 CEQUALS
-352 436 CEQUALS
-352 456 CEQUALS
-352 12 CEQUALS
 ------qwer-----CACHE MISS 288
-In pte
-5 3 entry
-12 4 entry
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-7 0 entry
-4 5 entry
-addr: 812, ppn 4, trans 300, entsssry 3
-300 352 CEQUALS
-300 436 CEQUALS
-300 456 CEQUALS
-300 12 CEQUALS
+In cac
+36 264 136 456 12 352 -1 -1 
+504 372 188 220 408 112 436 92 
+current pc, :118  qqq
+addr:812 
+addr: 812, ppn 4, trans 300, entsssry 0
 ------qwer-----CACHE MISS 812
-In pte
-5 3 entry
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-7 0 entry
-4 5 entry
-12 4 entry
-In pte
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-7 0 entry
-4 5 entry
-12 4 entry
-9 3 entry
-addr: 808, ppn 4, trans 296, entry 2
-296 192 CEQUALS
-296 436 CEQUALS
-296 456 CEQUALS
-296 300 CEQUALS
------------CACHE MISS 808
-In pte
-13 7 entry
-6 2 entry
-15 6 entry
-8 1 entry
-7 0 entry
-4 5 entry
-12 4 entry
-9 3 entry
-In pte
-6 2 entry
-15 6 entry
-8 1 entry
-7 0 entry
-4 5 entry
-12 4 entry
-9 3 entry
-3 7 entry
-addr: 492, ppn 0, trans 44, entsssry 3
-44 192 CEQUALS
-44 436 CEQUALS
-44 488 CEQUALS
-44 300 CEQUALS
+In cac
+36 264 136 456 12 352 300 -1 
+504 372 188 220 408 112 436 92 
+current pc, :11c  qqq
+addr:576 
+addr: 576, ppn 3, trans 192, qentsssry 0
+In cac
+36 264 136 456 12 352 300 192 
+504 372 188 220 408 112 436 92 
+current pc, :120  qqq
+addr:808 
+addr: 808, ppn 4, trans 296, entry 0
+-----------CACHE HIT 808
+In cac
+36 264 136 456 12 352 192 296 
+504 372 188 220 408 112 436 92 
+current pc, :124  qqq
+addr:232 
+addr: 232, ppn 7, trans 488, qentsssry 0
+In cac
+264 136 456 12 352 192 296 488 
+504 372 188 220 408 112 436 92 
+current pc, :128  qqq
+addr:492 
+addr: 492, ppn 0, trans 44, entsssry 0
 ------qwer-----CACHE MISS 492
-In pte
-6 2 entry
-15 6 entry
-8 1 entry
-4 5 entry
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-In pte
-15 6 entry
-8 1 entry
-4 5 entry
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
+In cac
+136 456 12 352 192 296 488 44 
+504 372 188 220 408 112 436 92 
+current pc, :12c  qqq
+addr:896 
+addr: 896, ppn 2, trans 128, qentsssry 0
+In cac
+456 12 352 192 296 488 44 128 
+504 372 188 220 408 112 436 92 
+current pc, :130  qqq
+addr:288 
 addr: 288, ppn 5, trans 352, entsssry 0
-352 128 CEQUALS
-352 436 CEQUALS
-352 488 CEQUALS
-352 44 CEQUALS
-------qwer-----CACHE MISS 288
-In pte
-15 6 entry
-8 1 entry
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-In pte
-8 1 entry
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-2 6 entry
-addr: 140, ppn 6, trans 396, entry 3
-396 384 CEQUALS
-396 436 CEQUALS
-396 488 CEQUALS
-396 44 CEQUALS
------------CACHE MISS 140
-In pte
-8 1 entry
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-2 6 entry
-In pte
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-2 6 entry
-13 1 entry
-addr: 300, ppn 5, trans 364, entry 3
-364 384 CEQUALS
-364 436 CEQUALS
-364 -1 CEQUALS
-364 108 CEQUALS
+-----------CACHE HIT 288
+In cac
+456 12 192 296 488 44 128 352 
+504 372 188 220 408 112 436 92 
+current pc, :134  qqq
+addr:128 
+addr: 128, ppn 6, trans 384, qentsssry 0
+In cac
+12 192 296 488 44 128 352 384 
+504 372 188 220 408 112 436 92 
+current pc, :138  qqq
+addr:140 
+addr: 140, ppn 6, trans 396, entry 0
+-----------CACHE HIT 140
+In cac
+12 192 296 488 44 128 352 396 
+504 372 188 220 408 112 436 92 
+current pc, :13c  qqq
+addr:876 
+addr: 876, ppn 1, trans 108, qentsssry 0
+In cac
+12 296 44 128 396 108 -1 -1 
+504 372 188 220 408 112 436 92 
+current pc, :140  qqq
+addr:300 
+addr: 300, ppn 5, trans 364, entry 0
 -----------CACHE MISS 300
-In pte
-12 4 entry
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-2 6 entry
-13 1 entry
-In pte
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-2 6 entry
-13 1 entry
-6 4 entry
-addr: 396, ppn 4, trans 268, entry 3
-268 384 CEQUALS
-268 436 CEQUALS
-268 264 CEQUALS
-268 364 CEQUALS
------------CACHE MISS 396
-In pte
-9 3 entry
-3 7 entry
-7 0 entry
-14 2 entry
-4 5 entry
-2 6 entry
-13 1 entry
-6 4 entry
-addr: 908, ppn 2, trans 140, entsssry 3
-140 384 CEQUALS
-140 436 CEQUALS
-140 264 CEQUALS
-140 268 CEQUALS
-------qwer-----CACHE MISS 908
-In pte
-9 3 entry
-3 7 entry
-7 0 entry
-4 5 entry
-2 6 entry
-13 1 entry
-6 4 entry
-14 2 entry
+In cac
+12 296 44 128 396 108 364 -1 
+504 372 188 220 408 112 436 92 
+current pc, :144  qqq
+addr:392 
+addr: 392, ppn 4, trans 264, qentsssry 0
+In cac
+12 296 44 128 396 108 364 264 
+504 372 188 220 408 112 436 92 
+current pc, :148  qqq
+addr:396 
+addr: 396, ppn 4, trans 268, entry 0
+-----------CACHE HIT 396
+In cac
+12 296 44 128 396 108 364 268 
+504 372 188 220 408 112 436 92 
+current pc, :14c  qqq
+addr:908 
+addr: 908, ppn 2, trans 140, entsssry 0
+-----------CACHE HIT 908
+In cac
+12 296 44 396 108 364 268 140 
+504 372 188 220 408 112 436 92 
+current pc, :150  qqq
+addr:288 
 addr: 288, ppn 5, trans 352, entry 0
-352 384 CEQUALS
-352 436 CEQUALS
-352 264 CEQUALS
-352 140 CEQUALS
------------CACHE MISS 288
-In pte
-9 3 entry
-3 7 entry
-7 0 entry
-4 5 entry
-2 6 entry
-13 1 entry
-6 4 entry
-14 2 entry
-addr: 452, ppn 0, trans 4, entsssry 1
-4 352 CEQUALS
-4 436 CEQUALS
-4 264 CEQUALS
-4 140 CEQUALS
-------qwer-----CACHE MISS 452
-In pte
-9 3 entry
-3 7 entry
-4 5 entry
-2 6 entry
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-In pte
-3 7 entry
-4 5 entry
-2 6 entry
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-addr: 140, ppn 6, trans 396, entsssry 3
-396 224 CEQUALS
-396 4 CEQUALS
-396 264 CEQUALS
-396 140 CEQUALS
-------qwer-----CACHE MISS 140
-In pte
-3 7 entry
-4 5 entry
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-2 6 entry
-addr: 232, ppn 7, trans 488, entsssry 2
-488 224 CEQUALS
-488 4 CEQUALS
-488 264 CEQUALS
-488 396 CEQUALS
+-----------CACHE HIT 288
+In cac
+12 296 44 396 108 268 140 352 
+504 372 188 220 408 112 436 92 
+current pc, :154  qqq
+addr:452 
+addr: 452, ppn 0, trans 4, entsssry 0
+-----------CACHE HIT 452
+In cac
+296 44 396 108 268 140 352 4 
+504 372 188 220 408 112 436 92 
+current pc, :158  qqq
+addr:800 
+addr: 800, ppn 3, trans 224, qentsssry 0
+In cac
+44 396 108 268 140 352 4 224 
+504 372 188 220 408 112 436 92 
+current pc, :15c  qqq
+addr:140 
+addr: 140, ppn 6, trans 396, entsssry 0
+-----------CACHE HIT 140
+In cac
+44 108 268 140 352 4 224 396 
+504 372 188 220 408 112 436 92 
+current pc, :160  qqq
+addr:232 
+addr: 232, ppn 7, trans 488, entsssry 0
 ------qwer-----CACHE MISS 232
-In pte
-4 5 entry
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-In pte
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-addr: 176, ppn 6, trans 432, entry 0
-432 352 CEQUALS
-432 4 CEQUALS
-432 488 CEQUALS
-432 396 CEQUALS
------------CACHE MISS 176
-In pte
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-addr: 76, ppn 5, trans 332, entry 3
-332 432 CEQUALS
-332 4 CEQUALS
-332 488 CEQUALS
-332 396 CEQUALS
+In cac
+108 268 140 352 4 224 396 488 
+504 372 188 220 408 112 436 92 
+current pc, :164  qqq
+addr:96 
+addr: 96, ppn 5, trans 352, qentsssry 0
+In cac
+268 140 352 4 224 396 488 352 
+504 372 188 220 408 112 436 92 
+current pc, :168  qqq
+addr:176 
+addr: 176, ppn 6, trans 432, entry 1
+-----------CACHE HIT 176
+In cac
+268 140 352 4 224 396 488 352 
+504 372 188 220 408 112 92 432 
+current pc, :16c  qqq
+addr:76 
+addr: 76, ppn 5, trans 332, entry 0
 -----------CACHE MISS 76
-In pte
-13 1 entry
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-In pte
-6 4 entry
-14 2 entry
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
+In cac
+140 352 4 224 396 488 352 332 
+504 372 188 220 408 112 92 432 
+current pc, :170  qqq
+addr:268 
+addr: 268, ppn 1, trans 76, qentsssry 0
+In cac
+140 4 396 76 -1 -1 -1 -1 
+504 372 188 220 408 112 92 432 
+current pc, :174  qqq
+addr:948 
 addr: 948, ppn 2, trans 180, entsssry 1
-180 432 CEQUALS
-180 4 CEQUALS
-180 -1 CEQUALS
-180 76 CEQUALS
-------qwer-----CACHE MISS 948
-In pte
-6 4 entry
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
-14 2 entry
-In pte
-7 0 entry
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
-14 2 entry
-10 4 entry
-In pte
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
-14 2 entry
-10 4 entry
-6 0 entry
+-----------CACHE HIT 948
+In cac
+140 4 396 76 -1 -1 -1 -1 
+504 372 220 408 112 92 432 180 
+current pc, :178  qqq
+addr:672 
+addr: 672, ppn 4, trans 288, qentsssry 0
+In cac
+140 4 396 76 288 -1 -1 -1 
+504 372 220 408 112 92 432 180 
+current pc, :17c  qqq
+addr:384 
+addr: 384, ppn 0, trans 0, qentsssry 0
+In cac
+76 0 -1 -1 -1 -1 -1 -1 
+504 372 220 408 112 92 432 180 
+current pc, :180  qqq
+addr:640 
 addr: 640, ppn 4, trans 256, entry 0
-256 0 CEQUALS
-256 -1 CEQUALS
-256 -1 CEQUALS
-256 76 CEQUALS
 -----------CACHE MISS 640
-In pte
-12 3 entry
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
-14 2 entry
-10 4 entry
-6 0 entry
-In pte
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
-14 2 entry
-10 4 entry
-6 0 entry
-0 3 entry
-addr: 676, ppn 4, trans 292, entry 1
-292 208 CEQUALS
-292 -1 CEQUALS
-292 -1 CEQUALS
-292 76 CEQUALS
+In cac
+76 0 256 -1 -1 -1 -1 -1 
+504 372 220 408 112 92 432 180 
+current pc, :184  qqq
+addr:16 
+addr: 16, ppn 3, trans 208, qentsssry 1
+In cac
+76 0 256 -1 -1 -1 -1 -1 
+372 220 408 112 92 432 180 208 
+current pc, :188  qqq
+addr:676 
+addr: 676, ppn 4, trans 292, entry 0
 -----------CACHE MISS 676
-In pte
-2 6 entry
-3 7 entry
-1 5 entry
-4 1 entry
-14 2 entry
-10 4 entry
-6 0 entry
-0 3 entry
-addr: 248, ppn 7, trans 504, entsssry 2
-504 208 CEQUALS
-504 292 CEQUALS
-504 -1 CEQUALS
-504 76 CEQUALS
+In cac
+76 0 256 292 -1 -1 -1 -1 
+372 220 408 112 92 432 180 208 
+current pc, :18c  qqq
+addr:248 
+addr: 248, ppn 7, trans 504, entsssry 1
 ------qwer-----CACHE MISS 248
-In pte
-2 6 entry
-1 5 entry
-4 1 entry
-14 2 entry
-10 4 entry
-6 0 entry
-0 3 entry
-3 7 entry
-addr: 304, ppn 1, trans 112, entsssry 0
-112 208 CEQUALS
-112 292 CEQUALS
-112 504 CEQUALS
-112 76 CEQUALS
-------qwer-----CACHE MISS 304
-In pte
-2 6 entry
-1 5 entry
-14 2 entry
-10 4 entry
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-In pte
-1 5 entry
-14 2 entry
-10 4 entry
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-In pte
-14 2 entry
-10 4 entry
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-In pte
-10 4 entry
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
+In cac
+76 0 256 292 -1 -1 -1 -1 
+220 408 112 92 432 180 208 504 
+current pc, :190  qqq
+addr:304 
+addr: 304, ppn 1, trans 112, entsssry 1
+-----------CACHE HIT 304
+In cac
+76 0 256 292 -1 -1 -1 -1 
+220 408 92 432 180 208 504 112 
+current pc, :194  qqq
+addr:628 
+addr: 628, ppn 6, trans 436, qentsssry 1
+In cac
+76 0 256 292 -1 -1 -1 -1 
+408 92 432 180 208 504 112 436 
+current pc, :198  qqq
+addr:468 
+addr: 468, ppn 5, trans 340, qentsssry 1
+In cac
+76 0 256 292 -1 -1 -1 -1 
+92 432 180 208 504 112 436 340 
+current pc, :19c  qqq
+addr:540 
+addr: 540, ppn 2, trans 156, qentsssry 1
+In cac
+76 0 256 292 -1 -1 -1 -1 
+432 180 208 504 112 436 340 156 
+current pc, :1a0  qqq
+addr:288 
 addr: 288, ppn 1, trans 96, entry 0
-96 112 CEQUALS
-96 340 CEQUALS
-96 504 CEQUALS
-96 156 CEQUALS
 -----------CACHE MISS 288
-In pte
-10 4 entry
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-In pte
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-addr: 316, ppn 1, trans 124, entry 3
-124 96 CEQUALS
-124 340 CEQUALS
-124 504 CEQUALS
-124 316 CEQUALS
------------CACHE MISS 316
-In pte
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-addr: 524, ppn 2, trans 140, entry 3
-140 96 CEQUALS
-140 340 CEQUALS
-140 504 CEQUALS
-140 124 CEQUALS
------------CACHE MISS 524
-In pte
-6 0 entry
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-addr: 388, ppn 0, trans 4, entsssry 1
-4 96 CEQUALS
-4 340 CEQUALS
-4 504 CEQUALS
-4 140 CEQUALS
-------qwer-----CACHE MISS 388
-In pte
-0 3 entry
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-6 0 entry
-In pte
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-6 0 entry
-2 3 entry
-addr: 296, ppn 1, trans 104, entry 2
-104 96 CEQUALS
-104 4 CEQUALS
-104 232 CEQUALS
-104 140 CEQUALS
------------CACHE MISS 296
-In pte
-3 7 entry
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-6 0 entry
-2 3 entry
-In pte
-4 1 entry
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-6 0 entry
-2 3 entry
-12 7 entry
-In pte
-9 6 entry
-7 5 entry
-8 2 entry
-15 4 entry
-6 0 entry
-2 3 entry
-12 7 entry
-14 1 entry
-In pte
-7 5 entry
-8 2 entry
-15 4 entry
-6 0 entry
-2 3 entry
-12 7 entry
-14 1 entry
-0 6 entry
-In pte
-8 2 entry
-15 4 entry
-6 0 entry
-2 3 entry
-12 7 entry
-14 1 entry
-0 6 entry
-10 5 entry
-addr: 392, ppn 0, trans 8, entsssry 2
-8 80 CEQUALS
-8 356 CEQUALS
-8 392 CEQUALS
-8 140 CEQUALS
-------qwer-----CACHE MISS 392
-In pte
-8 2 entry
-15 4 entry
-2 3 entry
-12 7 entry
-14 1 entry
-0 6 entry
-10 5 entry
-6 0 entry
-In pte
-15 4 entry
-2 3 entry
-12 7 entry
-14 1 entry
-0 6 entry
-10 5 entry
-6 0 entry
-9 2 entry
-In pte
-2 3 entry
-12 7 entry
-14 1 entry
-0 6 entry
-10 5 entry
-6 0 entry
-9 2 entry
-4 4 entry
-addr: 184, ppn 3, trans 248, entsssry 2
-248 80 CEQUALS
-248 356 CEQUALS
-248 264 CEQUALS
-248 140 CEQUALS
-------qwer-----CACHE MISS 184
-In pte
-12 7 entry
-14 1 entry
-0 6 entry
-10 5 entry
-6 0 entry
-9 2 entry
-4 4 entry
-2 3 entry
-In pte
-14 1 entry
-0 6 entry
-10 5 entry
-6 0 entry
-9 2 entry
-4 4 entry
-2 3 entry
-13 7 entry
-addr: 20, ppn 6, trans 404, entsssry 1
-404 80 CEQUALS
-404 356 CEQUALS
-404 248 CEQUALS
-404 492 CEQUALS
-------qwer-----CACHE MISS 20
-In pte
-14 1 entry
-10 5 entry
-6 0 entry
-9 2 entry
-4 4 entry
-2 3 entry
-13 7 entry
-0 6 entry
-In pte
-10 5 entry
-6 0 entry
-9 2 entry
-4 4 entry
-2 3 entry
-13 7 entry
-0 6 entry
-11 1 entry
-addr: 316, ppn 4, trans 316, entsssry 3
-316 -1 CEQUALS
-316 404 CEQUALS
-316 -1 CEQUALS
-316 92 CEQUALS
-------qwer-----CACHE MISS 316
-In pte
-10 5 entry
-6 0 entry
-9 2 entry
-2 3 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-addr: 856, ppn 7, trans 472, entry 2
-472 -1 CEQUALS
-472 404 CEQUALS
-472 -1 CEQUALS
-472 316 CEQUALS
------------CACHE MISS 856
-In pte
-10 5 entry
-6 0 entry
-9 2 entry
-2 3 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-addr: 144, ppn 3, trans 208, entsssry 0
-208 -1 CEQUALS
-208 404 CEQUALS
-208 472 CEQUALS
-208 316 CEQUALS
-------qwer-----CACHE MISS 144
-In pte
-10 5 entry
-6 0 entry
-9 2 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-addr: 872, ppn 7, trans 488, entry 2
-488 208 CEQUALS
-488 404 CEQUALS
-488 472 CEQUALS
-488 316 CEQUALS
------------CACHE MISS 872
-In pte
-10 5 entry
-6 0 entry
-9 2 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-In pte
-6 0 entry
-9 2 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-In pte
-9 2 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-addr: 460, ppn 0, trans 12, entry 3
-12 208 CEQUALS
-12 -1 CEQUALS
-12 40 CEQUALS
-12 -1 CEQUALS
------------CACHE MISS 460
-In pte
-9 2 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-addr: 116, ppn 5, trans 372, entry 1
-372 208 CEQUALS
-372 -1 CEQUALS
-372 40 CEQUALS
-372 12 CEQUALS
------------CACHE MISS 116
-In pte
-9 2 entry
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-In pte
-13 7 entry
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-15 2 entry
-In pte
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-15 2 entry
-5 7 entry
-addr: 340, ppn 7, trans 468, entry 1
-468 448 CEQUALS
-468 132 CEQUALS
-468 40 CEQUALS
-468 12 CEQUALS
------------CACHE MISS 340
-In pte
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-15 2 entry
-5 7 entry
-addr: 124, ppn 5, trans 380, entry 3
-380 448 CEQUALS
-380 468 CEQUALS
-380 40 CEQUALS
-380 12 CEQUALS
------------CACHE MISS 124
-In pte
-0 6 entry
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-15 2 entry
-5 7 entry
-In pte
-11 1 entry
-4 4 entry
-2 3 entry
-1 5 entry
-7 0 entry
-15 2 entry
-5 7 entry
-3 6 entry
-addr: 144, ppn 3, trans 208, entsssry 0
-208 400 CEQUALS
-208 468 CEQUALS
-208 40 CEQUALS
-208 380 CEQUALS
-------qwer-----CACHE MISS 144
-In pte
-11 1 entry
-4 4 entry
-1 5 entry
-7 0 entry
-15 2 entry
-5 7 entry
-3 6 entry
-2 3 entry
-addr: 304, ppn 4, trans 304, entsssry 0
-304 208 CEQUALS
-304 468 CEQUALS
-304 40 CEQUALS
-304 380 CEQUALS
-------qwer-----CACHE MISS 304
-In pte
-11 1 entry
-1 5 entry
-7 0 entry
-15 2 entry
-5 7 entry
-3 6 entry
-2 3 entry
-4 4 entry
-addr: 376, ppn 7, trans 504, entsssry 2
-504 304 CEQUALS
-504 468 CEQUALS
-504 40 CEQUALS
-504 380 CEQUALS
-------qwer-----CACHE MISS 376
-In pte
-11 1 entry
-1 5 entry
-7 0 entry
-15 2 entry
-3 6 entry
-2 3 entry
-4 4 entry
-5 7 entry
-addr: 316, ppn 4, trans 316, entry 3
-316 304 CEQUALS
-316 468 CEQUALS
-316 504 CEQUALS
-316 380 CEQUALS
------------CACHE MISS 316
-In pte
-11 1 entry
-1 5 entry
-7 0 entry
-15 2 entry
-3 6 entry
-2 3 entry
-4 4 entry
-5 7 entry
-In pte
-1 5 entry
-7 0 entry
-15 2 entry
-3 6 entry
-2 3 entry
-4 4 entry
-5 7 entry
-10 1 entry
-In pte
-7 0 entry
-15 2 entry
-3 6 entry
-2 3 entry
-4 4 entry
-5 7 entry
-10 1 entry
-14 5 entry
-In pte
-15 2 entry
-3 6 entry
-2 3 entry
-4 4 entry
-5 7 entry
-10 1 entry
-14 5 entry
-6 0 entry
-In pte
-3 6 entry
-2 3 entry
-4 4 entry
-5 7 entry
-10 1 entry
-14 5 entry
-6 0 entry
-9 2 entry
-In pte
-2 3 entry
-4 4 entry
-5 7 entry
-10 1 entry
-14 5 entry
-6 0 entry
-9 2 entry
-0 6 entry
-In pte
-4 4 entry
-5 7 entry
-10 1 entry
-14 5 entry
-6 0 entry
-9 2 entry
-0 6 entry
-15 3 entry
-In pte
-5 7 entry
-10 1 entry
-14 5 entry
-6 0 entry
-9 2 entry
-0 6 entry
-15 3 entry
-12 4 entry
-In pte
-10 1 entry
-14 5 entry
-6 0 entry
-9 2 entry
-0 6 entry
-15 3 entry
-12 4 entry
-3 7 entry
-addr: 900, ppn 5, trans 324, entsssry 1
-324 144 CEQUALS
-324 452 CEQUALS
-324 312 CEQUALS
-324 252 CEQUALS
-------qwer-----CACHE MISS 900
-In pte
-10 1 entry
-6 0 entry
-9 2 entry
-0 6 entry
-15 3 entry
-12 4 entry
-3 7 entry
-14 5 entry
-In pte
-6 0 entry
-9 2 entry
-0 6 entry
-15 3 entry
-12 4 entry
-3 7 entry
-14 5 entry
-7 1 entry
-In pte
-9 2 entry
-0 6 entry
-15 3 entry
-12 4 entry
-3 7 entry
-14 5 entry
-7 1 entry
-10 0 entry
-addr: 596, ppn 2, trans 148, entsssry 1
-148 16 CEQUALS
-148 -1 CEQUALS
-148 88 CEQUALS
-148 -1 CEQUALS
-------qwer-----CACHE MISS 596
-In pte
-0 6 entry
-15 3 entry
-12 4 entry
-3 7 entry
-14 5 entry
-7 1 entry
-10 0 entry
-9 2 entry
-In pte
-15 3 entry
-12 4 entry
-3 7 entry
-14 5 entry
-7 1 entry
-10 0 entry
-9 2 entry
-11 6 entry
-In pte
-12 4 entry
-3 7 entry
-14 5 entry
-7 1 entry
-10 0 entry
-9 2 entry
-11 6 entry
-4 3 entry
-In pte
-3 7 entry
-14 5 entry
-7 1 entry
-10 0 entry
-9 2 entry
-11 6 entry
-4 3 entry
-6 4 entry
-In pte
-14 5 entry
-7 1 entry
-10 0 entry
-9 2 entry
-11 6 entry
-4 3 entry
-6 4 entry
-2 7 entry
-In pte
-7 1 entry
-10 0 entry
-9 2 entry
-11 6 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-addr: 184, ppn 7, trans 504, entry 2
-504 16 CEQUALS
-504 292 CEQUALS
-504 472 CEQUALS
-504 380 CEQUALS
------------CACHE MISS 184
-In pte
-7 1 entry
-10 0 entry
-9 2 entry
-11 6 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-addr: 628, ppn 2, trans 180, entsssry 1
-180 16 CEQUALS
-180 292 CEQUALS
-180 504 CEQUALS
-180 380 CEQUALS
-------qwer-----CACHE MISS 628
-In pte
-7 1 entry
-10 0 entry
-11 6 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-addr: 752, ppn 6, trans 432, entsssry 0
-432 16 CEQUALS
-432 180 CEQUALS
-432 504 CEQUALS
-432 380 CEQUALS
-------qwer-----CACHE MISS 752
-In pte
-7 1 entry
-10 0 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-addr: 848, ppn 5, trans 336, entry 0
-336 432 CEQUALS
-336 180 CEQUALS
-336 504 CEQUALS
-336 380 CEQUALS
------------CACHE MISS 848
-In pte
-7 1 entry
-10 0 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-addr: 756, ppn 6, trans 436, entry 1
-436 336 CEQUALS
-436 180 CEQUALS
-436 504 CEQUALS
-436 380 CEQUALS
------------CACHE MISS 756
-In pte
-7 1 entry
-10 0 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-In pte
-10 0 entry
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-14 1 entry
-In pte
-4 3 entry
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-14 1 entry
-8 0 entry
-In pte
-6 4 entry
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-14 1 entry
-8 0 entry
-3 3 entry
-In pte
-2 7 entry
-13 5 entry
-9 2 entry
-11 6 entry
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-addr: 136, ppn 7, trans 456, entsssry 2
-456 288 CEQUALS
-456 52 CEQUALS
-456 216 CEQUALS
-456 -1 CEQUALS
-------qwer-----CACHE MISS 136
-In pte
-13 5 entry
-9 2 entry
-11 6 entry
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-addr: 616, ppn 2, trans 168, entsssry 2
-168 288 CEQUALS
-168 52 CEQUALS
-168 456 CEQUALS
-168 -1 CEQUALS
-------qwer-----CACHE MISS 616
-In pte
-13 5 entry
-11 6 entry
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-addr: 136, ppn 7, trans 456, entry 2
-456 288 CEQUALS
-456 52 CEQUALS
-456 168 CEQUALS
-456 -1 CEQUALS
------------CACHE MISS 136
-In pte
-13 5 entry
-11 6 entry
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-In pte
-11 6 entry
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-In pte
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-13 6 entry
-addr: 580, ppn 2, trans 132, entry 1
-132 416 CEQUALS
-132 372 CEQUALS
-132 456 CEQUALS
-132 -1 CEQUALS
------------CACHE MISS 580
-In pte
-14 1 entry
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-13 6 entry
-In pte
-8 0 entry
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-13 6 entry
-11 1 entry
-addr: 528, ppn 0, trans 16, entsssry 0
-16 64 CEQUALS
-16 132 CEQUALS
-16 -1 CEQUALS
-16 -1 CEQUALS
-------qwer-----CACHE MISS 528
-In pte
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-13 6 entry
-11 1 entry
-8 0 entry
-addr: 620, ppn 2, trans 172, entry 3
-172 16 CEQUALS
-172 132 CEQUALS
-172 -1 CEQUALS
-172 -1 CEQUALS
------------CACHE MISS 620
-In pte
-3 3 entry
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-13 6 entry
-11 1 entry
-8 0 entry
-In pte
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-13 6 entry
-11 1 entry
-8 0 entry
-4 3 entry
-addr: 892, ppn 6, trans 444, entsssry 3
-444 16 CEQUALS
-444 132 CEQUALS
-444 -1 CEQUALS
-444 220 CEQUALS
-------qwer-----CACHE MISS 892
-In pte
-1 4 entry
-2 7 entry
-9 2 entry
-6 5 entry
-11 1 entry
-8 0 entry
-4 3 entry
-13 6 entry
-In pte
-2 7 entry
-9 2 entry
-6 5 entry
-11 1 entry
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-In pte
-9 2 entry
-6 5 entry
-11 1 entry
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-10 7 entry
-addr: 260, ppn 3, trans 196, entry 1
-196 16 CEQUALS
-196 484 CEQUALS
-196 264 CEQUALS
-196 444 CEQUALS
------------CACHE MISS 260
-In pte
-9 2 entry
-6 5 entry
-11 1 entry
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-10 7 entry
-In pte
-6 5 entry
-11 1 entry
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-10 7 entry
-1 2 entry
-In pte
-11 1 entry
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-10 7 entry
-1 2 entry
-12 5 entry
-In pte
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-addr: 268, ppn 3, trans 204, entry 3
-204 176 CEQUALS
-204 -1 CEQUALS
-204 264 CEQUALS
-204 108 CEQUALS
------------CACHE MISS 268
-In pte
-8 0 entry
-4 3 entry
-13 6 entry
-0 4 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-addr: 52, ppn 4, trans 308, entsssry 1
-308 176 CEQUALS
-308 -1 CEQUALS
-308 264 CEQUALS
-308 204 CEQUALS
-------qwer-----CACHE MISS 52
-In pte
-8 0 entry
-4 3 entry
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-addr: 60, ppn 4, trans 316, entry 3
-316 176 CEQUALS
-316 308 CEQUALS
-316 264 CEQUALS
-316 204 CEQUALS
------------CACHE MISS 60
-In pte
-8 0 entry
-4 3 entry
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-addr: 204, ppn 1, trans 76, entry 3
-76 176 CEQUALS
-76 308 CEQUALS
-76 264 CEQUALS
-76 316 CEQUALS
------------CACHE MISS 204
-In pte
-8 0 entry
-4 3 entry
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-addr: 816, ppn 5, trans 368, entry 0
-368 176 CEQUALS
-368 308 CEQUALS
-368 264 CEQUALS
-368 76 CEQUALS
------------CACHE MISS 816
-In pte
-8 0 entry
-4 3 entry
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-In pte
-4 3 entry
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-In pte
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-addr: 460, ppn 0, trans 12, entry 3
-12 368 CEQUALS
-12 -1 CEQUALS
-12 -1 CEQUALS
-12 220 CEQUALS
------------CACHE MISS 460
-In pte
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-addr: 448, ppn 0, trans 0, entry 0
-0 368 CEQUALS
-0 -1 CEQUALS
-0 -1 CEQUALS
-0 12 CEQUALS
------------CACHE MISS 448
-In pte
-13 6 entry
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-In pte
-10 7 entry
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-8 6 entry
-In pte
-1 2 entry
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-8 6 entry
-2 7 entry
-In pte
-12 5 entry
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-8 6 entry
-2 7 entry
-6 2 entry
-In pte
-3 1 entry
-0 4 entry
-7 0 entry
-5 3 entry
-8 6 entry
-2 7 entry
-6 2 entry
-1 5 entry
-In pte
-0 4 entry
-7 0 entry
-5 3 entry
-8 6 entry
-2 7 entry
-6 2 entry
-1 5 entry
-13 1 entry
-In pte
-7 0 entry
-5 3 entry
-8 6 entry
-2 7 entry
-6 2 entry
-1 5 entry
-13 1 entry
-15 4 entry
-In pte
-5 3 entry
-8 6 entry
-2 7 entry
-6 2 entry
-1 5 entry
-13 1 entry
-15 4 entry
-10 0 entry
-In pte
-8 6 entry
-2 7 entry
-6 2 entry
-1 5 entry
-13 1 entry
-15 4 entry
-10 0 entry
-3 3 entry
-addr: 392, ppn 2, trans 136, entsssry 2
-136 -1 CEQUALS
-136 4 CEQUALS
-136 -1 CEQUALS
-136 236 CEQUALS
-------qwer-----CACHE MISS 392
-In pte
-8 6 entry
-2 7 entry
-1 5 entry
-13 1 entry
-15 4 entry
-10 0 entry
-3 3 entry
-6 2 entry
-addr: 532, ppn 6, trans 404, entsssry 1
-404 -1 CEQUALS
-404 4 CEQUALS
-404 136 CEQUALS
-404 236 CEQUALS
-------qwer-----CACHE MISS 532
-In pte
-2 7 entry
-1 5 entry
-13 1 entry
-15 4 entry
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-In pte
-1 5 entry
-13 1 entry
-15 4 entry
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-14 7 entry
-addr: 520, ppn 6, trans 392, entry 2
-392 -1 CEQUALS
-392 500 CEQUALS
-392 136 CEQUALS
-392 236 CEQUALS
------------CACHE MISS 520
-In pte
-1 5 entry
-13 1 entry
-15 4 entry
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-14 7 entry
-In pte
-13 1 entry
-15 4 entry
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-14 7 entry
-12 5 entry
-In pte
-15 4 entry
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-14 7 entry
-12 5 entry
-11 1 entry
-In pte
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-14 7 entry
-12 5 entry
-11 1 entry
-0 4 entry
-addr: 920, ppn 7, trans 472, entsssry 2
-472 304 CEQUALS
-472 68 CEQUALS
-472 392 CEQUALS
-472 -1 CEQUALS
-------qwer-----CACHE MISS 920
-In pte
-10 0 entry
-3 3 entry
-6 2 entry
-8 6 entry
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-In pte
-3 3 entry
-6 2 entry
-8 6 entry
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-addr: 520, ppn 6, trans 392, entsssry 2
-392 -1 CEQUALS
-392 68 CEQUALS
-392 472 CEQUALS
-392 12 CEQUALS
-------qwer-----CACHE MISS 520
-In pte
-3 3 entry
-6 2 entry
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-addr: 164, ppn 0, trans 36, entry 1
-36 -1 CEQUALS
-36 68 CEQUALS
-36 392 CEQUALS
-36 12 CEQUALS
------------CACHE MISS 164
-In pte
-3 3 entry
-6 2 entry
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-In pte
-6 2 entry
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-addr: 168, ppn 0, trans 40, entry 2
-40 192 CEQUALS
-40 36 CEQUALS
-40 392 CEQUALS
-40 188 CEQUALS
------------CACHE MISS 168
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-addr: 552, ppn 6, trans 424, entry 2
-424 192 CEQUALS
-424 36 CEQUALS
-424 40 CEQUALS
-424 188 CEQUALS
------------CACHE MISS 552
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-addr: 972, ppn 2, trans 140, entry 3
-140 192 CEQUALS
-140 36 CEQUALS
-140 424 CEQUALS
-140 188 CEQUALS
------------CACHE MISS 972
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-addr: 536, ppn 6, trans 408, entry 2
-408 192 CEQUALS
-408 36 CEQUALS
-408 424 CEQUALS
-408 140 CEQUALS
------------CACHE MISS 536
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-addr: 960, ppn 2, trans 128, entry 0
-128 192 CEQUALS
-128 36 CEQUALS
-128 408 CEQUALS
-128 140 CEQUALS
------------CACHE MISS 960
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-14 7 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-addr: 900, ppn 7, trans 452, entsssry 1
-452 128 CEQUALS
-452 36 CEQUALS
-452 408 CEQUALS
-452 140 CEQUALS
-------qwer-----CACHE MISS 900
-In pte
-12 5 entry
-11 1 entry
-0 4 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-14 7 entry
-addr: 712, ppn 1, trans 72, entsssry 2
-72 128 CEQUALS
-72 452 CEQUALS
-72 408 CEQUALS
-72 140 CEQUALS
-------qwer-----CACHE MISS 712
-In pte
-12 5 entry
-0 4 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-14 7 entry
-11 1 entry
-addr: 56, ppn 4, trans 312, entsssry 2
-312 128 CEQUALS
-312 452 CEQUALS
-312 72 CEQUALS
-312 140 CEQUALS
-------qwer-----CACHE MISS 56
-In pte
-12 5 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-14 7 entry
-11 1 entry
-0 4 entry
-addr: 0, ppn 4, trans 256, entry 0
-256 128 CEQUALS
-256 452 CEQUALS
-256 312 CEQUALS
-256 140 CEQUALS
------------CACHE MISS 0
-In pte
-12 5 entry
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-14 7 entry
-11 1 entry
-0 4 entry
-In pte
-2 0 entry
-8 6 entry
-4 3 entry
-15 2 entry
-14 7 entry
-11 1 entry
-0 4 entry
-6 5 entry
-In pte
-8 6 entry
-4 3 entry
-15 2 entry
-14 7 entry
-11 1 entry
-0 4 entry
-6 5 entry
-9 0 entry
-addr: 1016, ppn 2, trans 184, entsssry 2
-184 -1 CEQUALS
-184 452 CEQUALS
-184 40 CEQUALS
-184 -1 CEQUALS
-------qwer-----CACHE MISS 1016
-In pte
-8 6 entry
-4 3 entry
-14 7 entry
-11 1 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-addr: 60, ppn 4, trans 316, entry 3
-316 -1 CEQUALS
-316 452 CEQUALS
-316 184 CEQUALS
-316 -1 CEQUALS
------------CACHE MISS 60
-In pte
-8 6 entry
-4 3 entry
-14 7 entry
-11 1 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-addr: 316, ppn 3, trans 252, entsssry 3
-252 -1 CEQUALS
-252 452 CEQUALS
-252 184 CEQUALS
-252 316 CEQUALS
-------qwer-----CACHE MISS 316
-In pte
-8 6 entry
-14 7 entry
-11 1 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-addr: 752, ppn 1, trans 112, entsssry 0
-112 -1 CEQUALS
-112 452 CEQUALS
-112 184 CEQUALS
-112 252 CEQUALS
-------qwer-----CACHE MISS 752
-In pte
-8 6 entry
-14 7 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-addr: 312, ppn 3, trans 248, entry 2
-248 112 CEQUALS
-248 452 CEQUALS
-248 184 CEQUALS
-248 252 CEQUALS
------------CACHE MISS 312
-In pte
-8 6 entry
-14 7 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-In pte
-14 7 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-addr: 316, ppn 3, trans 252, entry 3
-252 112 CEQUALS
-252 388 CEQUALS
-252 248 CEQUALS
-252 252 CEQUALS
-252 252 are EQUALS
+In cac
+76 0 256 292 96 -1 -1 -1 
+432 180 208 504 112 436 340 156 
+current pc, :1a4  qqq
+addr:1020 
+addr: 1020, ppn 4, trans 316, qentsssry 1
+In cac
+76 0 256 292 96 -1 -1 -1 
+180 208 504 112 436 340 156 316 
+current pc, :1a8  qqq
+addr:316 
+addr: 316, ppn 1, trans 124, entry 1
 -----------CACHE HIT 316
-In pte
-14 7 entry
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-In pte
-0 4 entry
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-3 7 entry
-In pte
-6 5 entry
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-In pte
-9 0 entry
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-10 5 entry
-In pte
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-10 5 entry
-6 0 entry
-addr: 440, ppn 0, trans 56, entry 2
-56 0 CEQUALS
-56 356 CEQUALS
-56 -1 CEQUALS
-56 252 CEQUALS
------------CACHE MISS 440
-In pte
-15 2 entry
-4 3 entry
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-10 5 entry
-6 0 entry
-addr: 300, ppn 3, trans 236, entsssry 3
-236 0 CEQUALS
-236 356 CEQUALS
-236 56 CEQUALS
-236 252 CEQUALS
-------qwer-----CACHE MISS 300
-In pte
-15 2 entry
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-10 5 entry
-6 0 entry
-4 3 entry
-In pte
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-10 5 entry
-6 0 entry
-4 3 entry
-2 2 entry
-addr: 136, ppn 2, trans 136, entry 2
-136 0 CEQUALS
-136 164 CEQUALS
-136 56 CEQUALS
-136 236 CEQUALS
------------CACHE MISS 136
-In pte
-11 1 entry
-1 6 entry
-3 7 entry
-14 4 entry
-10 5 entry
-6 0 entry
-4 3 entry
-2 2 entry
-addr: 192, ppn 7, trans 448, entsssry 0
-448 0 CEQUALS
-448 164 CEQUALS
-448 136 CEQUALS
-448 236 CEQUALS
-------qwer-----CACHE MISS 192
-In pte
-11 1 entry
-1 6 entry
-14 4 entry
-10 5 entry
-6 0 entry
-4 3 entry
-2 2 entry
-3 7 entry
-In pte
-1 6 entry
-14 4 entry
-10 5 entry
-6 0 entry
-4 3 entry
-2 2 entry
-3 7 entry
-12 1 entry
-In pte
-14 4 entry
-10 5 entry
-6 0 entry
-4 3 entry
-2 2 entry
-3 7 entry
-12 1 entry
-15 6 entry
-In pte
-10 5 entry
-6 0 entry
-4 3 entry
-2 2 entry
-3 7 entry
-12 1 entry
-15 6 entry
-7 4 entry
-In pte
-6 0 entry
-4 3 entry
-2 2 entry
-3 7 entry
-12 1 entry
-15 6 entry
-7 4 entry
-9 5 entry
-In pte
-4 3 entry
-2 2 entry
-3 7 entry
-12 1 entry
-15 6 entry
-7 4 entry
-9 5 entry
-1 0 entry
-addr: 500, ppn 4, trans 308, entry 1
-308 16 CEQUALS
-308 -1 CEQUALS
-308 72 CEQUALS
-308 -1 CEQUALS
------------CACHE MISS 500
-In pte
-4 3 entry
-2 2 entry
-3 7 entry
-12 1 entry
-15 6 entry
-7 4 entry
-9 5 entry
-1 0 entry
-In pte
-2 2 entry
-3 7 entry
-12 1 entry
-15 6 entry
-7 4 entry
-9 5 entry
-1 0 entry
-10 3 entry
-addr: 172, ppn 2, trans 172, entsssry 3
-172 16 CEQUALS
-172 308 CEQUALS
-172 72 CEQUALS
-172 220 CEQUALS
-------qwer-----CACHE MISS 172
-In pte
-3 7 entry
-12 1 entry
-15 6 entry
-7 4 entry
-9 5 entry
-1 0 entry
-10 3 entry
-2 2 entry
-In pte
-12 1 entry
-15 6 entry
-7 4 entry
-9 5 entry
-1 0 entry
-10 3 entry
-2 2 entry
-6 7 entry
-addr: 980, ppn 6, trans 404, entsssry 1
-404 16 CEQUALS
-404 468 CEQUALS
-404 72 CEQUALS
-404 172 CEQUALS
-------qwer-----CACHE MISS 980
-In pte
-12 1 entry
-7 4 entry
-9 5 entry
-1 0 entry
-10 3 entry
-2 2 entry
-6 7 entry
-15 6 entry
-addr: 128, ppn 2, trans 128, entry 0
-128 16 CEQUALS
-128 404 CEQUALS
-128 72 CEQUALS
-128 172 CEQUALS
------------CACHE MISS 128
-In pte
-12 1 entry
-7 4 entry
-9 5 entry
-1 0 entry
-10 3 entry
-2 2 entry
-6 7 entry
-15 6 entry
-In pte
-7 4 entry
-9 5 entry
-1 0 entry
-10 3 entry
-2 2 entry
-6 7 entry
-15 6 entry
-8 1 entry
-In pte
-9 5 entry
-1 0 entry
-10 3 entry
-2 2 entry
-6 7 entry
-15 6 entry
-8 1 entry
-14 4 entry
-addr: 624, ppn 5, trans 368, entsssry 0
-368 304 CEQUALS
-368 404 CEQUALS
-368 -1 CEQUALS
-368 172 CEQUALS
-------qwer-----CACHE MISS 624
-In pte
-1 0 entry
-10 3 entry
-2 2 entry
-6 7 entry
-15 6 entry
-8 1 entry
-14 4 entry
-9 5 entry
-addr: 404, ppn 7, trans 468, entsssry 1
-468 368 CEQUALS
-468 404 CEQUALS
-468 -1 CEQUALS
-468 172 CEQUALS
-------qwer-----CACHE MISS 404
-In pte
-1 0 entry
-10 3 entry
-2 2 entry
-15 6 entry
-8 1 entry
-14 4 entry
-9 5 entry
-6 7 entry
-In pte
-10 3 entry
-2 2 entry
-15 6 entry
-8 1 entry
-14 4 entry
-9 5 entry
-6 7 entry
-4 0 entry
-addr: 144, ppn 2, trans 144, entsssry 0
-144 368 CEQUALS
-144 52 CEQUALS
-144 -1 CEQUALS
-144 -1 CEQUALS
+In cac
+76 0 256 292 96 -1 -1 -1 
+180 208 504 436 340 156 316 124 
+current pc, :1ac  qqq
+addr:524 
+addr: 524, ppn 2, trans 140, entry 0
+-----------CACHE MISS 524
+In cac
+76 0 256 292 96 140 -1 -1 
+180 208 504 436 340 156 316 124 
+current pc, :1b0  qqq
+addr:388 
+addr: 388, ppn 0, trans 4, entsssry 0
+-----------CACHE HIT 388
+In cac
+76 256 292 96 140 4 -1 -1 
+180 208 504 436 340 156 316 124 
+current pc, :1b4  qqq
+addr:168 
+addr: 168, ppn 3, trans 232, qentsssry 0
+In cac
+76 256 292 96 140 4 232 -1 
+180 208 504 436 340 156 316 124 
+current pc, :1b8  qqq
+addr:296 
+addr: 296, ppn 1, trans 104, entry 0
+-----------CACHE HIT 296
+In cac
+76 256 292 140 4 232 104 -1 
+180 208 504 436 340 156 316 124 
+current pc, :1bc  qqq
+addr:808 
+addr: 808, ppn 7, trans 488, qentsssry 0
+In cac
+76 256 292 140 4 232 104 488 
+180 208 504 436 340 156 316 124 
+current pc, :1c0  qqq
+addr:912 
+addr: 912, ppn 1, trans 80, qentsssry 1
+In cac
+256 292 140 4 -1 -1 -1 -1 
+208 504 436 340 156 316 124 80 
+current pc, :1c4  qqq
+addr:8 
+addr: 8, ppn 6, trans 392, qentsssry 0
+In cac
+256 292 140 4 392 -1 -1 -1 
+208 504 436 340 156 316 124 80 
+current pc, :1c8  qqq
+addr:676 
+addr: 676, ppn 5, trans 356, qentsssry 0
+In cac
+256 292 140 4 392 356 -1 -1 
+208 504 436 340 156 316 124 80 
+current pc, :1cc  qqq
+addr:392 
+addr: 392, ppn 0, trans 8, entsssry 0
+-----------CACHE HIT 392
+In cac
+256 292 140 392 356 8 -1 -1 
+208 504 436 340 156 316 124 80 
+current pc, :1d0  qqq
+addr:588 
+addr: 588, ppn 2, trans 140, qentsssry 0
+In cac
+256 292 140 392 356 8 140 -1 
+208 504 436 340 156 316 124 80 
+current pc, :1d4  qqq
+addr:264 
+addr: 264, ppn 4, trans 264, qentsssry 0
+In cac
+256 292 140 392 356 8 140 264 
+208 504 436 340 156 316 124 80 
+current pc, :1d8  qqq
+addr:184 
+addr: 184, ppn 3, trans 248, entsssry 1
+------qwer-----CACHE MISS 184
+In cac
+256 292 140 392 356 8 140 264 
+504 436 340 156 316 124 80 248 
+current pc, :1dc  qqq
+addr:876 
+addr: 876, ppn 7, trans 492, qentsssry 0
+In cac
+292 140 392 356 8 140 264 492 
+504 436 340 156 316 124 80 248 
+current pc, :1e0  qqq
+addr:20 
+addr: 20, ppn 6, trans 404, entsssry 1
+------qwer-----CACHE MISS 20
+In cac
+292 140 392 356 8 140 264 492 
+436 340 156 316 124 80 248 404 
+current pc, :1e4  qqq
+addr:732 
+addr: 732, ppn 1, trans 92, qentsssry 1
+In cac
+292 140 392 8 140 264 -1 -1 
+340 156 316 124 80 248 404 92 
+current pc, :1e8  qqq
+addr:316 
+addr: 316, ppn 4, trans 316, entsssry 1
+-----------CACHE HIT 316
+In cac
+292 140 392 8 140 264 -1 -1 
+340 156 124 80 248 404 92 316 
+current pc, :1ec  qqq
+addr:856 
+addr: 856, ppn 7, trans 472, entry 1
+-----------CACHE MISS 856
+In cac
+292 140 392 8 140 264 -1 -1 
+156 124 80 248 404 92 316 472 
+current pc, :1f0  qqq
+addr:144 
+addr: 144, ppn 3, trans 208, entsssry 1
 ------qwer-----CACHE MISS 144
-In pte
-10 3 entry
-15 6 entry
-8 1 entry
-14 4 entry
-9 5 entry
-6 7 entry
-4 0 entry
-2 2 entry
+In cac
+292 140 392 8 140 264 -1 -1 
+124 80 248 404 92 316 472 208 
+current pc, :1f4  qqq
+addr:872 
+addr: 872, ppn 7, trans 488, entry 0
+-----------CACHE MISS 872
+In cac
+292 140 392 8 140 264 488 -1 
+124 80 248 404 92 316 472 208 
+current pc, :1f8  qqq
+addr:120 
+addr: 120, ppn 5, trans 376, qentsssry 1
+In cac
+292 140 392 8 140 264 488 -1 
+80 248 404 92 316 472 208 376 
+current pc, :1fc  qqq
+addr:488 
+addr: 488, ppn 0, trans 40, qentsssry 0
+In cac
+488 40 -1 -1 -1 -1 -1 -1 
+80 248 404 92 316 472 208 376 
+current pc, :200  qqq
+addr:460 
+addr: 460, ppn 0, trans 12, entry 0
+-----------CACHE MISS 460
+In cac
+488 40 12 -1 -1 -1 -1 -1 
+80 248 404 92 316 472 208 376 
+current pc, :204  qqq
+addr:116 
+addr: 116, ppn 5, trans 372, entry 1
+-----------CACHE HIT 116
+In cac
+488 40 12 -1 -1 -1 -1 -1 
+80 248 404 92 316 472 208 372 
+current pc, :208  qqq
+addr:964 
+addr: 964, ppn 2, trans 132, qentsssry 0
+In cac
+488 40 12 132 -1 -1 -1 -1 
+80 248 404 92 316 472 208 372 
+current pc, :20c  qqq
+addr:320 
+addr: 320, ppn 7, trans 448, qentsssry 0
+In cac
+488 40 12 132 448 -1 -1 -1 
+80 248 404 92 316 472 208 372 
+current pc, :210  qqq
+addr:340 
+addr: 340, ppn 7, trans 468, entry 1
+-----------CACHE HIT 340
+In cac
+488 40 12 132 448 -1 -1 -1 
+80 248 404 92 316 208 372 468 
+current pc, :214  qqq
+addr:124 
+addr: 124, ppn 5, trans 380, entry 1
+-----------CACHE HIT 124
+In cac
+488 40 12 132 448 -1 -1 -1 
+80 248 404 92 316 208 468 380 
+current pc, :218  qqq
+addr:208 
+addr: 208, ppn 6, trans 400, qentsssry 1
+In cac
+488 40 12 132 448 -1 -1 -1 
+248 404 92 316 208 468 380 400 
+current pc, :21c  qqq
+addr:144 
+addr: 144, ppn 3, trans 208, entsssry 1
+-----------CACHE HIT 144
+In cac
+488 40 12 132 448 -1 -1 -1 
+248 404 92 316 468 380 400 208 
+current pc, :220  qqq
+addr:304 
+addr: 304, ppn 4, trans 304, entsssry 1
+-----------CACHE HIT 304
+In cac
+488 40 12 132 448 -1 -1 -1 
+248 404 92 468 380 400 208 304 
+current pc, :224  qqq
+addr:376 
+addr: 376, ppn 7, trans 504, entsssry 1
+------qwer-----CACHE MISS 376
+In cac
+488 40 12 132 448 -1 -1 -1 
+404 92 468 380 400 208 304 504 
+current pc, :228  qqq
+addr:316 
+addr: 316, ppn 4, trans 316, entry 1
+-----------CACHE HIT 316
+In cac
+488 40 12 132 448 -1 -1 -1 
+404 92 468 380 400 208 504 316 
+current pc, :22c  qqq
+addr:684 
+addr: 684, ppn 1, trans 108, qentsssry 0
+In cac
+40 12 132 108 -1 -1 -1 -1 
+404 92 468 380 400 208 504 316 
+current pc, :230  qqq
+addr:932 
+addr: 932, ppn 5, trans 356, qentsssry 0
+In cac
+40 12 132 108 356 -1 -1 -1 
+404 92 468 380 400 208 504 316 
+current pc, :234  qqq
+addr:436 
+addr: 436, ppn 0, trans 52, qentsssry 1
+In cac
+108 356 -1 -1 -1 -1 -1 -1 
+92 468 380 400 208 504 316 52 
+current pc, :238  qqq
+addr:592 
+addr: 592, ppn 2, trans 144, qentsssry 1
+In cac
+108 356 -1 -1 -1 -1 -1 -1 
+468 380 400 208 504 316 52 144 
+current pc, :23c  qqq
+addr:4 
+addr: 4, ppn 6, trans 388, qentsssry 0
+In cac
+108 356 388 -1 -1 -1 -1 -1 
+468 380 400 208 504 316 52 144 
+current pc, :240  qqq
+addr:1020 
+addr: 1020, ppn 3, trans 252, qentsssry 1
+In cac
+108 356 388 -1 -1 -1 -1 -1 
+380 400 208 504 316 52 144 252 
+current pc, :244  qqq
+addr:824 
+addr: 824, ppn 4, trans 312, qentsssry 1
+In cac
+108 356 388 -1 -1 -1 -1 -1 
+400 208 504 316 52 144 252 312 
+current pc, :248  qqq
+addr:196 
+addr: 196, ppn 7, trans 452, qentsssry 0
+In cac
+108 356 388 452 -1 -1 -1 -1 
+400 208 504 316 52 144 252 312 
+current pc, :24c  qqq
+addr:900 
+addr: 900, ppn 5, trans 324, entsssry 0
+------qwer-----CACHE MISS 900
+In cac
+108 356 388 452 324 -1 -1 -1 
+400 208 504 316 52 144 252 312 
+current pc, :250  qqq
+addr:472 
+addr: 472, ppn 1, trans 88, qentsssry 1
+In cac
+388 -1 -1 -1 -1 -1 -1 -1 
+208 504 316 52 144 252 312 88 
+current pc, :254  qqq
+addr:656 
+addr: 656, ppn 0, trans 16, qentsssry 1
+In cac
+-1 -1 -1 -1 -1 -1 -1 -1 
+504 316 52 144 252 312 88 16 
+current pc, :258  qqq
+addr:596 
+addr: 596, ppn 2, trans 148, entsssry 1
+-----------CACHE HIT 596
+In cac
+-1 -1 -1 -1 -1 -1 -1 -1 
+504 316 52 252 312 88 16 148 
+current pc, :25c  qqq
+addr:740 
+addr: 740, ppn 6, trans 420, qentsssry 0
+In cac
+420 -1 -1 -1 -1 -1 -1 -1 
+504 316 52 252 312 88 16 148 
+current pc, :260  qqq
+addr:260 
+addr: 260, ppn 3, trans 196, qentsssry 0
+In cac
+420 196 -1 -1 -1 -1 -1 -1 
+504 316 52 252 312 88 16 148 
+current pc, :264  qqq
+addr:420 
+addr: 420, ppn 4, trans 292, qentsssry 0
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+504 316 52 252 312 88 16 148 
+current pc, :268  qqq
+addr:152 
+addr: 152, ppn 7, trans 472, qentsssry 1
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+316 52 252 312 88 16 148 472 
+current pc, :26c  qqq
+addr:892 
+addr: 892, ppn 5, trans 380, qentsssry 1
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+52 252 312 88 16 148 472 380 
+current pc, :270  qqq
+addr:184 
+addr: 184, ppn 7, trans 504, entry 1
+-----------CACHE MISS 184
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+252 312 88 16 148 472 380 504 
+current pc, :274  qqq
+addr:628 
+addr: 628, ppn 2, trans 180, entsssry 1
+------qwer-----CACHE MISS 628
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+312 88 16 148 472 380 504 180 
+current pc, :278  qqq
+addr:752 
+addr: 752, ppn 6, trans 432, entsssry 1
+------qwer-----CACHE MISS 752
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+88 16 148 472 380 504 180 432 
+current pc, :27c  qqq
+addr:848 
+addr: 848, ppn 5, trans 336, entry 1
+-----------CACHE MISS 848
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+16 148 472 380 504 180 432 336 
+current pc, :280  qqq
+addr:756 
+addr: 756, ppn 6, trans 436, entry 1
+-----------CACHE HIT 756
+In cac
+420 196 292 -1 -1 -1 -1 -1 
+16 148 472 380 504 180 336 436 
+current pc, :284  qqq
+addr:952 
+addr: 952, ppn 1, trans 120, qentsssry 1
+In cac
+420 292 -1 -1 -1 -1 -1 -1 
+148 472 380 504 180 336 436 120 
+current pc, :288  qqq
+addr:564 
+addr: 564, ppn 0, trans 52, qentsssry 1
+In cac
+-1 -1 -1 -1 -1 -1 -1 -1 
+472 380 504 180 336 436 120 52 
+current pc, :28c  qqq
+addr:216 
+addr: 216, ppn 3, trans 216, qentsssry 1
+In cac
+-1 -1 -1 -1 -1 -1 -1 -1 
+380 504 180 336 436 120 52 216 
+current pc, :290  qqq
+addr:96 
+addr: 96, ppn 4, trans 288, qentsssry 0
+In cac
+288 -1 -1 -1 -1 -1 -1 -1 
+380 504 180 336 436 120 52 216 
+current pc, :294  qqq
+addr:136 
+addr: 136, ppn 7, trans 456, entsssry 0
+------qwer-----CACHE MISS 136
+In cac
+288 456 -1 -1 -1 -1 -1 -1 
+380 504 180 336 436 120 52 216 
+current pc, :298  qqq
+addr:616 
+addr: 616, ppn 2, trans 168, entsssry 0
+------qwer-----CACHE MISS 616
+In cac
+288 456 168 -1 -1 -1 -1 -1 
+380 504 180 336 436 120 52 216 
+current pc, :29c  qqq
+addr:136 
+addr: 136, ppn 7, trans 456, entry 0
+-----------CACHE HIT 136
+In cac
+288 168 456 -1 -1 -1 -1 -1 
+380 504 180 336 436 120 52 216 
+current pc, :2a0  qqq
+addr:436 
+addr: 436, ppn 5, trans 372, qentsssry 1
+In cac
+288 168 456 -1 -1 -1 -1 -1 
+504 180 336 436 120 52 216 372 
+current pc, :2a4  qqq
+addr:864 
+addr: 864, ppn 6, trans 416, qentsssry 0
+In cac
+288 168 456 416 -1 -1 -1 -1 
+504 180 336 436 120 52 216 372 
+current pc, :2a8  qqq
+addr:580 
+addr: 580, ppn 2, trans 132, entry 0
+-----------CACHE MISS 580
+In cac
+288 168 456 416 132 -1 -1 -1 
+504 180 336 436 120 52 216 372 
+current pc, :2ac  qqq
+addr:704 
+addr: 704, ppn 1, trans 64, qentsssry 0
+In cac
+288 168 416 132 64 -1 -1 -1 
+504 180 336 436 120 52 216 372 
+current pc, :2b0  qqq
+addr:528 
+addr: 528, ppn 0, trans 16, entsssry 1
+------qwer-----CACHE MISS 528
+In cac
+288 168 416 132 64 -1 -1 -1 
+180 336 436 120 52 216 372 16 
+current pc, :2b4  qqq
+addr:620 
+addr: 620, ppn 2, trans 172, entry 0
+-----------CACHE HIT 620
+In cac
+288 416 132 64 172 -1 -1 -1 
+180 336 436 120 52 216 372 16 
+current pc, :2b8  qqq
+addr:284 
+addr: 284, ppn 3, trans 220, qentsssry 1
+In cac
+288 416 132 64 172 -1 -1 -1 
+336 436 120 52 216 372 16 220 
+current pc, :2bc  qqq
+addr:892 
+addr: 892, ppn 6, trans 444, entsssry 1
+-----------CACHE HIT 892
+In cac
+288 416 132 64 172 -1 -1 -1 
+336 120 52 216 372 16 220 444 
+current pc, :2c0  qqq
+addr:8 
+addr: 8, ppn 4, trans 264, qentsssry 0
+In cac
+288 416 132 64 172 264 -1 -1 
+336 120 52 216 372 16 220 444 
+current pc, :2c4  qqq
+addr:676 
+addr: 676, ppn 7, trans 484, qentsssry 0
+In cac
+288 416 132 64 172 264 484 -1 
+336 120 52 216 372 16 220 444 
+current pc, :2c8  qqq
+addr:260 
+addr: 260, ppn 3, trans 196, entry 0
+-----------CACHE MISS 260
+In cac
+288 416 132 64 172 264 484 196 
+336 120 52 216 372 16 220 444 
+current pc, :2cc  qqq
+addr:112 
+addr: 112, ppn 2, trans 176, qentsssry 1
+In cac
+288 416 132 64 172 264 484 196 
+120 52 216 372 16 220 444 176 
+current pc, :2d0  qqq
+addr:772 
+addr: 772, ppn 5, trans 324, qentsssry 0
+In cac
+416 132 64 172 264 484 196 324 
+120 52 216 372 16 220 444 176 
+current pc, :2d4  qqq
+addr:236 
+addr: 236, ppn 1, trans 108, qentsssry 0
+In cac
+416 132 172 264 108 -1 -1 -1 
+120 52 216 372 16 220 444 176 
+current pc, :2d8  qqq
+addr:268 
+addr: 268, ppn 3, trans 204, entry 0
+-----------CACHE MISS 268
+In cac
+416 132 172 264 108 204 -1 -1 
+120 52 216 372 16 220 444 176 
+current pc, :2dc  qqq
+addr:52 
+addr: 52, ppn 4, trans 308, entsssry 1
+------qwer-----CACHE MISS 52
+In cac
+416 132 172 264 108 204 -1 -1 
+52 216 372 16 220 444 176 308 
+current pc, :2e0  qqq
+addr:60 
+addr: 60, ppn 4, trans 316, entry 1
+-----------CACHE HIT 60
+In cac
+416 132 172 264 108 204 -1 -1 
+52 216 372 16 220 444 176 316 
+current pc, :2e4  qqq
+addr:204 
+addr: 204, ppn 1, trans 76, entry 0
+-----------CACHE MISS 204
+In cac
+416 132 172 264 108 204 76 -1 
+52 216 372 16 220 444 176 316 
+current pc, :2e8  qqq
+addr:816 
+addr: 816, ppn 5, trans 368, entry 1
+-----------CACHE HIT 816
+In cac
+416 132 172 264 108 204 76 -1 
+52 216 16 220 444 176 316 368 
+current pc, :2ec  qqq
+addr:508 
+addr: 508, ppn 0, trans 60, qentsssry 1
+In cac
+108 204 76 -1 -1 -1 -1 -1 
+216 16 220 444 176 316 368 60 
+current pc, :2f0  qqq
+addr:348 
+addr: 348, ppn 3, trans 220, qentsssry 1
+In cac
+108 204 76 -1 -1 -1 -1 -1 
+16 220 444 176 316 368 60 220 
+current pc, :2f4  qqq
+addr:460 
+addr: 460, ppn 0, trans 12, entry 0
+-----------CACHE MISS 460
+In cac
+108 204 76 12 -1 -1 -1 -1 
+16 220 444 176 316 368 60 220 
+current pc, :2f8  qqq
+addr:448 
+addr: 448, ppn 0, trans 0, entry 0
+-----------CACHE HIT 448
+In cac
+108 204 76 0 -1 -1 -1 -1 
+16 220 444 176 316 368 60 220 
+current pc, :2fc  qqq
+addr:544 
+addr: 544, ppn 6, trans 416, qentsssry 0
+In cac
+108 204 76 0 416 -1 -1 -1 
+16 220 444 176 316 368 60 220 
+current pc, :300  qqq
+addr:128 
+addr: 128, ppn 7, trans 448, qentsssry 0
+In cac
+108 204 76 0 416 448 -1 -1 
+16 220 444 176 316 368 60 220 
+current pc, :304  qqq
+addr:388 
+addr: 388, ppn 2, trans 132, qentsssry 0
+In cac
+108 204 76 0 416 448 132 -1 
+16 220 444 176 316 368 60 220 
+current pc, :308  qqq
+addr:124 
+addr: 124, ppn 5, trans 380, qentsssry 1
+In cac
+108 204 76 0 416 448 132 -1 
+220 444 176 316 368 60 220 380 
+current pc, :30c  qqq
+addr:840 
+addr: 840, ppn 1, trans 72, qentsssry 0
+In cac
+0 416 132 72 -1 -1 -1 -1 
+220 444 176 316 368 60 220 380 
+current pc, :310  qqq
+addr:984 
+addr: 984, ppn 4, trans 280, qentsssry 1
+In cac
+0 416 132 72 -1 -1 -1 -1 
+444 176 316 368 60 220 380 280 
+current pc, :314  qqq
+addr:644 
+addr: 644, ppn 0, trans 4, qentsssry 0
+In cac
+72 4 -1 -1 -1 -1 -1 -1 
+444 176 316 368 60 220 380 280 
+current pc, :318  qqq
+addr:236 
+addr: 236, ppn 3, trans 236, qentsssry 0
+In cac
+72 4 236 -1 -1 -1 -1 -1 
+444 176 316 368 60 220 380 280 
+current pc, :31c  qqq
+addr:392 
+addr: 392, ppn 2, trans 136, entsssry 0
+------qwer-----CACHE MISS 392
+In cac
+72 4 236 136 -1 -1 -1 -1 
+444 176 316 368 60 220 380 280 
+current pc, :320  qqq
+addr:532 
+addr: 532, ppn 6, trans 404, entsssry 1
+------qwer-----CACHE MISS 532
+In cac
+72 4 236 136 -1 -1 -1 -1 
+176 316 368 60 220 380 280 404 
+current pc, :324  qqq
+addr:948 
+addr: 948, ppn 7, trans 500, qentsssry 1
+In cac
+72 4 236 136 -1 -1 -1 -1 
+316 368 60 220 380 280 404 500 
+current pc, :328  qqq
+addr:520 
+addr: 520, ppn 6, trans 392, entry 0
+-----------CACHE MISS 520
+In cac
+72 4 236 136 392 -1 -1 -1 
+316 368 60 220 380 280 404 500 
+current pc, :32c  qqq
+addr:768 
+addr: 768, ppn 5, trans 320, qentsssry 0
+In cac
+72 4 236 136 392 320 -1 -1 
+316 368 60 220 380 280 404 500 
+current pc, :330  qqq
+addr:708 
+addr: 708, ppn 1, trans 68, qentsssry 0
+In cac
+4 136 392 68 -1 -1 -1 -1 
+316 368 60 220 380 280 404 500 
+current pc, :334  qqq
+addr:48 
+addr: 48, ppn 4, trans 304, qentsssry 1
+In cac
+4 136 392 68 -1 -1 -1 -1 
+368 60 220 380 280 404 500 304 
+current pc, :338  qqq
+addr:920 
+addr: 920, ppn 7, trans 472, entsssry 1
+------qwer-----CACHE MISS 920
+In cac
+4 136 392 68 -1 -1 -1 -1 
+60 220 380 280 404 500 304 472 
+current pc, :33c  qqq
+addr:140 
+addr: 140, ppn 0, trans 12, qentsssry 0
+In cac
+68 12 -1 -1 -1 -1 -1 -1 
+60 220 380 280 404 500 304 472 
+current pc, :340  qqq
+addr:520 
+addr: 520, ppn 6, trans 392, entsssry 0
+------qwer-----CACHE MISS 520
+In cac
+68 12 392 -1 -1 -1 -1 -1 
+60 220 380 280 404 500 304 472 
+current pc, :344  qqq
+addr:164 
+addr: 164, ppn 0, trans 36, entry 0
+-----------CACHE MISS 164
+In cac
+68 12 392 36 -1 -1 -1 -1 
+60 220 380 280 404 500 304 472 
+current pc, :348  qqq
+addr:256 
+addr: 256, ppn 3, trans 192, qentsssry 0
+In cac
+68 12 392 36 192 -1 -1 -1 
+60 220 380 280 404 500 304 472 
+current pc, :34c  qqq
+addr:1020 
+addr: 1020, ppn 2, trans 188, qentsssry 1
+In cac
+68 12 392 36 192 -1 -1 -1 
+220 380 280 404 500 304 472 188 
+current pc, :350  qqq
+addr:168 
+addr: 168, ppn 0, trans 40, entry 0
+-----------CACHE HIT 168
+In cac
+68 12 392 192 40 -1 -1 -1 
+220 380 280 404 500 304 472 188 
+current pc, :354  qqq
+addr:552 
+addr: 552, ppn 6, trans 424, entry 0
+-----------CACHE MISS 552
+In cac
+68 12 392 192 40 424 -1 -1 
+220 380 280 404 500 304 472 188 
+current pc, :358  qqq
+addr:972 
+addr: 972, ppn 2, trans 140, entry 0
+-----------CACHE MISS 972
+In cac
+68 12 392 192 40 424 140 -1 
+220 380 280 404 500 304 472 188 
+current pc, :35c  qqq
+addr:536 
+addr: 536, ppn 6, trans 408, entry 1
+-----------CACHE HIT 536
+In cac
+68 12 392 192 40 424 140 -1 
+220 380 280 500 304 472 188 408 
+current pc, :360  qqq
+addr:960 
+addr: 960, ppn 2, trans 128, entry 0
+-----------CACHE HIT 960
+In cac
+68 12 392 192 40 424 128 -1 
+220 380 280 500 304 472 188 408 
+current pc, :364  qqq
+addr:900 
+addr: 900, ppn 7, trans 452, entsssry 0
+------qwer-----CACHE MISS 900
+In cac
+68 12 392 192 40 424 128 452 
+220 380 280 500 304 472 188 408 
+current pc, :368  qqq
+addr:712 
+addr: 712, ppn 1, trans 72, entsssry 0
+-----------CACHE HIT 712
+In cac
+12 392 192 40 424 128 452 72 
+220 380 280 500 304 472 188 408 
+current pc, :36c  qqq
+addr:56 
+addr: 56, ppn 4, trans 312, entsssry 1
+-----------CACHE HIT 56
+In cac
+12 392 192 40 424 128 452 72 
+220 380 280 500 472 188 408 312 
+current pc, :370  qqq
+addr:0 
+addr: 0, ppn 4, trans 256, entry 0
+-----------CACHE MISS 0
+In cac
+392 192 40 424 128 452 72 256 
+220 380 280 500 472 188 408 312 
+current pc, :374  qqq
+addr:408 
+addr: 408, ppn 5, trans 344, qentsssry 1
+In cac
+392 192 40 424 128 452 72 256 
+380 280 500 472 188 408 312 344 
+current pc, :378  qqq
+addr:616 
+addr: 616, ppn 0, trans 40, qentsssry 0
+In cac
+192 452 72 40 -1 -1 -1 -1 
+380 280 500 472 188 408 312 344 
+current pc, :37c  qqq
+addr:1016 
+addr: 1016, ppn 2, trans 184, entsssry 1
+-----------CACHE HIT 1016
+In cac
+192 452 72 40 -1 -1 -1 -1 
+380 280 500 472 408 312 344 184 
+current pc, :380  qqq
+addr:60 
+addr: 60, ppn 4, trans 316, entry 1
+-----------CACHE HIT 60
+In cac
+192 452 72 40 -1 -1 -1 -1 
+380 280 500 472 408 344 184 316 
+current pc, :384  qqq
+addr:316 
+addr: 316, ppn 3, trans 252, entsssry 1
+------qwer-----CACHE MISS 316
+In cac
+192 452 72 40 -1 -1 -1 -1 
+280 500 472 408 344 184 316 252 
+current pc, :388  qqq
+addr:752 
+addr: 752, ppn 1, trans 112, entsssry 1
+------qwer-----CACHE MISS 752
+In cac
+192 452 72 40 -1 -1 -1 -1 
+500 472 408 344 184 316 252 112 
+current pc, :38c  qqq
+addr:312 
+addr: 312, ppn 3, trans 248, entry 1
+-----------CACHE HIT 312
+In cac
+192 452 72 40 -1 -1 -1 -1 
+500 472 408 344 184 316 112 248 
+current pc, :390  qqq
+addr:68 
+addr: 68, ppn 6, trans 388, qentsssry 0
+In cac
+192 452 72 40 388 -1 -1 -1 
+500 472 408 344 184 316 112 248 
+current pc, :394  qqq
+addr:316 
+addr: 316, ppn 3, trans 252, entry 1
+-----------CACHE HIT 316
+In cac
+192 452 72 40 388 -1 -1 -1 
+500 472 408 344 184 316 112 252 
+current pc, :398  qqq
+addr:232 
+addr: 232, ppn 7, trans 488, qentsssry 0
+In cac
+192 452 72 40 388 488 -1 -1 
+500 472 408 344 184 316 112 252 
+current pc, :39c  qqq
+addr:952 
+addr: 952, ppn 4, trans 312, qentsssry 1
+In cac
+192 452 72 40 388 488 -1 -1 
+472 408 344 184 316 112 252 312 
+current pc, :3a0  qqq
+addr:676 
+addr: 676, ppn 5, trans 356, qentsssry 0
+In cac
+192 452 72 40 388 488 356 -1 
+472 408 344 184 316 112 252 312 
+current pc, :3a4  qqq
+addr:384 
+addr: 384, ppn 0, trans 0, qentsssry 0
+In cac
+192 452 72 488 356 0 -1 -1 
+472 408 344 184 316 112 252 312 
+current pc, :3a8  qqq
+addr:440 
+addr: 440, ppn 0, trans 56, entry 1
+-----------CACHE MISS 440
+In cac
+192 452 72 488 356 0 -1 -1 
+408 344 184 316 112 252 312 56 
+current pc, :3ac  qqq
+addr:300 
+addr: 300, ppn 3, trans 236, entsssry 0
+------qwer-----CACHE MISS 300
+In cac
+192 452 72 488 356 0 236 -1 
+408 344 184 316 112 252 312 56 
+current pc, :3b0  qqq
+addr:164 
+addr: 164, ppn 2, trans 164, qentsssry 0
+In cac
+192 452 72 488 356 0 236 164 
+408 344 184 316 112 252 312 56 
+current pc, :3b4  qqq
+addr:136 
+addr: 136, ppn 2, trans 136, entry 0
+-----------CACHE MISS 136
+In cac
+452 72 488 356 0 236 164 136 
+408 344 184 316 112 252 312 56 
+current pc, :3b8  qqq
+addr:192 
+addr: 192, ppn 7, trans 448, entsssry 0
+-----------CACHE HIT 192
+In cac
+72 488 356 0 236 164 136 448 
+408 344 184 316 112 252 312 56 
+current pc, :3bc  qqq
+addr:776 
+addr: 776, ppn 1, trans 72, qentsssry 0
+In cac
+0 164 136 72 -1 -1 -1 -1 
+408 344 184 316 112 252 312 56 
+current pc, :3c0  qqq
+addr:1004 
+addr: 1004, ppn 6, trans 428, qentsssry 0
+In cac
+0 164 136 72 428 -1 -1 -1 
+408 344 184 316 112 252 312 56 
+current pc, :3c4  qqq
+addr:496 
+addr: 496, ppn 4, trans 304, qentsssry 1
+In cac
+0 164 136 72 428 -1 -1 -1 
+344 184 316 112 252 312 56 304 
+current pc, :3c8  qqq
+addr:608 
+addr: 608, ppn 5, trans 352, qentsssry 0
+In cac
+0 164 136 72 428 352 -1 -1 
+344 184 316 112 252 312 56 304 
+current pc, :3cc  qqq
+addr:80 
+addr: 80, ppn 0, trans 16, qentsssry 1
+In cac
+72 352 -1 -1 -1 -1 -1 -1 
+184 316 112 252 312 56 304 16 
+current pc, :3d0  qqq
+addr:500 
+addr: 500, ppn 4, trans 308, entry 1
+-----------CACHE HIT 500
+In cac
+72 352 -1 -1 -1 -1 -1 -1 
+184 112 252 312 56 304 16 308 
+current pc, :3d4  qqq
+addr:668 
+addr: 668, ppn 3, trans 220, qentsssry 1
+In cac
+72 352 -1 -1 -1 -1 -1 -1 
+112 252 312 56 304 16 308 220 
+current pc, :3d8  qqq
+addr:172 
+addr: 172, ppn 2, trans 172, entsssry 0
+------qwer-----CACHE MISS 172
+In cac
+72 352 172 -1 -1 -1 -1 -1 
+112 252 312 56 304 16 308 220 
+current pc, :3dc  qqq
+addr:404 
+addr: 404, ppn 7, trans 468, qentsssry 1
+In cac
+72 352 172 -1 -1 -1 -1 -1 
+252 312 56 304 16 308 220 468 
+current pc, :3e0  qqq
+addr:980 
+addr: 980, ppn 6, trans 404, entsssry 1
+------qwer-----CACHE MISS 980
+In cac
+72 352 172 -1 -1 -1 -1 -1 
+312 56 304 16 308 220 468 404 
+current pc, :3e4  qqq
+addr:128 
+addr: 128, ppn 2, trans 128, entry 0
+-----------CACHE MISS 128
+In cac
+72 352 172 128 -1 -1 -1 -1 
+312 56 304 16 308 220 468 404 
+current pc, :3e8  qqq
+addr:544 
+addr: 544, ppn 1, trans 96, qentsssry 0
+In cac
+172 128 96 -1 -1 -1 -1 -1 
+312 56 304 16 308 220 468 404 
+current pc, :3ec  qqq
+addr:944 
+addr: 944, ppn 4, trans 304, qentsssry 1
+In cac
+172 128 96 -1 -1 -1 -1 -1 
+56 304 16 308 220 468 404 304 
+current pc, :3f0  qqq
+addr:624 
+addr: 624, ppn 5, trans 368, entsssry 1
+------qwer-----CACHE MISS 624
+In cac
+172 128 96 -1 -1 -1 -1 -1 
+304 16 308 220 468 404 304 368 
+current pc, :3f4  qqq
+addr:404 
+addr: 404, ppn 7, trans 468, entsssry 1
+-----------CACHE HIT 404
+In cac
+172 128 96 -1 -1 -1 -1 -1 
+304 16 308 220 404 304 368 468 
+current pc, :3f8  qqq
+addr:308 
+addr: 308, ppn 0, trans 52, qentsssry 1
+In cac
+96 -1 -1 -1 -1 -1 -1 -1 
+16 308 220 404 304 368 468 52 
+current pc, :3fc  qqq
+addr:144 
+addr: 144, ppn 2, trans 144, entsssry 1
+------qwer-----CACHE MISS 144
+In cac
+96 -1 -1 -1 -1 -1 -1 -1 
+308 220 404 304 368 468 52 144 
+current pc, :400  qqq

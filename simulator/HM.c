@@ -32,6 +32,7 @@ void HM_check(int addr, int type) {
     }
     int tag = addr / tar_page->size; // each tlb can link to a  page size of words
     int tlb_res = TLB_search(tar_tlb, tag);
+    if(type) printf("addr:%d \n", addr);
     if(tlb_res) {
         // TLB HIT, check CACHE
         tar_tlb->hm[HIT] ++;
@@ -41,12 +42,12 @@ void HM_check(int addr, int type) {
         LRU_update(tar_tlb, update, tar_tlb->entry, tag); // update the recency
         int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
         
-        //if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
+        if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
         int cac_res = CAC_search(tar_cac, trans); // check Cache
         if(cac_res) {
             // hit, update recency
             tar_cac->hm[HIT]++;
-            //if(type)printf("-----------CACHE HIT %d\n",addr);
+            if(type)printf("-----------CACHE HIT %d\n",addr);
             update = CLRU_search(tar_cac, trans);
             CLRU_update(tar_cac, update, trans);
         }
@@ -56,7 +57,7 @@ void HM_check(int addr, int type) {
             // if item isn't in memory, it's impossible that
             // TLB hit. So we are sure that it's already in memory. 
             // update Cache directly
-            //if(type)printf("-----------CACHE MISS %d\n",addr);
+            if(type)printf("-----------CACHE MISS %d\n",addr);
             tar_cac->hm[MISS] ++;
             CLRU_insert(tar_cac, trans);
         }
@@ -78,17 +79,17 @@ void HM_check(int addr, int type) {
 
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
 
-            //if(type) printf("addr: %d, ppn %d, trans %d, entsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
+            if(type) printf("addr: %d, ppn %d, trans %d, entsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             int cac_res = CAC_search(tar_cac, trans);
             if(cac_res) {
                 // update cache recency
                 tar_cac->hm[HIT]++;
                 update = CLRU_search(tar_cac, trans);
                 CLRU_update(tar_cac, update, trans);
-                //if(type)printf("-----------CACHE HIT %d\n",addr);
+                if(type)printf("-----------CACHE HIT %d\n",addr);
             }
             else {
-                //if(type)printf("------qwer-----CACHE MISS %d\n",addr);
+                if(type)printf("------qwer-----CACHE MISS %d\n",addr);
                 // update cache
                 tar_cac->hm[MISS] ++;
                 CLRU_insert(tar_cac, trans);
@@ -104,17 +105,21 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
             
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
+            if(type) printf("addr: %d, ppn %d, trans %d, qentsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             CLRU_insert(tar_cac, trans);
         }
     }
-/*
+
     if(type) {
         int q, c;
-        printf("In pte\n");
-        for(q = 0; q < tar_page->entry; q ++) {
-            printf("%d %d entry\n", tar_page->recency[q], tar_page->content[tar_page->recency[q]]);
+        printf("In cac\n");
+        for(q = 0; q < tar_cac->entry; q ++) {
+            for(c = 0; c < tar_cac->way; c ++) {
+                printf("%d ", tar_cac->c_recency[q][c]);
+            }
+            printf("\n");
         }
-    }*/
+    }
 }
 
 
@@ -179,14 +184,13 @@ int Cequals(int addr, int cur) {
 int CAC_search(m_unit* cac, int addr) {
     int x, y;
     //printf("%d cac_ent\n", cac->entry);
+    int set = (addr / cac->size) % cac->entry;
 
     // search the cache to fine the addr.
-    for(x = 0; x < cac->entry; x += y) {
        //printf("x moving %d\n", x);
         for(y = 0; y < cac->way; y ++) {
-            if(Cequals(addr, cac->c_recency[x][y])) return HIT;
+            if(Cequals(addr, cac->c_recency[set][y])) return HIT;
         }
-    }
     return MISS;
 }
 
@@ -215,7 +219,7 @@ void CAC_invalid(m_unit* cac, m_unit* pte, int page) {
 
 void CAC_reset(m_unit* cac, int set) {
     int x, y;
-    for(x = 0; x < cac->way; x ++) {
+    for(x = 0; x < cac->way; x += y) {
         int tar = cac->c_recency[set][x];
         if(tar == -1) {
             for(y = x + 1; y < cac->way; y ++) {
@@ -236,7 +240,8 @@ int CLRU_search(m_unit* cac, int addr) {
     int set = (addr / cac->size) % cac->entry;
     // search the set to find the index that contains target address
     for(x = 0; x < cac->way; x ++) {
-        if(cac->c_recency[set][x] == addr) return x;
+        if(Cequals(addr, cac->c_recency[set][x])) return x;
+        //if(cac->c_recency[set][x] == addr) return x;
     }
     return -1;
 }
@@ -261,6 +266,7 @@ void CLRU_update(m_unit* cac, int from, int addr){
     int x;
     int set = (addr / cac->size) % cac->entry;
     cac->c_recency[set][from] = addr;
+   
     for(x = from; x < cac->way - 1; x ++) {
         // move the target address to the end of the queue.
         // the one on the first place will be replace first

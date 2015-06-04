@@ -26,7 +26,7 @@ void execute() {
         int opcode = (cur_ins->bits >> 26) & 0x0000003f;
         int code = cur_ins->bits;
         HM_check(pc, 0);
-        //printf("current pc, :%x  qqq\n", pc + 4);        
+        printf("current pc, :%x  qqq\n", pc + 4);        
         if(opcode) {
         //I or J type
             int s = (code >> 21) & 0x0000001f;

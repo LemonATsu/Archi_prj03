@@ -1,5 +1,6 @@
 path=~/hell/
 origin=~/102062207_03/simulator
+param="64 512 8 64 16 4 4 256 16 8"
 
 make
 
@@ -18,11 +19,11 @@ do
 
         cd $origin
         
-        ./CMP 64 512 8 64 16 4 4 16 4 1
+        ./CMP $param
         mv report.rpt repo_2.rpt
         mv snapshot.rpt sna_2.rpt
 
-        /home/archi/CMP 64 512 8 64 16 4 4 16 4 1
+        /home/archi/CMP $param
         diff -b report.rpt repo_2.rpt >> ~/test.log
         diff -b snapshot.rpt sna_2.rpt >> ~/test.log
         
