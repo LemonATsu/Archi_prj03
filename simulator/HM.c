@@ -32,7 +32,6 @@ void HM_check(int addr, int type) {
     }
     int tag = addr / tar_page->size; // each tlb can link to a  page size of words
     int tlb_res = TLB_search(tar_tlb, tag);
-    if(type) printf("addr:%d \n", addr);
     if(tlb_res) {
         // TLB HIT, check CACHE
         tar_tlb->hm[HIT] ++;
@@ -42,7 +41,7 @@ void HM_check(int addr, int type) {
         LRU_update(tar_tlb, update, tar_tlb->entry, tag); // update the recency
         int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
         
-        if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
+        //if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
         int cac_res = CAC_search(tar_cac, trans); // check Cache
         if(cac_res) {
             // hit, update recency
@@ -79,7 +78,7 @@ void HM_check(int addr, int type) {
 
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
 
-            if(type) printf("addr: %d, ppn %d, trans %d, entsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
+            //if(type) printf("addr: %d, ppn %d, trans %d, entsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             int cac_res = CAC_search(tar_cac, trans);
             if(cac_res) {
                 // update cache recency
@@ -105,7 +104,7 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
             
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
-            if(type) printf("addr: %d, ppn %d, trans %d, qentsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
+            //if(type) printf("addr: %d, ppn %d, trans %d, qentsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             CLRU_insert(tar_cac, trans);
         }
     }
@@ -197,7 +196,7 @@ int CAC_search(m_unit* cac, int addr) {
 void CAC_invalid(m_unit* cac, m_unit* pte, int page) {
     int x, y;
     int cac_reset = 0;
-    for(x = 0; x < cac->entry; x += y) {
+    for(x = 0; x < cac->entry; x ++) {
         cac_reset = 0;
         for(y = 0; y < cac->way; y ++) {
             if(cac->c_recency[x][y] == -1) {
@@ -205,7 +204,7 @@ void CAC_invalid(m_unit* cac, m_unit* pte, int page) {
                 continue;
             }
             
-            int t_page = (cac->c_recency[x][y] / pte->size) & 0x1;
+            int t_page = (cac->c_recency[x][y] / pte->size);
             if(t_page == page) {
                 cac->c_recency[x][y] = -1;
                 cac_reset = 1;
@@ -219,7 +218,7 @@ void CAC_invalid(m_unit* cac, m_unit* pte, int page) {
 
 void CAC_reset(m_unit* cac, int set) {
     int x, y;
-    for(x = 0; x < cac->way; x += y) {
+    for(x = 0; x < cac->way; x ++) {
         int tar = cac->c_recency[set][x];
         if(tar == -1) {
             for(y = x + 1; y < cac->way; y ++) {
