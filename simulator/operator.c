@@ -14,6 +14,7 @@ void lw(int s, int t, short c) {
 void lh(int s, int t, short c, int mode) {
     int dat = reg_read(s);
     int hmc = (dat + c) - ((dat + c) % 4);
+    //printf("lh  %d\n", hmc);
     HM_check(hmc, 1);
     if(mode) {
         short int temp = data_read(dat + c, 2);
@@ -28,6 +29,7 @@ void lb(int s, int t, short c, int mode) {
     int dat = reg_read(s);
     short byte = data_read(dat + c, 1);
     int hmc = (dat + c) - ((dat + c) % 4);
+    //printf("lb  %d\n", hmc);
     HM_check(hmc, 1);
     if(mode) {
         short res = byte;
@@ -52,7 +54,7 @@ void sh(int s, int t, short c) {
     int dat_t = reg_read(t);
     int data = dat_t & 0x0000ffff;
     int hmc = (dat_s + c) - ((dat_s + c) % 4);
-    HM_check(dat_s + c, 1);
+    HM_check(hmc, 1);
     data_write(dat_s + c, data, 2);
 }
 

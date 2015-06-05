@@ -46,7 +46,7 @@ void HM_check(int addr, int type) {
         if(cac_res) {
             // hit, update recency
             tar_cac->hm[HIT]++;
-            //if(type)printf("-----------CACHE HIT %d\n",addr);
+            //if(type)printf("-t1---------CACHE HIT %d\n",addr);
             update = CLRU_search(tar_cac, trans);
             CLRU_update(tar_cac, update, trans);
         }
@@ -85,7 +85,7 @@ void HM_check(int addr, int type) {
                 tar_cac->hm[HIT]++;
                 update = CLRU_search(tar_cac, trans);
                 CLRU_update(tar_cac, update, trans);
-                //if(type)printf("-----------CACHE HIT %d\n",addr);
+                //if(type)printf("-t2---------CACHE HIT %d\n",addr);
             }
             else {
                 //if(type)printf("------qwer-----CACHE MISS %d\n",addr);
@@ -108,8 +108,8 @@ void HM_check(int addr, int type) {
             CLRU_insert(tar_cac, trans);
         }
     }
-/*
-    if(type) {
+
+    /*if(type) {
         int q, c;
         printf("In cac\n");
         for(q = 0; q < tar_cac->entry; q ++) {
@@ -162,18 +162,21 @@ int Cequals(int addr, int cur) {
     }
 
     int result = 0;
+    int page_size = cur_type ? d_page->size : i_page->size;
     int blk_size = cur_type ? d_cac->size : i_cac->size;
     int mod = cur_type ? d_cac->entry : i_cac->entry;
     int e_addr = (addr / blk_size) % mod;
     int cur_addr = (cur / blk_size) % mod;
-
+    int e_ppn = addr / page_size;
+    int cur_ppn = cur / page_size;
     if(cur_addr != e_addr) return 0;
     
     // in same set entry
 
     int max = blk_size - 4;
+    if(e_ppn != cur_ppn) return 0;
 
-    if(abs(addr - cur) <= max) {
+    if((abs(addr - cur)) <= max && (addr != -1) && (cur != -1)) {
         //if(cur_type)printf("%d %d are EQUALS\n", addr, cur); 
         return 1;
     }
