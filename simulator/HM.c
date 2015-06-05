@@ -46,7 +46,7 @@ void HM_check(int addr, int type) {
         if(cac_res) {
             // hit, update recency
             tar_cac->hm[HIT]++;
-            if(type)printf("-----------CACHE HIT %d\n",addr);
+            //if(type)printf("-----------CACHE HIT %d\n",addr);
             update = CLRU_search(tar_cac, trans);
             CLRU_update(tar_cac, update, trans);
         }
@@ -56,7 +56,7 @@ void HM_check(int addr, int type) {
             // if item isn't in memory, it's impossible that
             // TLB hit. So we are sure that it's already in memory. 
             // update Cache directly
-            if(type)printf("-----------CACHE MISS %d\n",addr);
+            //if(type)printf("-----------CACHE MISS %d\n",addr);
             tar_cac->hm[MISS] ++;
             CLRU_insert(tar_cac, trans);
         }
@@ -85,10 +85,10 @@ void HM_check(int addr, int type) {
                 tar_cac->hm[HIT]++;
                 update = CLRU_search(tar_cac, trans);
                 CLRU_update(tar_cac, update, trans);
-                if(type)printf("-----------CACHE HIT %d\n",addr);
+                //if(type)printf("-----------CACHE HIT %d\n",addr);
             }
             else {
-                if(type)printf("------qwer-----CACHE MISS %d\n",addr);
+                //if(type)printf("------qwer-----CACHE MISS %d\n",addr);
                 // update cache
                 tar_cac->hm[MISS] ++;
                 CLRU_insert(tar_cac, trans);
@@ -108,7 +108,7 @@ void HM_check(int addr, int type) {
             CLRU_insert(tar_cac, trans);
         }
     }
-
+/*
     if(type) {
         int q, c;
         printf("In cac\n");
@@ -118,7 +118,7 @@ void HM_check(int addr, int type) {
             }
             printf("\n");
         }
-    }
+    }*/
 }
 
 

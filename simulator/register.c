@@ -14,6 +14,7 @@ int reg_read(int tar) {
 }
 
 void reg_write(int tar, int data) {
+    if(tar == 0) return;
     reg[tar] = data;
 }
 #endif
