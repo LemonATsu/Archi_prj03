@@ -15,7 +15,6 @@ void HM_check(int addr, int type) {
     cur_type = type;
 
     if(type) {
-        //printf("***********D type **********\n");
         set = d_set;
         tar_page = d_page;
         tar_mem = d_mem;
@@ -32,23 +31,21 @@ void HM_check(int addr, int type) {
     }
     int tag = addr / tar_page->size; // each tlb can link to a  page size of words
     int tlb_res = TLB_search(tar_tlb, tag);
+
     if(tlb_res) {
         // TLB HIT, check CACHE
         tar_tlb->hm[HIT] ++;
-        //if(type) printf("TLB HIT : %d, tag : %d ---------------HIT# %d\n", addr, tag, tar_tlb->hm[HIT]);
         int update = LRU_search(tar_tlb, tag); // search the hit index
-        // fuck update
         LRU_update(tar_tlb, update, tar_tlb->entry, tag); // update the recency
         int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
-        
-        //if(type) printf("addr: %d, ppn %d, trans %d, entry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
+        //if(!cur_type) printf("ADDR: %d, TLB HIT\n", addr);        
         int cac_res = CAC_search(tar_cac, trans); // check Cache
         if(cac_res) {
             // hit, update recency
             tar_cac->hm[HIT]++;
-            //if(type)printf("-t1---------CACHE HIT %d\n",addr);
             update = CLRU_search(tar_cac, trans);
             CLRU_update(tar_cac, update, trans);
+            
         }
         else {
             // miss, update CACHE
@@ -56,16 +53,10 @@ void HM_check(int addr, int type) {
             // if item isn't in memory, it's impossible that
             // TLB hit. So we are sure that it's already in memory. 
             // update Cache directly
-            //if(type)printf("-----------CACHE MISS %d\n",addr);
             tar_cac->hm[MISS] ++;
             CLRU_insert(tar_cac, trans);
         }
-        // fuck update
-        // update page(memory)
-        //update = LRU_search(tar_page, tag);
-        //LRU_update(tar_page, update, tar_page->entry, tag); // update page
     } else {
-        //if(type) printf("TLB MISS : %d, tag : %d\n", addr, tag);
         // TLB MISS
         tar_tlb->hm[MISS] ++;
         int pte_res = PTE_search(tar_page, tag);
@@ -78,23 +69,20 @@ void HM_check(int addr, int type) {
 
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
 
-            //if(type) printf("addr: %d, ppn %d, trans %d, entsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             int cac_res = CAC_search(tar_cac, trans);
             if(cac_res) {
                 // update cache recency
                 tar_cac->hm[HIT]++;
                 update = CLRU_search(tar_cac, trans);
                 CLRU_update(tar_cac, update, trans);
-                //if(type)printf("-t2---------CACHE HIT %d\n",addr);
             }
             else {
-                //if(type)printf("------qwer-----CACHE MISS %d\n",addr);
                 // update cache
                 tar_cac->hm[MISS] ++;
                 CLRU_insert(tar_cac, trans);
-                //LRU_update(tar_page, update, tar_page->entry, tag); // update page
             }
         } else {
+            //if(!cur_type) printf("ADDR: %d, PTE MISS\n", addr);        
             // if TLB, PTE both miss, cache must be miss.
             // update PTE, TLB and Cache.
             tar_page->hm[MISS] ++;
@@ -104,21 +92,9 @@ void HM_check(int addr, int type) {
             LRU_insert(tar_tlb, tar_tlb->entry, tag);
             
             int trans = (tar_page->content[tag] * tar_page->size) | (addr % tar_page->size);
-            //if(type) printf("addr: %d, ppn %d, trans %d, qentsssry %d\n", addr, tar_page->content[tag], trans, trans / tar_cac->size % tar_cac->entry); 
             CLRU_insert(tar_cac, trans);
         }
     }
-
-    /*if(type) {
-        int q, c;
-        printf("In cac\n");
-        for(q = 0; q < tar_cac->entry; q ++) {
-            for(c = 0; c < tar_cac->way; c ++) {
-                printf("%d ", tar_cac->c_recency[q][c]);
-            }
-            printf("\n");
-        }
-    }*/
 }
 
 
@@ -155,7 +131,6 @@ void TLB_reset(m_unit* tlb) {
 }
 
 int Cequals(int addr, int cur) {
-    //if(cur_type)printf("%d %d CEQUALS\n", addr, cur);
     if(addr == cur) {
         //if(cur_type)printf("%d %d are EQUALS\n", addr, cur); 
         return 1;
@@ -165,11 +140,13 @@ int Cequals(int addr, int cur) {
     int page_size = cur_type ? d_page->size : i_page->size;
     int blk_size = cur_type ? d_cac->size : i_cac->size;
     int mod = cur_type ? d_cac->entry : i_cac->entry;
+    int e_ba = addr / blk_size;
+    int cur_ba = cur / blk_size;
     int e_addr = (addr / blk_size) % mod;
     int cur_addr = (cur / blk_size) % mod;
     int e_ppn = addr / page_size;
     int cur_ppn = cur / page_size;
-    if(cur_addr != e_addr) return 0;
+    if((cur_addr != e_addr) || (e_ba != cur_ba)) return 0;
     
     // in same set entry
 
@@ -177,7 +154,6 @@ int Cequals(int addr, int cur) {
     if(e_ppn != cur_ppn) return 0;
 
     if((abs(addr - cur)) <= max && (addr != -1) && (cur != -1)) {
-        //if(cur_type)printf("%d %d are EQUALS\n", addr, cur); 
         return 1;
     }
     else return 0;
@@ -185,14 +161,12 @@ int Cequals(int addr, int cur) {
 
 int CAC_search(m_unit* cac, int addr) {
     int x, y;
-    //printf("%d cac_ent\n", cac->entry);
     int set = (addr / cac->size) % cac->entry;
 
     // search the cache to fine the addr.
-       //printf("x moving %d\n", x);
-        for(y = 0; y < cac->way; y ++) {
-            if(Cequals(addr, cac->c_recency[set][y])) return HIT;
-        }
+    for(y = 0; y < cac->way; y ++) {
+        if(Cequals(addr, cac->c_recency[set][y])) return HIT;
+    }
     return MISS;
 }
 
@@ -243,7 +217,6 @@ int CLRU_search(m_unit* cac, int addr) {
     // search the set to find the index that contains target address
     for(x = 0; x < cac->way; x ++) {
         if(Cequals(addr, cac->c_recency[set][x])) return x;
-        //if(cac->c_recency[set][x] == addr) return x;
     }
     return -1;
 }

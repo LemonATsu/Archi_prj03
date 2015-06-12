@@ -1,5 +1,5 @@
 path=~/hell/
-origin=~/102062207_03/simulator
+origin=~/dir_tes/102062207_03/simulator
 
 make
 

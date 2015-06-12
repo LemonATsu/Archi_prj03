@@ -39,6 +39,7 @@ int i_cur_pn[MEMO_LIMIT];
 int i_pn_c;
 int ic_recency[MEMO_LIMIT][MEMO_LIMIT];
 
+
 int CLRU_search(m_unit* cac, int addr);
 void CLRU_insert(m_unit* cac, int addr);
 void CLRU_update(m_unit* cac, int from, int addr);
